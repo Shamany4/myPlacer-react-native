@@ -12,17 +12,16 @@ export default function DateGroup({ day, number }) {
 
 const styles = StyleSheet.create({
   date: {
-
+    flex: 1,
   },
   date__day: {
     fontFamily: 'Gilroy-Regular',
     fontSize: 14,
-    letterSpacing: 0.2
+    letterSpacing: 0.2,
   },
   date__number: {
-    fontFamily: 'Gilroy-Medium',
+    fontFamily: 'Gilroy-SemiBold',
     fontSize: 16,
-    fontWeight: '700',
-    letterSpacing: 0.2
+    letterSpacing: 0.2,
   }
 });

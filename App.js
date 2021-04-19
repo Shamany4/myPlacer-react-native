@@ -9,8 +9,9 @@ import Home from './src/pages/Home';
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
   'Gilroy-Medium': require('./assets/fonts/Gilroy-Medium.ttf'),
-  'Gilroy-ExtraBold': require('./assets/fonts/Gilroy-Extrabold.ttf'),
+  'Gilroy-SemiBold': require('./assets/fonts/Gilroy-Semibold.ttf'),
   'Gilroy-Bold': require('./assets/fonts/Gilroy-Bold.ttf'),
+  'Gilroy-ExtraBold': require('./assets/fonts/Gilroy-Extrabold.ttf'),
   'Gilroy-Black': require('./assets/fonts/Gilroy-Black.ttf'),
 };
 
