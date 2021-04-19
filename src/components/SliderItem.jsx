@@ -11,8 +11,10 @@ export default function SliderItem() {
           <Icon width={25} height={25} style={styles.sliderLocation__icon}/>
           <Text style={styles.sliderLocation__text}>2.68 км</Text>
         </View>
-        <Text style={styles.sliderTitle}>Континент</Text>
-        <Text style={styles.sliderSubtitle}>Торговый центр</Text>
+        <View>
+          <Text style={styles.sliderTitle}>Континент</Text>
+          <Text style={styles.sliderSubtitle}>Торговый центр</Text>
+        </View>
       </View>
       <TypeIcon width={60} height={60}/>
     </View>
@@ -32,20 +34,20 @@ const styles = StyleSheet.create({
   },
   sliderInfo: {
     flex: 1,
-    justifyContent: 'center'
+    height: '100%',
+    justifyContent: 'space-around'
   },
   sliderLocation: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15
   },
   sliderLocation__icon: {
-    marginRight: 5
+    marginRight: 8
   },
   sliderLocation__text: {
-    fontFamily: 'Gilroy-Regular',
-    fontSize: 12,
+    fontFamily: 'Gilroy-Medium',
+    fontSize: 14,
     letterSpacing: 0.2,
   },
   sliderTitle: {
