@@ -16,7 +16,9 @@
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0"
+    "@babel/core": "^7.9.0",
+    "expo-app-loading": "^1.0.3",
+    "expo-font": "^9.1.0"
   },
   "private": true
 }
