@@ -11,7 +11,7 @@ export default function TitlePage({title}) {
 
 const styles = StyleSheet.create({
   titlePageBlock: {
-    marginTop: '20%',
+    marginTop: 30,
     marginBottom: '5%',
   },
   titlePage: {

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Gilroy-ExtraBold',
     fontSize: 25,
     letterSpacing: 0.1,
-    lineHeight: 30
+    lineHeight: 28
   },
   sliderSubtitle: {
     fontFamily: 'Gilroy-Regular',

@@ -1,15 +1,16 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import Swiper from "react-native-web-swiper";
 
 import Header from '../components/Header';
 import TitlePage from "../components/TitlePage";
 import SliderItem from "../components/SliderItem";
 import SubtitlePage from "../components/SubtitlePage";
+import ItemCard from "../components/ItemCard";
 
 export default function Home() {
   return (
-    <View style={styles.home}>
+    <ScrollView style={styles.home}>
 
       <Header/>
       <TitlePage title="Главная"/>
@@ -37,7 +38,14 @@ export default function Home() {
       </View>
 
       <SubtitlePage title="Популярное сегодня"/>
-    </View>
+      <View style={styles.popularWrapper}>
+        <ItemCard open={true} title="Континент" type="Торговый центр" distance="1.68"/>
+        <ItemCard open={false} title="Аура" type="Торговый центр" distance="3.64"/>
+        <ItemCard open={false} title="Галерея" type="Торговый центр" distance="0.15"/>
+        <ItemCard open={true} title="Сибирский Молл" type="Торговый центр" distance="9.10"/>
+        <ItemCard open={true} title="Роял парк" type="Торговый центр" distance="6.56"/>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -53,5 +61,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center"
+  },
+  popularWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between'
   }
 })

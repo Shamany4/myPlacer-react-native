@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState, Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
@@ -15,31 +15,27 @@ let customFonts = {
   'Gilroy-Black': require('./assets/fonts/Gilroy-Black.ttf'),
 };
 
-export default class App extends React.Component {
-  state = {
-    fontsLoaded: false,
-  };
+export default function App() {
+  const [font, setFont] = useState(false);
 
-  async _loadFontsAsync() {
+  async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
-    this.setState({ fontsLoaded: true });
+    setFont(true);
   }
 
-  componentDidMount() {
-    this._loadFontsAsync();
-  }
+  useEffect(() => {
+    LoadAsyncFonts();
+  }, [LoadAsyncFonts]);
 
-  render() {
-    if (this.state.fontsLoaded) {
-      return (
-        <View style={styles.container}>
-          <StatusBar style="auto" />
-          <Home />
-        </View>
-      );
-    } else {
-      return <AppLoading />;
-    }
+  if (font) {
+    return(
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <Home />
+      </View>
+    );
+  } else {
+    return <AppLoading />
   }
 }
 
@@ -49,6 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fefefe',
     paddingLeft: '6%',
     paddingRight: '6%',
+    paddingTop: 50
   },
 });
 
