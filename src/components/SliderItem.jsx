@@ -17,7 +17,7 @@ export default function SliderItem({title, type, distance, colorCard}) {
         </View>
       </View>
       <View style={styles.sliderImage}>
-        <TypeIcon width={60} height={60} />
+        <TypeIcon width={80} height={80} />
       </View>
     </View>
   );
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    height: 150,
+    height: 160,
     width: '100%',
     borderRadius: 10,
     padding: 20,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   sliderInfo: {
     flex: 2.5,
     height: '100%',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
   },
   sliderLocation: {
     display: 'flex',

@@ -5,6 +5,7 @@ import * as Font from 'expo-font';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Home from './src/pages/Home';
+import Menu from "./src/components/Menu";
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -29,9 +30,12 @@ export default function App() {
 
   if (font) {
     return(
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <Home />
+      <View style={styles.application}>
+        <Menu />
+        <View style={styles.container}>
+          <StatusBar style="auto" />
+          <Home />
+        </View>
       </View>
     );
   } else {
@@ -40,12 +44,20 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  application: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    position: 'relative',
+    backgroundColor: 'red',
+  },
   container: {
     flex: 1,
     backgroundColor: '#fefefe',
     paddingLeft: '6%',
     paddingRight: '6%',
-    paddingTop: 50
+    paddingTop: 50,
+    paddingBottom: 60
   },
 });
 

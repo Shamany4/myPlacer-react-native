@@ -7,6 +7,7 @@ import TitlePage from "../components/TitlePage";
 import SliderItem from "../components/SliderItem";
 import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
+import Menu from "../components/Menu";
 
 export default function Home() {
   return (
@@ -45,6 +46,8 @@ export default function Home() {
         <ItemCard open={true} title="Сибирский Молл" type="Торговый центр" distance="9.10"/>
         <ItemCard open={true} title="Роял парк" type="Торговый центр" distance="6.56"/>
       </View>
+
+
     </ScrollView>
   );
 }
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
   },
   sliderContainer: {
     width: '100%',
-    height: 190,
+    height: 200,
   },
   slideWrapper: {
     flex: 1,
