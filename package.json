@@ -21,7 +21,8 @@
     "@expo/metro-config": "^0.1.62",
     "expo-app-loading": "^1.0.3",
     "expo-font": "^9.1.0",
-    "react-native-svg-transformer": "^0.14.3"
+    "react-native-svg-transformer": "^0.14.3",
+    "react-native-web-swiper": "^2.2.1"
   },
   "private": true
 }

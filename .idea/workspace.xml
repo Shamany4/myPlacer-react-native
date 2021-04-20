@@ -3,8 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/billiard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/bowling.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/cinema.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/computer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/museum.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/restaurant.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/sauna.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildings/shopping.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SliderItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/like.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/mail.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/map.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/pass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/position.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/user.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +73,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618850284582</updated>
-      <workItem from="1618850288367" duration="10833000" />
+      <workItem from="1618850288367" duration="10949000" />
+      <workItem from="1618915053622" duration="4271000" />
     </task>
     <servers />
   </component>
@@ -65,5 +91,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

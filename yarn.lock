@@ -5341,6 +5341,13 @@ react-native-svg@^12.1.1:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
 
+react-native-web-swiper@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npmjs.org/react-native-web-swiper/-/react-native-web-swiper-2.2.1.tgz"
+  integrity sha512-7q8BCdoCt91dw0fXhdTJ5S61NxOARAQX/F3x3sr5DJg9eGG4DoOSqLgJKFJl/7Z5GJasHbvKchC+SxgvtZVZvA==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-native-web@~0.13.12:
   version "0.13.18"
   resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.13.18.tgz"

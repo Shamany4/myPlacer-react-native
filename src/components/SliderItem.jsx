@@ -1,22 +1,24 @@
 import React from "react";
 import { StyleSheet, View, Text } from 'react-native';
-import Icon from "../icons/position.svg";
-import TypeIcon from "../buildings/shopping.svg";
+import Icon from "../assets/icons/position.svg";
+import TypeIcon from "../assets/buildings/shopping.svg";
 
-export default function SliderItem() {
+export default function SliderItem({title, type, distance, colorCard}) {
   return (
-    <View style={styles.sliderItem}>
+    <View style={styles.sliderItem} backgroundColor={colorCard}>
       <View style={styles.sliderInfo}>
         <View style={styles.sliderLocation}>
-          <Icon width={25} height={25} style={styles.sliderLocation__icon}/>
-          <Text style={styles.sliderLocation__text}>2.68 км</Text>
+          <Icon width={22} height={22} style={styles.sliderLocation__icon}/>
+          <Text style={styles.sliderLocation__text}>{distance} км</Text>
         </View>
         <View>
-          <Text style={styles.sliderTitle}>Континент</Text>
-          <Text style={styles.sliderSubtitle}>Торговый центр</Text>
+          <Text style={styles.sliderTitle}>{title}</Text>
+          <Text style={styles.sliderSubtitle}>{type}</Text>
         </View>
       </View>
-      <TypeIcon width={60} height={60}/>
+      <View style={styles.sliderImage}>
+        <TypeIcon width={60} height={60} />
+      </View>
     </View>
   );
 }
@@ -28,14 +30,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 150,
     width: '100%',
-    backgroundColor: '#f8d57e',
     borderRadius: 10,
-    padding: 20
+    padding: 20,
   },
   sliderInfo: {
-    flex: 1,
+    flex: 2.5,
     height: '100%',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
   },
   sliderLocation: {
     display: 'flex',
@@ -54,10 +55,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Gilroy-ExtraBold',
     fontSize: 25,
     letterSpacing: 0.1,
+    lineHeight: 30
   },
   sliderSubtitle: {
     fontFamily: 'Gilroy-Regular',
     fontSize: 14,
     letterSpacing: 0.24,
+  },
+  sliderImage: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   }
 })
