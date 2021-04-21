@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   sliderContainer: {
     width: '100%',
-    height: 200,
+    height: 250,
   },
   slideWrapper: {
     flex: 1,

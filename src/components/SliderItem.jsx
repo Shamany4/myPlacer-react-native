@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    height: 160,
+    height: '83%',
     width: '100%',
     borderRadius: 10,
     padding: 20,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   sliderInfo: {
     flex: 2.5,
     height: '100%',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   },
   sliderLocation: {
     display: 'flex',

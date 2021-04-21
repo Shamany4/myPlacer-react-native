@@ -38,7 +38,7 @@ export default function ItemCard({open, title, type, distance}) {
 
 const styles = StyleSheet.create({
   item: {
-    width: 148,
+    width: '48%',
     height: 150,
     display: 'flex',
     justifyContent: 'space-between',
@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 5
   },
   itemLocation__text: {
     fontFamily: 'Gilroy-Regular',
