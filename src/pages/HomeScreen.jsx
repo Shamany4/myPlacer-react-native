@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, ScrollView, Button} from 'react-native';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import Swiper from "react-native-web-swiper";
 
 import HeaderGroup from '../components/HeaderGroup';

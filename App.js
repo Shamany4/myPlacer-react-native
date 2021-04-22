@@ -8,8 +8,6 @@ import {StyleSheet, View} from 'react-native';
 
 
 import { HomeScreen, SearchScreen, CategoryScreen, FavoritesScreen, CabinetScreen } from './src/pages'
-import HeaderGroup from "./src/components/HeaderGroup";
-import Menu from "./src/components/Menu";
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -32,12 +30,10 @@ export default function App() {
     LoadAsyncFonts();
   }, [LoadAsyncFonts]);
 
-
-
   if (font) {
     return(
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Search">
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
