@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import DateGroup from './DateGroup';
 import AvatarGroup from "./AvatarGroup";
 
-export default function Header() {
+export default function HeaderGroup() {
   return (
     <View style={styles.header}>
       <DateGroup day="Пятница" number="15 февраля" />

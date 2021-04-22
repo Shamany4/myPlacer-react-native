@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet, View, Text} from "react-native";
+import {StyleSheet, View, Text, Alert} from "react-native";
 
 import Shop from "../assets/buildings/shop_white.svg";
 import Icon from "../assets/icons/position.svg";
 
 export default function ItemCard({open, title, type, distance}) {
   return(
-    <View style={styles.item}>
+    <View style={styles.item} >
       <View style={styles.itemStatus}>
         {
           open ?

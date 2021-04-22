@@ -1,10 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
+import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import {StyleSheet, View} from 'react-native';
 
-import Home from './src/pages/Home';
+
+import { HomeScreen, SearchScreen, CategoryScreen, FavoritesScreen, CabinetScreen } from './src/pages'
+import HeaderGroup from "./src/components/HeaderGroup";
 import Menu from "./src/components/Menu";
 
 let customFonts = {
@@ -16,27 +20,31 @@ let customFonts = {
   'Gilroy-Black': require('./assets/fonts/Gilroy-Black.ttf'),
 };
 
+const Stack = createStackNavigator();
+
 export default function App() {
   const [font, setFont] = useState(false);
-
   async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
     setFont(true);
   }
-
   useEffect(() => {
     LoadAsyncFonts();
   }, [LoadAsyncFonts]);
 
+
+
   if (font) {
     return(
-      <View style={styles.application}>
-        <Menu />
-        <View style={styles.container}>
-          <StatusBar style="auto" />
-          <Home />
-        </View>
-      </View>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Cabinet" component={CabinetScreen} options={{ headerShown: false }}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   } else {
     return <AppLoading />
@@ -49,20 +57,12 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     position: 'relative',
-    backgroundColor: 'red',
+    backgroundColor: '#fefefe',
   },
   container: {
     flex: 1,
-    backgroundColor: '#fefefe',
     paddingLeft: '6%',
     paddingRight: '6%',
-    paddingTop: 50,
     paddingBottom: 60
   },
 });
-
-
-// <View style={styles.container}>
-//   <StatusBar style="auto" />
-//   <Home />
-// </View>
