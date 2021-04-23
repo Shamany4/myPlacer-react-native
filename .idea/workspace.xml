@@ -4,9 +4,18 @@
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/buildings/billiard.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/buildings/billiard.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/billiard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/bowling.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/cinema.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/computer.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/museum.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/restaurant.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/sauna.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/shop_white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/buildings/shopping.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SliderItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" afterDir="false" />
     </list>
@@ -55,7 +64,8 @@
       <workItem from="1618850288367" duration="10949000" />
       <workItem from="1618915053622" duration="19359000" />
       <workItem from="1619008950975" duration="1103000" />
-      <workItem from="1619077067880" duration="18259000" />
+      <workItem from="1619077067880" duration="22555000" />
+      <workItem from="1619157887495" duration="1712000" />
     </task>
     <servers />
   </component>

@@ -33,7 +33,7 @@ export default function App() {
   if (font) {
     return(
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Search">
+        <Stack.Navigator initialRouteName="Category">
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>

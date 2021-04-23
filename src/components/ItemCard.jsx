@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleSheet, View, Text, Alert} from "react-native";
+import {StyleSheet, View, Text, Alert, Image} from "react-native";
 
-import Shop from "../assets/buildings/shop_white.svg";
 import Icon from "../assets/icons/position.svg";
 
 export default function ItemCard({open, title, type, distance}) {
@@ -30,7 +29,8 @@ export default function ItemCard({open, title, type, distance}) {
         <Text style={styles.itemLocation__text}>{distance} км</Text>
       </View>
       <View style={styles.itemIcon}>
-        <Shop width={24} height={24}/>
+        <Image style={styles.itemIcon__icon}
+               source={require('../assets/whiteBuildings/billiard_white.png')}/>
       </View>
     </View>
   );
@@ -92,5 +92,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  itemIcon__icon: {
+    height: 24,
+    width: 24
   }
 });

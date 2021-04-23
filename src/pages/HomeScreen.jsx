@@ -35,19 +35,19 @@ export default function HomeScreen({navigation}) {
                 }
               }}
             >
-              <SliderItem title="Континент" type="Торговый центр" distance="2.68" colorCard="#f3f3f3"/>
-              <SliderItem title="Рассвет" type="Кинотеатр" distance="1.33" colorCard="#9fd2ff"/>
-              <SliderItem title="Школа бильярда" type="Бильярдная" distance="3.45" colorCard="#9fffc2"/>
+              <SliderItem title="Континент" type="Торговый центр" distance="2.68" colorCard="#f3f3f3" icon="shopping"/>
+              <SliderItem title="Рассвет" type="Кинотеатр" distance="1.33" colorCard="#9fd2ff" icon="cinema"/>
+              <SliderItem title="Школа бильярда" type="Бильярдная" distance="3.45" colorCard="#9fffc2" icon="billiard"/>
             </Swiper>
           </View>
 
           <SubtitlePage title="Популярное сегодня"/>
           <View style={styles.popularWrapper}>
             <ItemCard open={true} title="Континент" type="Торговый центр" distance="1.68"/>
-            <ItemCard open={false} title="Аура" type="Торговый центр" distance="3.64"/>
+            <ItemCard open={false} title="Рассвет" type="Кинотеатр" distance="3.64"/>
             <ItemCard open={false} title="Галерея" type="Торговый центр" distance="0.15"/>
-            <ItemCard open={true} title="Сибирский Молл" type="Торговый центр" distance="9.10"/>
-            <ItemCard open={true} title="Роял парк" type="Торговый центр" distance="6.56"/>
+            <ItemCard open={true} title="SyberX" type="Компьютерный клуб" distance="9.10"/>
+            <ItemCard open={true} title="Школа бильярда" type="Торговый центр" distance="6.56"/>
           </View>
 
 

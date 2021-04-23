@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
+import {StyleSheet, View, Text, Image} from 'react-native';
 import Icon from "../assets/icons/position.svg";
-import TypeIcon from "../assets/buildings/shopping.svg";
 
-export default function SliderItem({title, type, distance, colorCard}) {
+export default function SliderItem({title, type, distance, colorCard, icon}) {
   return (
     <View style={styles.sliderItem} backgroundColor={colorCard}>
       <View style={styles.sliderInfo}>
@@ -17,7 +16,8 @@ export default function SliderItem({title, type, distance, colorCard}) {
         </View>
       </View>
       <View style={styles.sliderImage}>
-        <TypeIcon width={80} height={80} />
+        <Image style={styles.sliderImage__icon}
+               source={require('../assets/buildings/shopping.png')}/>
       </View>
     </View>
   );
@@ -66,5 +66,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
+  },
+  sliderImage__icon: {
+    height: 80,
+    width: 80
   }
 })
