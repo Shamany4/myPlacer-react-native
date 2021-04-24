@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {StyleSheet, View} from 'react-native';
 
 
-import { HomeScreen, SearchScreen, CategoryScreen, FavoritesScreen, CabinetScreen } from './src/pages'
+import { HomeScreen, SearchScreen, CategoryScreen, FavoritesScreen, CabinetScreen, LoginScreen } from './src/pages'
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -33,7 +33,8 @@ export default function App() {
   if (font) {
     return(
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Category">
+        <Stack.Navigator initialRouteName="Category ">
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>

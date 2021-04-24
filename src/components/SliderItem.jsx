@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, View, Text, Image} from 'react-native';
+
 import Icon from "../assets/icons/position.svg";
 
 export default function SliderItem({title, type, distance, colorCard, icon}) {
@@ -7,7 +8,9 @@ export default function SliderItem({title, type, distance, colorCard, icon}) {
     <View style={styles.sliderItem} backgroundColor={colorCard}>
       <View style={styles.sliderInfo}>
         <View style={styles.sliderLocation}>
+
           <Icon width={22} height={22} style={styles.sliderLocation__icon}/>
+
           <Text style={styles.sliderLocation__text}>{distance} км</Text>
         </View>
         <View>

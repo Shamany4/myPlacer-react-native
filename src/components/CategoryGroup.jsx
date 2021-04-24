@@ -1,12 +1,12 @@
 import React from "react";
 import {Image, StyleSheet, Text, View} from "react-native";
 
-export default function CategoryGroup({title, color}) {
+export default function CategoryGroup({title, color, icon}) {
   return(
     <View style={styles.categoryGroup} backgroundColor={color}>
       <Text style={styles.categoryGroup__text}>{title}</Text>
       <Image style={styles.categoryGroup__icon}
-             source={require('../assets/buildings/shopping.png')}/>
+             source={icon}/>
     </View>
   );
 }
