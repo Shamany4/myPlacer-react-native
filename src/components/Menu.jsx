@@ -1,22 +1,24 @@
 import React from "react";
-import {Alert, Button, StyleSheet, View} from "react-native";
-
-import HomeIcon from '../assets/icons/home.svg';
-import SearchIcon from '../assets/icons/search.svg';
-import MapIcon from '../assets/icons/map.svg';
-import LikeIcon from '../assets/icons/like.svg';
-import UserIcon from '../assets/icons/user.svg';
+import {Image, StyleSheet, TouchableHighlight, View} from "react-native";
 
 export default function Menu({navigation}) {
   return(
     <View style={styles.navbar}>
-      <HomeIcon height={20} width={20} onPress={() => navigation.navigate('Home')} />
-      <SearchIcon height={20} width={20} onPress={() => navigation.navigate('Search')}/>
-      <View style={styles.navbar__centralBtn}>
-        <MapIcon height={20} width={20} onPress={() => navigation.navigate('Category')}/>
-      </View>
-      <LikeIcon height={20} width={20} onPress={() => navigation.navigate('Favorites')}/>
-      <UserIcon height={20} width={20} onPress={() => navigation.navigate('Cabinet')}/>
+      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Home')}>
+        <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/home.png')}/>
+      </TouchableHighlight>
+      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Search')}>
+        <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/search.png')}/>
+      </TouchableHighlight>
+      <TouchableHighlight style={styles.navbar__centralBtn} onPress={() => navigation.navigate('Category')}>
+        <Image style={styles.navbarIconGroup__icon} source={require('../assets/iconsWhite/map.png')}/>
+      </TouchableHighlight>
+      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Favorites')}>
+        <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/like.png')}/>
+      </TouchableHighlight>
+      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Cabinet')}>
+        <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/user.png')}/>
+      </TouchableHighlight>
     </View>
   );
 }
@@ -41,16 +43,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   navbar__centralBtn: {
-    height: 44,
-    width: 44,
+    padding: 12,
     backgroundColor: '#000',
     borderRadius: 10,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
   },
-  navbar__icon: {
-    backgroundColor: 'red',
+  navbarIconGroup: {
     padding: 10
+  },
+  navbarIconGroup__icon: {
+    height: 20,
+    width: 20
   }
 });

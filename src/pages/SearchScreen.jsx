@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, ScrollView, TextInput} from 'react-native';
+import {StyleSheet, View, ScrollView, TextInput, Image} from 'react-native';
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 
-import IconInput from '../assets/icons/search.svg';
-import ItemCard from "../components/ItemCard";
 
 export default function SearchScreen({navigation}) {
   const [search, setSearch] = useState(false);
@@ -23,13 +21,13 @@ export default function SearchScreen({navigation}) {
             search
             ?
             <View style={styles.searchGroup} marginTop={0}>
-            <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
-            <IconInput style={styles.searchGroup__icon} height={24} width={24}/>
+              <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
+              <Image style={styles.searchGroup__icon} source={require('../assets/icons/search.png')}/>
             </View>
             :
             <View style={styles.searchGroup} marginTop={160}>
-            <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
-            <IconInput style={styles.searchGroup__icon} height={24} width={24}/>
+              <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
+              <Image style={styles.searchGroup__icon} source={require('../assets/icons/search.png')}/>
             </View>
           }
 
@@ -91,6 +89,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 25,
     top: '50%',
+    height: 24,
+    width: 24,
     transform: [{ translateY: -12 }],
   }
 })

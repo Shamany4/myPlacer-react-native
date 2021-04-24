@@ -1,8 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, Alert, Image} from "react-native";
 
-import Icon from "../assets/icons/position.svg";
-
 export default function ItemCard({open, title, type, distance}) {
   return(
     <View style={styles.item} >
@@ -25,7 +23,7 @@ export default function ItemCard({open, title, type, distance}) {
         <Text style={styles.itemSubtitle}>{type}</Text>
       </View>
       <View style={styles.itemLocation}>
-        <Icon width={18} height={18}/>
+        <Image style={styles.itemLocation__icon} source={require('../assets/icons/position.png')}/>
         <Text style={styles.itemLocation__text}>{distance} км</Text>
       </View>
       <View style={styles.itemIcon}>
@@ -75,6 +73,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  itemLocation__icon: {
+    height: 18,
+    width: 18
   },
   itemLocation__text: {
     fontFamily: 'Gilroy-Regular',

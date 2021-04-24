@@ -1,16 +1,12 @@
 import React from "react";
 import {StyleSheet, View, Text, Image} from 'react-native';
 
-import Icon from "../assets/icons/position.svg";
-
 export default function SliderItem({title, type, distance, colorCard, icon}) {
   return (
     <View style={styles.sliderItem} backgroundColor={colorCard}>
       <View style={styles.sliderInfo}>
         <View style={styles.sliderLocation}>
-
-          <Icon width={22} height={22} style={styles.sliderLocation__icon}/>
-
+          <Image style={styles.sliderLocation__icon} source={require('../assets/icons/position.png')}/>
           <Text style={styles.sliderLocation__text}>{distance} км</Text>
         </View>
         <View>
@@ -47,7 +43,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sliderLocation__icon: {
-    marginRight: 8
+    marginRight: 8,
+    height: 22,
+    width: 22
   },
   sliderLocation__text: {
     fontFamily: 'Gilroy-Medium',

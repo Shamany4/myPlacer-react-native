@@ -4,11 +4,31 @@
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metro.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/clock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/eye.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/like.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/mail.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/map.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/pass.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/position.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputGroup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SliderItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +81,7 @@
       <workItem from="1619173666645" duration="7730000" />
       <workItem from="1619255487531" duration="1220000" />
       <workItem from="1619262555829" duration="1204000" />
-      <workItem from="1619272801960" duration="6656000" />
+      <workItem from="1619272801960" duration="11319000" />
     </task>
     <servers />
   </component>

@@ -1,20 +1,11 @@
 import {Image, StyleSheet, TextInput, View} from "react-native";
 import React from "react";
 
-import MailIcon from '../assets/icons/mail.svg';
-import PassIcon from '../assets/icons/pass.svg';
-
-export default function ({placeholder, secure, isMail}) {
+export default function ({placeholder, secure, icon}) {
   return(
     <View style={styles.inputGroup}>
       <View style={styles.inputGroupImage}>
-        {
-          isMail
-          ?
-            <MailIcon height={24} width={24} />
-          :
-            <PassIcon height={24} width={24} />
-        }
+        <Image style={styles.inputGroupImage__icon} source={icon}/>
       </View>
       <TextInput style={styles.inputGroup__input}
                  placeholder={placeholder}
@@ -40,6 +31,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Gilroy-Medium',
     fontSize: 15,
     paddingRight: 10,
+    letterSpacing: 0.3,
     color: '#000',
     flex: 4.5
   },
@@ -48,5 +40,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  inputGroupImage__icon: {
+    height: 24,
+    width: 24
   }
 });

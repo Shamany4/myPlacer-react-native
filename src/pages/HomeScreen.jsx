@@ -46,7 +46,7 @@ export default function HomeScreen({navigation}) {
             <ItemCard open={true} title="Континент" type="Торговый центр" distance="1.68"/>
             <ItemCard open={false} title="Рассвет" type="Кинотеатр" distance="3.64"/>
             <ItemCard open={false} title="Галерея" type="Торговый центр" distance="0.15"/>
-            <ItemCard open={true} title="SyberX" type="Компьютерный клуб" distance="9.10"/>
+            <ItemCard open={true} title="CyberX" type="Компьютерный клуб" distance="9.10"/>
             <ItemCard open={true} title="Школа бильярда" type="Торговый центр" distance="6.56"/>
           </View>
 
