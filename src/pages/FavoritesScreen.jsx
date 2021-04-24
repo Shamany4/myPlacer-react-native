@@ -7,6 +7,7 @@ import Menu from "../components/Menu";
 import ItemCard from "../components/ItemCard";
 
 export default function FavoritesScreen({navigation}) {
+  const iconWhitePath = '../assets/whiteBuildings/';
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
@@ -17,7 +18,7 @@ export default function FavoritesScreen({navigation}) {
           <TitlePage title="Избранное"/>
 
           <View style={styles.popularWrapper}>
-            <ItemCard open={true} title="Континент" type="Торговый центр" distance="1.68"/>
+            <ItemCard open={false} title="Рассвет" type="Кинотеатр" distance="3.64" icon={require(iconWhitePath + 'cinema.png')}/>
           </View>
 
 

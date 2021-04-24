@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Text, Alert, Image} from "react-native";
+import {StyleSheet, View, Text, Image} from "react-native";
 
-export default function ItemCard({open, title, type, distance}) {
+export default function ItemCard({open, title, type, distance, icon}) {
   return(
     <View style={styles.item} >
       <View style={styles.itemStatus}>
@@ -28,7 +28,7 @@ export default function ItemCard({open, title, type, distance}) {
       </View>
       <View style={styles.itemIcon}>
         <Image style={styles.itemIcon__icon}
-               source={require('../assets/whiteBuildings/billiard_white.png')}/>
+               source={icon}/>
       </View>
     </View>
   );

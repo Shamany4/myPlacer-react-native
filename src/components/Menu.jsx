@@ -4,19 +4,19 @@ import {Image, StyleSheet, TouchableHighlight, View} from "react-native";
 export default function Menu({navigation}) {
   return(
     <View style={styles.navbar}>
-      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Home')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Home')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/home.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Search')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Search')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/search.png')}/>
       </TouchableHighlight>
       <TouchableHighlight style={styles.navbar__centralBtn} onPress={() => navigation.navigate('Category')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/iconsWhite/map.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Favorites')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Favorites')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/like.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight style={styles.navbarIconGroup} onPress={() => navigation.navigate('Cabinet')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Cabinet')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/user.png')}/>
       </TouchableHighlight>
     </View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   navbarIconGroup: {
-    padding: 10
+    padding: 10,
   },
   navbarIconGroup__icon: {
     height: 20,

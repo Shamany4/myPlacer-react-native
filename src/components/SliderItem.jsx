@@ -16,7 +16,7 @@ export default function SliderItem({title, type, distance, colorCard, icon}) {
       </View>
       <View style={styles.sliderImage}>
         <Image style={styles.sliderImage__icon}
-               source={require('../assets/buildings/shopping.png')}/>
+               source={icon}/>
       </View>
     </View>
   );
