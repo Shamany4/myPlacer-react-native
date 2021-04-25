@@ -27,7 +27,9 @@ export default function SearchScreen({navigation}) {
             :
             <View style={styles.searchGroup} marginTop={160}>
               <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
-              <Image style={styles.searchGroup__icon} source={require('../assets/icons/search.png')}/>
+              <View style={styles.searchGroupImage}>
+                <Image style={styles.searchGroupImage__icon} source={require('../assets/icons/search.png')}/>
+              </View>
             </View>
           }
 
@@ -69,28 +71,28 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: '#f2f2f2',
     borderRadius: 10,
-    position: 'relative',
     marginBottom: 30,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   searchGroup__input: {
     fontFamily: 'Gilroy-Medium',
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    left: 20,
+    flex: 4.5,
     fontSize: 15,
     borderRadius: 10,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
     letterSpacing: 0.2,
+    paddingLeft: 20
   },
-  searchGroup__icon: {
-    position: 'absolute',
-    right: 25,
-    top: '50%',
+  searchGroupImage: {
+    height: '100%',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  searchGroupImage__icon: {
     height: 24,
     width: 24,
-    transform: [{ translateY: -12 }],
   }
 })
