@@ -4,6 +4,10 @@
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Avatar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputGroup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +62,7 @@
       <workItem from="1619255487531" duration="1220000" />
       <workItem from="1619262555829" duration="1204000" />
       <workItem from="1619272801960" duration="15312000" />
-      <workItem from="1619339973889" duration="5842000" />
+      <workItem from="1619339973889" duration="9137000" />
     </task>
     <servers />
   </component>

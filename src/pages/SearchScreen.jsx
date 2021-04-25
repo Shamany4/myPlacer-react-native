@@ -22,10 +22,12 @@ export default function SearchScreen({navigation}) {
             ?
             <View style={styles.searchGroup} marginTop={0}>
               <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
-              <Image style={styles.searchGroup__icon} source={require('../assets/icons/search.png')}/>
+              <View style={styles.searchGroupImage}>
+                <Image style={styles.searchGroupImage__icon} source={require('../assets/icons/search.png')}/>
+              </View>
             </View>
             :
-            <View style={styles.searchGroup} marginTop={160}>
+            <View style={styles.searchGroup} marginTop="50%">
               <TextInput style={styles.searchGroup__input} placeholder="Начните вводить здесь"/>
               <View style={styles.searchGroupImage}>
                 <Image style={styles.searchGroupImage__icon} source={require('../assets/icons/search.png')}/>

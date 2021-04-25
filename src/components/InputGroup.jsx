@@ -1,16 +1,26 @@
 import {Image, StyleSheet, TextInput, View} from "react-native";
 import React from "react";
 
-export default function ({placeholder, secure, icon}) {
+export default function ({placeholder, value, secure, icon, secondIcon}) {
   return(
     <View style={styles.inputGroup}>
       <View style={styles.inputGroupImage}>
         <Image style={styles.inputGroupImage__icon} source={icon}/>
       </View>
       <TextInput style={styles.inputGroup__input}
+                 value={value}
                  placeholder={placeholder}
                  secureTextEntry={secure}
       />
+      {
+        secondIcon
+          ?
+          <View style={styles.inputGroupSecond}>
+            <Image style={styles.inputGroupSecond__icon} source={secondIcon}/>
+          </View>
+          :
+          null
+      }
     </View>
   );
 }
@@ -28,21 +38,37 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   inputGroup__input: {
+    height: '100%',
     fontFamily: 'Gilroy-Medium',
     fontSize: 15,
-    paddingRight: 10,
+    paddingRight: 20,
     letterSpacing: 0.3,
     color: '#000',
-    flex: 4.5
+    flex: 4,
   },
   inputGroupImage: {
     height: '100%',
+    maxWidth: 60,
+    minWidth: 60,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   inputGroupImage__icon: {
     height: 24,
     width: 24
+  },
+  inputGroupSecond: {
+    height: '100%',
+    flex: 1,
+    maxWidth: 60,
+    minWidth: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputGroupSecond__icon: {
+    height: 22,
+    width: 22,
+    opacity: 0.6
   }
 });
