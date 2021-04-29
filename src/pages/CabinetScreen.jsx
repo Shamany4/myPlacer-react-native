@@ -69,10 +69,7 @@ export default function CabinetScreen({navigation}) {
 const styles = StyleSheet.create({
   application: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    backgroundColor: '#fefefe',
+    backgroundColor: '#fefefe'
   },
   container: {
     paddingLeft: '6%',
@@ -86,8 +83,8 @@ const styles = StyleSheet.create({
   cabinetImageGroup: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 30,
+    marginTop: 25,
+    marginBottom: 10,
   },
   cabinetImageGroup__image: {
     width: 140,

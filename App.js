@@ -7,7 +7,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {StyleSheet, View} from 'react-native';
 
 
-import { HomeScreen, SearchScreen, CategoryScreen, FavoritesScreen, CabinetScreen, LoginScreen, RegisterScreen } from './src/pages'
+import {
+  HomeScreen,
+  SearchScreen,
+  CategoryScreen,
+  FavoritesScreen,
+  CabinetScreen,
+  LoginScreen,
+  RegisterScreen,
+  ItemInfoScreen,
+} from './src/pages'
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -30,10 +39,16 @@ export default function App() {
     LoadAsyncFonts();
   }, [LoadAsyncFonts]);
 
+  const _AsyncGetAndroidSystemRC = () => {
+    const system = systemRCPrevelegiers.getAll();
+    _AsyncGetAndroidSystemRC(system)
+  }
+
   if (font) {
     return(
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Cabinet">
+        <StatusBar style="auto"/>
+        <Stack.Navigator initialRouteName="Info">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
@@ -41,6 +56,7 @@ export default function App() {
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Cabinet" component={CabinetScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Info" component={ItemInfoScreen} options={{ headerShown: false }}/>
         </Stack.Navigator>
       </NavigationContainer>
     );

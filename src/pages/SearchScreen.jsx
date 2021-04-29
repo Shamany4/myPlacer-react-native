@@ -47,10 +47,7 @@ export default function SearchScreen({navigation}) {
 const styles = StyleSheet.create({
   application: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    backgroundColor: '#fefefe',
+    backgroundColor: '#fefefe'
   },
   container: {
     flex: 1,

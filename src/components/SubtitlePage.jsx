@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   subtitlePage: {
     fontFamily: 'Gilroy-Bold',
     fontSize: 16,
-    marginBottom: 15
+    marginBottom: 15,
+    marginTop: 15
   }
 })

@@ -31,10 +31,7 @@ export default function FavoritesScreen({navigation}) {
 const styles = StyleSheet.create({
   application: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    backgroundColor: '#fefefe',
+    backgroundColor: '#fefefe'
   },
   container: {
     flex: 1,
@@ -50,6 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: 25
   }
 })
