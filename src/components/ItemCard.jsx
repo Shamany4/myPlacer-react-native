@@ -84,9 +84,10 @@ const styles = StyleSheet.create({
     width: 18
   },
   itemLocation__text: {
-    fontFamily: 'Gilroy-Regular',
+    fontFamily: 'Gilroy-Medium',
     marginLeft: 7,
     fontSize: 12,
+    letterSpacing: 0.3,
   },
   itemIcon: {
     position: 'absolute',

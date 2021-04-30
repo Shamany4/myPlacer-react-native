@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View, ScrollView} from 'react-native';
+import {StyleSheet, View, ScrollView, Alert} from 'react-native';
 import Swiper from "react-native-web-swiper";
+import haversine from 'haversine'
 import json from "../db.json";
+import * as Location from 'expo-location';
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
@@ -9,20 +11,38 @@ import SliderItem from "../components/SliderItem";
 import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
+import AppLoading from "expo-app-loading";
 
 export default function HomeScreen({navigation}) {
   const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
 
-  const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [location, setLocation] = useState(null);
 
+  // Get All Items
   useEffect(()=>{
-    setData(json.hookah);
+    setData(json.cinema);
   },[data]);
 
-  return (
-    <View style={styles.application}>
+  // Get current user position
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Не удалось получить геопозицию','В разрешении на доступ к местоположению было отказано');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+
+  if (location && data) {
+    return(
+      <View style={styles.application}>
       <Menu navigation={navigation}/>
       <View style={styles.container}>
         <ScrollView>
@@ -58,9 +78,18 @@ export default function HomeScreen({navigation}) {
           <View style={styles.popularWrapper}>
             {
               data.map((el, index) => {
+                const start = {
+                  latitude: location.coords.latitude,
+                  longitude: location.coords.longitude
+                }
+                const end = {
+                  latitude: el.point.lat,
+                  longitude: el.point.lon
+                }
                 let type = el.name_ex.extension;
                 return <ItemCard open={true} title={el.name_ex.primary}
                                  type={type}
+                                 distance={haversine(start, end).toFixed(2)}
                                  icon={require(iconWhitePath + 'cinema.png')}
                                  navigate={navigation}
                                  key={index}
@@ -76,7 +105,10 @@ export default function HomeScreen({navigation}) {
         </ScrollView>
       </View>
     </View>
-  );
+    );
+  } else {
+    return <AppLoading />
+  }
 }
 
 const styles = StyleSheet.create({
