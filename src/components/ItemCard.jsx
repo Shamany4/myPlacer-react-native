@@ -1,42 +1,44 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image} from "react-native";
+import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
 
-export default function ItemCard({open, title, type, distance, icon}) {
+export default function ItemCard({open, title, type, distance, icon, navigate}) {
   return(
-    <View style={styles.item} >
-      <View style={styles.itemStatus}>
-        {
-          open ?
-            <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-              <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
-              <Text style={styles.itemStatus__text}>Открыто</Text>
-            </View>
-          :
-            <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-              <View style={styles.itemStatus__circle} backgroundColor="#ff8c84"/>
-              <Text style={styles.itemStatus__text}>Закрыто</Text>
-            </View>
-        }
+    <TouchableHighlight style={{width: '48%'}} onPress={() => navigate.navigate('Info')} underlayColor="#fff">
+      <View style={styles.item}>
+        <View style={styles.itemStatus}>
+          {
+            open ?
+              <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
+                <Text style={styles.itemStatus__text}>Открыто</Text>
+              </View>
+              :
+              <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <View style={styles.itemStatus__circle} backgroundColor="#ff8c84"/>
+                <Text style={styles.itemStatus__text}>Закрыто</Text>
+              </View>
+          }
+        </View>
+        <View style={{display: 'flex'}}>
+          <Text style={styles.itemTitle} numberOfLines={2}>{title}</Text>
+          <Text style={styles.itemSubtitle} numberOfLines={1}>{type}</Text>
+        </View>
+        <View style={styles.itemLocation}>
+          <Image style={styles.itemLocation__icon} source={require('../assets/icons/position.png')}/>
+          <Text style={styles.itemLocation__text}>{distance} км</Text>
+        </View>
+        <View style={styles.itemIcon}>
+          <Image style={styles.itemIcon__icon}
+                 source={icon}/>
+        </View>
       </View>
-      <View style={{display: 'flex', marginBottom: 20}}>
-        <Text style={styles.itemTitle}>{title}</Text>
-        <Text style={styles.itemSubtitle}>{type}</Text>
-      </View>
-      <View style={styles.itemLocation}>
-        <Image style={styles.itemLocation__icon} source={require('../assets/icons/position.png')}/>
-        <Text style={styles.itemLocation__text}>{distance} км</Text>
-      </View>
-      <View style={styles.itemIcon}>
-        <Image style={styles.itemIcon__icon}
-               source={icon}/>
-      </View>
-    </View>
+    </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   item: {
-    width: '48%',
+    width: '100%',
     height: 150,
     display: 'flex',
     justifyContent: 'space-between',
@@ -62,12 +64,15 @@ const styles = StyleSheet.create({
   itemTitle: {
     fontFamily: 'Gilroy-Bold',
     fontSize: 18,
-    letterSpacing: 0.32,
+    letterSpacing: 0.3,
+    lineHeight: 20,
   },
   itemSubtitle: {
+    width: '80%',
     fontFamily: 'Gilroy-Regular',
-    fontSize: 12,
+    fontSize: 14,
     letterSpacing: 0.24,
+    lineHeight: 20,
   },
   itemLocation: {
     display: 'flex',
@@ -97,6 +102,6 @@ const styles = StyleSheet.create({
   },
   itemIcon__icon: {
     height: 24,
-    width: 24
+    width: 24,
   }
 });

@@ -1,24 +1,26 @@
 import React from "react";
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableHighlight} from 'react-native';
 
-export default function SliderItem({title, type, distance, colorCard, icon}) {
+export default function SliderItem({title, type, distance, colorCard, icon, navigate}) {
   return (
-    <View style={styles.sliderItem} backgroundColor={colorCard}>
-      <View style={styles.sliderInfo}>
-        <View style={styles.sliderLocation}>
-          <Image style={styles.sliderLocation__icon} source={require('../assets/icons/position.png')}/>
-          <Text style={styles.sliderLocation__text}>{distance} км</Text>
+    <TouchableHighlight style={{height: '83%'}} onPress={() => navigate.navigate('Info')} underlayColor="#fff">
+      <View style={styles.sliderItem} backgroundColor={colorCard}>
+        <View style={styles.sliderInfo}>
+          <View style={styles.sliderLocation}>
+            <Image style={styles.sliderLocation__icon} source={require('../assets/icons/position.png')}/>
+            <Text style={styles.sliderLocation__text}>{distance} км</Text>
+          </View>
+          <View>
+            <Text style={styles.sliderTitle}>{title}</Text>
+            <Text style={styles.sliderSubtitle}>{type}</Text>
+          </View>
         </View>
-        <View>
-          <Text style={styles.sliderTitle}>{title}</Text>
-          <Text style={styles.sliderSubtitle}>{type}</Text>
+        <View style={styles.sliderImage}>
+          <Image style={styles.sliderImage__icon}
+                 source={icon}/>
         </View>
       </View>
-      <View style={styles.sliderImage}>
-        <Image style={styles.sliderImage__icon}
-               source={icon}/>
-      </View>
-    </View>
+    </TouchableHighlight>
   );
 }
 
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    height: '83%',
+    height: '100%',
     width: '100%',
     borderRadius: 10,
     padding: 20,

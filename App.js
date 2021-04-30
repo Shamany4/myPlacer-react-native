@@ -48,7 +48,7 @@ export default function App() {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
-        <Stack.Navigator initialRouteName="Info">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>

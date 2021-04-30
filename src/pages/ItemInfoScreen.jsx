@@ -127,7 +127,7 @@ export default function ItemInfoScreen({navigation, open}) {
             <InputGroup value="rassvet-nsk@mail.ru" icon={require('../assets/icons/mail.png')} secure={false} />
             <InputGroup value="8 (383) 311-01-84" icon={require('../assets/icons/phone.png')} secure={false} />
             <InputGroup value="Отсутствует" icon={require('../assets/icons/link.png')} secure={false} />
-            <ButtonGroup title="Позвонить" size="50%"/>
+            <ButtonGroup title="Позвонить" />
             <ButtonGroup title="Написать" />
 
           </ScrollView>

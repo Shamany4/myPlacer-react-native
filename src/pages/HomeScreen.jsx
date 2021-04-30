@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import Swiper from "react-native-web-swiper";
+import json from "../db.json";
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
@@ -12,6 +13,14 @@ import Menu from "../components/Menu";
 export default function HomeScreen({navigation}) {
   const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
+
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(()=>{
+    setData(json.hookah);
+  },[data]);
+
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
@@ -39,26 +48,28 @@ export default function HomeScreen({navigation}) {
             >
               <SliderItem title="Континент" type="Торговый центр"
                           distance="2.68" colorCard="#f3f3f3"
-                          icon={require(iconBuildingPath + 'shopping.png')}/>
-              <SliderItem title="CyberX" type="Компьютерный клуб"
-                          distance="1.37" colorCard="#ff9f9f"
-                          icon={require(iconBuildingPath + 'computer.png')}/>
-              <SliderItem title="Победа" type="Кинотеатр"
-                          distance="3.34" colorCard="#9fd2ff"
-                          icon={require(iconBuildingPath + 'cinema.png')}/>
-              <SliderItem title="Школа бильярда" type="Бильярдные"
-                          distance="2.68" colorCard="#9fffc2"
-                          icon={require(iconBuildingPath + 'billiard.png')}/>
+                          icon={require(iconBuildingPath + 'shopping.png')}
+                          navigate={navigation}
+              />
             </Swiper>
           </View>
 
           <SubtitlePage title="Популярное сегодня"/>
           <View style={styles.popularWrapper}>
-            <ItemCard open={true} title="Континент" type="Торговый центр" distance="1.68" icon={require(iconWhitePath + 'shopping.png')}/>
-            <ItemCard open={false} title="Рассвет" type="Кинотеатр" distance="3.64" icon={require(iconWhitePath + 'cinema.png')}/>
-            <ItemCard open={false} title="Галерея" type="Торговый центр" distance="0.15" icon={require(iconWhitePath + 'shopping.png')}/>
-            <ItemCard open={true} title="CyberX" type="Компьютерный клуб" distance="9.10" icon={require(iconWhitePath + 'computer.png')}/>
-            <ItemCard open={true} title="Школа бильярда" type="Торговый центр" distance="6.56" icon={require(iconWhitePath + 'billiard.png')}/>
+            {
+              data.map((el, index) => {
+                let type = el.name_ex.extension;
+                return <ItemCard open={true} title={el.name_ex.primary}
+                                 type={type}
+                                 icon={require(iconWhitePath + 'cinema.png')}
+                                 navigate={navigation}
+                                 key={index}
+                />
+              })
+            }
+            {/*<ItemCard open={true} title="Континент" type="Торговый центр"*/}
+            {/*          distance="1.68" icon={require(iconWhitePath + 'shopping.png')}*/}
+            {/*          navigate={navigation}/>*/}
           </View>
 
 

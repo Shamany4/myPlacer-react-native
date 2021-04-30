@@ -18,7 +18,9 @@ export default function FavoritesScreen({navigation}) {
           <TitlePage title="Избранное"/>
 
           <View style={styles.popularWrapper}>
-            <ItemCard open={false} title="Рассвет" type="Кинотеатр" distance="3.64" icon={require(iconWhitePath + 'cinema.png')}/>
+            <ItemCard open={true} title="Континент" type="Торговый центр"
+                      distance="1.68" icon={require(iconWhitePath + 'shopping.png')}
+                      navigate={navigation}/>
           </View>
 
 
