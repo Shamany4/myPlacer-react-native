@@ -86,6 +86,7 @@ export default function HomeScreen({navigation}) {
                   latitude: el.point.lat,
                   longitude: el.point.lon
                 }
+
                 return <ItemCard open={true}
                                  title={el.name_ex.primary}
                                  type={el.name_ex.extension}
@@ -93,6 +94,9 @@ export default function HomeScreen({navigation}) {
                                  image={el.external_content}
                                  desc={el.ads.article}
                                  distance={haversine(start, end).toFixed(2)}
+                                 timeWork={el.schedule.Sat}
+                                 rating={el.reviews.general_rating}
+                                 contacts={el.contact_groups[0].contacts}
                                  icon={require(iconWhitePath + 'cinema.png')}
                                  navigate={navigation}
                                  key={index}

@@ -34,7 +34,7 @@ export default function CabinetScreen({navigation}) {
 
           <SubtitlePage title="Данные для входа"/>
           <View>
-            <InputGroup value="mikle-po4ta@mail.ru" secure={false} icon={require(iconInputPath + 'mail.png')}
+            <InputGroup value="mikle-po4ta@mail.ru" secure={false} icon={require(iconInputPath + 'email.png')}
                         secondIcon={require(iconInputPath + 'edit.png')}/>
             <InputGroup value="*********************" secure={true} icon={require(iconInputPath + 'pass.png')} secondIcon={require(iconInputPath + 'edit.png')}/>
             <InputGroup value="8 (383) 311-01-84" secure={false} icon={require(iconInputPath + 'phone.png')} secondIcon={require(iconInputPath + 'edit.png')}/>

@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
 
-export default function ItemCard({open, title, type, image, desc, distance, icon, navigate, address}) {
+export default function ItemCard({open, title, type, image, desc, timeWork, rating, contacts, distance, icon, navigate, address}) {
+
 
   return(
     <TouchableHighlight style={{width: '48%'}}
@@ -11,7 +12,10 @@ export default function ItemCard({open, title, type, image, desc, distance, icon
                             name: title,
                             address: address,
                             image: image,
-                            description: desc
+                            description: desc,
+                            workTime: timeWork,
+                            rating: rating,
+                            contacts: contacts,
                         })}
     >
       <View style={styles.item}>

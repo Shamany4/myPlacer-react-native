@@ -11,12 +11,22 @@ import ButtonGroup from "../components/ButtonGroup";
 
 export default function ItemInfoScreen({route, navigation, open}) {
 
+  const iconInputPath = '../assets/icons/';
+
   const [favorite, setFavorite] = useState(false);
   const favoriteHandler = () => {
     setFavorite(!favorite);
   }
 
-  const {name, address, image, description} = route.params;
+  const {
+    name,
+    address,
+    image,
+    description,
+    workTime,
+    rating,
+    contacts
+  } = route.params;
 
   return(
     <View style={styles.application}>
@@ -108,7 +118,7 @@ export default function ItemInfoScreen({route, navigation, open}) {
                 <View style={{display: 'flex', marginBottom: 20}}>
                   <Text style={styles.itemTitle}>Режим работы</Text>
                 </View>
-                <Text style={styles.itemLocation__text}>09:00 - 01:00</Text>
+                <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
                 <View style={styles.itemIcon}>
                   <Image style={styles.itemIcon__icon}
                          source={require('../assets/iconsWhite/clock.png')}/>
@@ -118,7 +128,7 @@ export default function ItemInfoScreen({route, navigation, open}) {
                 <View style={{display: 'flex', marginBottom: 20}}>
                   <Text style={styles.itemTitle}>Рейтинг</Text>
                 </View>
-                <Text style={styles.itemLocation__text_rating}>4,76</Text>
+                <Text style={styles.itemLocation__text_rating}>{rating}</Text>
                 <View style={styles.itemIcon}>
                   <Image style={styles.itemIcon__icon}
                          source={require('../assets/iconsWhite/star.png')}/>
@@ -127,9 +137,24 @@ export default function ItemInfoScreen({route, navigation, open}) {
             </View>
 
             <SubtitlePage title="Контактная информация" />
-            <InputGroup value="rassvet-nsk@mail.ru" icon={require('../assets/icons/mail.png')} secure={false} />
-            <InputGroup value="8 (383) 311-01-84" icon={require('../assets/icons/phone.png')} secure={false} />
-            <InputGroup value="Отсутствует" icon={require('../assets/icons/link.png')} secure={false} />
+            {
+              contacts.map((el, index) => {
+                switch (el.type) {
+                  case 'phone':
+                    return <InputGroup value={el.text} icon={require('../assets/icons/phone.png')} secure={false} key={index}/>
+                  case 'email':
+                    return <InputGroup value={el.text} icon={require('../assets/icons/email.png')} secure={false} key={index}/>
+                  case 'website':
+                    return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
+                  case 'vkontakte':
+                    let str = el.text.split('https://vk.com/');
+                    return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
+                  case 'instagram':
+                    let str2 = el.text.split('https://instagram.com/');
+                    return <InputGroup value={str2[1]} icon={require('../assets/icons/instagram.png')} secure={false} key={index}/>
+                }
+              })
+            }
             <ButtonGroup title="Позвонить" />
             <ButtonGroup title="Написать" />
 

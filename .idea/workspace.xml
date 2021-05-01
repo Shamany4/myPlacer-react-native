@@ -3,10 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/link.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/website.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/mail.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/email.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ItemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TitlePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TitlePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ItemInfoScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ItemInfoScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +75,7 @@
       <workItem from="1619774418140" duration="3435000" />
       <workItem from="1619785844415" duration="6849000" />
       <workItem from="1619803320898" duration="12452000" />
-      <workItem from="1619860782227" duration="8468000" />
+      <workItem from="1619860782227" duration="12690000" />
     </task>
     <servers />
   </component>

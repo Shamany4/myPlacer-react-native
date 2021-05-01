@@ -23,7 +23,7 @@ export default function LoginScreen({navigation}) {
         <View style={styles.container}>
           <View style={styles.loginForm}>
             <View>
-              <InputGroup placeholder="Ваш email" secure={false} icon={require(iconInputPath + 'mail.png')}/>
+              <InputGroup placeholder="Ваш email" secure={false} icon={require(iconInputPath + 'email.png')}/>
               <InputGroup placeholder="Ваш пароль" secure={true} icon={require(iconInputPath + 'pass.png')}/>
               <ButtonGroup title="Войти"/>
             </View>
