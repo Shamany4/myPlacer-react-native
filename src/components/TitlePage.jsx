@@ -4,14 +4,13 @@ import {StyleSheet, Text, View} from "react-native";
 export default function TitlePage({title}) {
   return(
     <View style={styles.titlePageBlock}>
-      <Text style={styles.titlePage} h1>{title}</Text>
+      <Text style={styles.titlePage}>{title}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   titlePageBlock: {
-
   },
   titlePage: {
     fontFamily: 'Gilroy-Black',

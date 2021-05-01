@@ -22,7 +22,7 @@ export default function HomeScreen({navigation}) {
 
   // Get All Items
   useEffect(()=>{
-    setData(json.cinema);
+    setData(json.restaurants);
   },[data]);
 
   // Get current user position
@@ -86,9 +86,12 @@ export default function HomeScreen({navigation}) {
                   latitude: el.point.lat,
                   longitude: el.point.lon
                 }
-                let type = el.name_ex.extension;
-                return <ItemCard open={true} title={el.name_ex.primary}
-                                 type={type}
+                return <ItemCard open={true}
+                                 title={el.name_ex.primary}
+                                 type={el.name_ex.extension}
+                                 address={el.address_name}
+                                 image={el.external_content}
+                                 desc={el.ads.article}
                                  distance={haversine(start, end).toFixed(2)}
                                  icon={require(iconWhitePath + 'cinema.png')}
                                  navigate={navigation}

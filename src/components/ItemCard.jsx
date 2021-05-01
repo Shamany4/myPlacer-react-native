@@ -1,9 +1,19 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
 
-export default function ItemCard({open, title, type, distance, icon, navigate}) {
+export default function ItemCard({open, title, type, image, desc, distance, icon, navigate, address}) {
+
   return(
-    <TouchableHighlight style={{width: '48%'}} onPress={() => navigate.navigate('Info')} underlayColor="#fff">
+    <TouchableHighlight style={{width: '48%'}}
+                        underlayColor="#fff"
+                        onPress={() =>
+                          navigate.navigate('Info', {
+                            name: title,
+                            address: address,
+                            image: image,
+                            description: desc
+                        })}
+    >
       <View style={styles.item}>
         <View style={styles.itemStatus}>
           {

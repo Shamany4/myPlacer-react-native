@@ -9,11 +9,15 @@ import SliderItem from "../components/SliderItem";
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 
-export default function ItemInfoScreen({navigation, open}) {
+export default function ItemInfoScreen({route, navigation, open}) {
+
   const [favorite, setFavorite] = useState(false);
   const favoriteHandler = () => {
     setFavorite(!favorite);
   }
+
+  const {name, address, image, description} = route.params;
+
   return(
     <View style={styles.application}>
       <Menu navigation={navigation}/>
@@ -24,11 +28,11 @@ export default function ItemInfoScreen({navigation, open}) {
             <HeaderGroup/>
 
             <View style={styles.infoTitleGroup}>
-              <View>
-                <TitlePage title="Рассвет"/>
-                <Text style={styles.infoTitleGroup__address}>Зорге 47/2</Text>
+              <View style={{flex: 5}}>
+                <TitlePage title={name}/>
+                <Text style={styles.infoTitleGroup__address}>{address}</Text>
               </View>
-              <TouchableOpacity onPress={favoriteHandler}>
+              <TouchableOpacity onPress={favoriteHandler} style={{flex: 1, alignItems: 'flex-end'}}>
                 {
                   favorite
                     ?
@@ -80,14 +84,15 @@ export default function ItemInfoScreen({navigation, open}) {
               }
             }}
           >
-            <Image style={styles.sliderItemPhoto}
-                   source={require('../assets/image/login-bg.jpg')}/>
-            <Image style={styles.sliderItemPhoto}
-                   source={require('../assets/image/register-bg.jpg')}/>
-            <Image style={styles.sliderItemPhoto}
-                   source={require('../assets/image/login-bg.jpg')}/>
-            <Image style={styles.sliderItemPhoto}
-                   source={require('../assets/image/register-bg.jpg')}/>
+            {
+              image.map((el, index) =>
+                <Image style={styles.sliderItemPhoto}
+                       source={{
+                         uri: el.main_photo_url
+                       }}
+                       key={index}
+              />)
+            }
           </Swiper>
         </View>
 
@@ -96,9 +101,7 @@ export default function ItemInfoScreen({navigation, open}) {
           <ScrollView style={styles.info}>
 
             <SubtitlePage title="Информация о заведении"/>
-            <Text style={styles.infoDescription}>
-              Кинотеатр «Рассвет» - это  один из старейших кинотеатров города Новосибирска с двумя современно оборудованными залами: Зал «Relax»- 168 места и зал «Гигант» – 432 места. Во всех залах активная 3D система HI-shock Pro с очень удобными 3d очками, как для взрослых, так и для детей. В фойе расположены детская комната «Республика Шкид», поп-корн бар и «Кинокафе».
-            </Text>
+            <Text style={styles.infoDescription}>{description.split('<br />')}</Text>
 
             <View style={styles.smallCardWrapper}>
               <View style={styles.item} >
