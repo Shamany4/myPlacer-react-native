@@ -29,6 +29,7 @@
     "expo-app-loading": "^1.0.3",
     "expo-font": "^9.1.0",
     "haversine": "^1.1.1",
+    "moment": "^2.29.1",
     "react-native-web-swiper": "^2.2.1"
   },
   "private": true

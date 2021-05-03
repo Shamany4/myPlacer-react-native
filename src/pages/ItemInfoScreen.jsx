@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+
+
 import Menu from "../components/Menu";
 import HeaderGroup from "../components/HeaderGroup";
 import TitlePage from "../components/TitlePage";
 import SubtitlePage from "../components/SubtitlePage";
 import Swiper from "react-native-web-swiper";
-import SliderItem from "../components/SliderItem";
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 
@@ -147,7 +148,7 @@ export default function ItemInfoScreen({route, navigation, open}) {
                   case 'website':
                     return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
                   case 'vkontakte':
-                    let str = el.text.split('https://vk.com/');
+                    let str = el.text.split('https://');
                     return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
                   case 'instagram':
                     let str2 = el.text.split('https://instagram.com/');
@@ -231,7 +232,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     letterSpacing: 0.28,
     lineHeight: 20,
-    textAlign: 'left',
+    textAlign: 'justify',
   },
 
   smallCardWrapper: {

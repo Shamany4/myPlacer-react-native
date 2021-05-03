@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font';
+import * as Location from "expo-location";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {StyleSheet, View} from 'react-native';
-
+import {Alert} from 'react-native';
+import AppLoading from 'expo-app-loading';
 
 import {
   HomeScreen,
@@ -17,6 +17,7 @@ import {
   RegisterScreen,
   ItemInfoScreen,
 } from './src/pages'
+
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -31,10 +32,13 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [font, setFont] = useState(false);
+  const [location, setLocation] = useState(null);
+
   async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
     setFont(true);
   }
+  // Async load fonts
   useEffect(() => {
     LoadAsyncFonts();
   }, [LoadAsyncFonts]);
@@ -44,14 +48,31 @@ export default function App() {
     _AsyncGetAndroidSystemRC(system)
   }
 
-  if (font) {
+  // Get current user position
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Не удалось получить геопозицию','В разрешении на доступ к местоположению было отказано');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
+
+  if (font && location) {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Home" component={HomeScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location: location }}/>
           <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>
@@ -64,19 +85,3 @@ export default function App() {
     return <AppLoading />
   }
 }
-
-const styles = StyleSheet.create({
-  application: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    position: 'relative',
-    backgroundColor: '#fefefe',
-  },
-  container: {
-    flex: 1,
-    paddingLeft: '6%',
-    paddingRight: '6%',
-    paddingBottom: 60
-  },
-});
