@@ -10,7 +10,7 @@ import Swiper from "react-native-web-swiper";
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 
-export default function ItemInfoScreen({route, navigation, open}) {
+export default function ItemInfoScreen({route, navigation}) {
 
   const iconInputPath = '../assets/icons/';
 
@@ -26,7 +26,9 @@ export default function ItemInfoScreen({route, navigation, open}) {
     description,
     workTime,
     rating,
-    contacts
+    contacts,
+    status,
+    is_24x7
   } = route.params;
 
   return(
@@ -62,7 +64,7 @@ export default function ItemInfoScreen({route, navigation, open}) {
               <SubtitlePage title="Фото заведения"/>
               <View style={styles.itemStatus}>
                 {
-                  open ?
+                  status ?
                     <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                       <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
                       <Text style={styles.itemStatus__text}>Открыто</Text>
@@ -116,24 +118,18 @@ export default function ItemInfoScreen({route, navigation, open}) {
 
             <View style={styles.smallCardWrapper}>
               <View style={styles.item} >
-                <View style={{display: 'flex', marginBottom: 20}}>
-                  <Text style={styles.itemTitle}>Режим работы</Text>
-                </View>
-                <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
-                <View style={styles.itemIcon}>
-                  <Image style={styles.itemIcon__icon}
-                         source={require('../assets/iconsWhite/clock.png')}/>
-                </View>
+                <Text style={styles.itemTitle}>Режим работы</Text>
+                {
+                  is_24x7
+                    ?
+                    <Text style={styles.itemLocation__text}>Круглосуточно</Text>
+                    :
+                    <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
+                }
               </View>
               <View style={styles.item} >
-                <View style={{display: 'flex', marginBottom: 20}}>
-                  <Text style={styles.itemTitle}>Рейтинг</Text>
-                </View>
+                <Text style={styles.itemTitle}>Рейтинг</Text>
                 <Text style={styles.itemLocation__text_rating}>{rating}</Text>
-                <View style={styles.itemIcon}>
-                  <Image style={styles.itemIcon__icon}
-                         source={require('../assets/iconsWhite/star.png')}/>
-                </View>
               </View>
             </View>
 
@@ -239,49 +235,35 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 15,
+    marginTop: 10,
   },
   item: {
     width: '48%',
-    height: 100,
+    height: 80,
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    alignItems: 'center',
     backgroundColor: '#f3f3f3',
     borderRadius: 10,
     padding: 10,
-    position: 'relative',
-    marginBottom: 16
+    marginBottom: 16,
   },
   itemTitle: {
-    fontFamily: 'Gilroy-Bold',
-    fontSize: 18,
+    fontFamily: 'Gilroy-Black',
+    fontSize: 16,
+    textAlign: 'center',
     letterSpacing: 0.32,
   },
   itemLocation__text: {
-    fontFamily: 'Gilroy-Regular',
-    fontSize: 13,
+    fontFamily: 'Gilroy-SemiBold',
+    fontSize: 16,
+    textAlign: 'center',
     letterSpacing: 0.24,
-    paddingBottom: 5
   },
   itemLocation__text_rating: {
-    fontFamily: 'Gilroy-Medium',
-    fontSize: 22,
+    fontFamily: 'Gilroy-SemiBold',
+    fontSize: 16,
+    textAlign: 'center',
     letterSpacing: 0.4,
   },
-  itemIcon: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    height: 50,
-    width: 50,
-    backgroundColor: '#404040',
-    borderRadius: 10,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  itemIcon__icon: {
-    height: 24,
-    width: 24
-  }
 });

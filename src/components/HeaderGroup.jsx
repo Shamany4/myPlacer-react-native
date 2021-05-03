@@ -9,9 +9,7 @@ import AvatarGroup from "./AvatarGroup";
 export default function HeaderGroup({ }) {
 
   const [dayWeek, setDayWeek] = useState('Воскресенье');
-  const [dayNumber, setDayNumber] = useState(2);
   const [dayMonth, setDayMonth] = useState('мая');
-
 
   useEffect(()=> {
     moment.locale('ru');

@@ -33,6 +33,7 @@ const Stack = createStackNavigator();
 export default function App() {
   const [font, setFont] = useState(false);
   const [location, setLocation] = useState(null);
+  const [dayWeek, setDayWeek] = useState('');
 
   async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
@@ -62,8 +63,15 @@ export default function App() {
     })();
   }, []);
 
+  useEffect(() => {
+    let date = new Date();
+    let countDayWeek = date.getDay();
+    let arrDaysWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    setDayWeek(arrDaysWeek[countDayWeek]);
+  }, []);
 
-  if (font && location) {
+
+  if (font && location && dayWeek) {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
@@ -72,7 +80,7 @@ export default function App() {
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen}
                         options={{ headerShown: false }}
-                        initialParams={{ location: location }}/>
+                        initialParams={{ location: location, currentDay: dayWeek }}/>
           <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>

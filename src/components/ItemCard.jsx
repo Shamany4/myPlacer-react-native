@@ -1,8 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
+import moment from 'moment';
+import 'moment/locale/ru';
 
-export default function ItemCard({open, title, type, image, desc, timeWork, rating, contacts, distance, icon, navigate, address}) {
+export default function ItemCard({open, title, type, image, desc, timeWork, is_24x7, rating, contacts, distance, icon, navigate, address}) {
 
+  const [status, setStatus] = useState(true);
+
+  console.log(is_24x7)
+
+  useEffect(() => {
+    if (is_24x7) {
+      setStatus(true);
+    } else {
+      if (timeWork) {
+        // Открыие - timeWork.working_hours[0].from
+        // Закрытие - timeWork.working_hours[0].to
+        // Текущее время - moment().format('HH[:]MM')
+        moment.locale('ru');
+        let timeOpen = timeWork.working_hours[0].from;
+        let timeClose = timeWork.working_hours[0].to;
+        let timeCurrent = moment().format('HH[:]MM');
+        if (moment.utc(moment.duration(timeClose) - moment.duration(timeCurrent)).format('HH[:]MM') <= moment.utc(moment.duration(timeClose) - moment.duration(timeOpen)).format('HH[:]MM')) {
+          setStatus(true);
+        } else {
+          setStatus(false);
+        }
+      }
+    }
+  }, [timeWork]);
 
   return(
     <TouchableHighlight style={{width: '48%'}}
@@ -15,13 +41,15 @@ export default function ItemCard({open, title, type, image, desc, timeWork, rati
                             description: desc,
                             workTime: timeWork,
                             rating: rating,
+                            status: status,
                             contacts: contacts,
+                            is_24x7: is_24x7
                         })}
     >
       <View style={styles.item}>
         <View style={styles.itemStatus}>
           {
-            open ?
+            status ?
               <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                 <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
                 <Text style={styles.itemStatus__text}>Открыто</Text>

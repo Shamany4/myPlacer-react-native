@@ -14,6 +14,7 @@ import Menu from "../components/Menu";
 export default function HomeScreen({route, navigation}) {
   const {
     location,
+    currentDay,
   } = route.params;
 
 
@@ -24,7 +25,7 @@ export default function HomeScreen({route, navigation}) {
 
   // Get All Items
   useEffect(()=>{
-    setData(json.restaurants);
+    setData(json.sauna);
   },[data]);
 
 
@@ -75,14 +76,30 @@ export default function HomeScreen({route, navigation}) {
                   longitude: el.point.lon
                 }
 
+                let description = '';
+                if (el.ads === undefined) {
+                  description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
+                } else {
+                  description = el.ads.article;
+                }
+
+                let type = '';
+                if (el.name_ex.extension === undefined) {
+                  type = el.name_ex.primary;
+                } else {
+                  type = el.name_ex.extension;
+                }
+                let strType = type[0].toUpperCase() + type.slice(1);
+
                 return <ItemCard open={true}
                                  title={el.name_ex.primary}
-                                 type={el.name_ex.extension}
+                                 type={strType}
                                  address={el.address_name}
                                  image={el.external_content}
-                                 desc={el.ads.article}
+                                 desc={description}
                                  distance={haversine(start, end).toFixed(2)}
-                                 timeWork={el.schedule.Sat}
+                                 timeWork={el.schedule[currentDay]}
+                                 is_24x7={el.schedule.is_24x7}
                                  rating={el.reviews.general_rating}
                                  contacts={el.contact_groups[0].contacts}
                                  icon={require(iconWhitePath + 'cinema.png')}
