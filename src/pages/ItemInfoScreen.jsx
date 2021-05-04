@@ -26,11 +26,13 @@ export default function ItemInfoScreen({route, navigation}) {
     description,
     workTime,
     rating,
+    contactsNull,
     contacts,
     status,
     is_24x7,
     close,
   } = route.params;
+
 
   return(
     <View style={styles.application}>
@@ -140,25 +142,39 @@ export default function ItemInfoScreen({route, navigation}) {
 
             <SubtitlePage title="Контактная информация" />
             {
-              contacts.map((el, index) => {
-                switch (el.type) {
-                  case 'phone':
-                    return <InputGroup value={el.text} icon={require('../assets/icons/phone.png')} secure={false} key={index}/>
-                  case 'email':
-                    return <InputGroup value={el.text} icon={require('../assets/icons/email.png')} secure={false} key={index}/>
-                  case 'website':
-                    return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
-                  case 'vkontakte':
-                    let str = el.text.split('https://');
-                    return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
-                  case 'instagram':
-                    let str2 = el.text.split('https://instagram.com/');
-                    return <InputGroup value={str2[1]} icon={require('../assets/icons/instagram.png')} secure={false} key={index}/>
-                }
-              })
+              contactsNull
+                ?
+                <Text style={styles.infoDescription}>Отсутствует какая-либо контактная информация о заведении. Подробности узнавайте по прибытию на адрес.</Text>
+                :
+                contacts.map((el, index) => {
+                  switch (el.type) {
+                    case 'phone':
+                      return <InputGroup value={el.text} icon={require('../assets/icons/phone.png')} secure={false} key={index}/>
+                    case 'email':
+                      return <InputGroup value={el.text} icon={require('../assets/icons/email.png')} secure={false} key={index}/>
+                    case 'website':
+                      return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
+                    case 'vkontakte':
+                      let str = el.text.split('https://');
+                      return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
+                    case 'instagram':
+                      let str2 = el.text.split('https://instagram.com/');
+                      return <InputGroup value={str2[1]} icon={require('../assets/icons/instagram.png')} secure={false} key={index}/>
+                  }
+                })
             }
-            <ButtonGroup title="Позвонить" />
-            <ButtonGroup title="Написать" />
+
+
+            {
+              contactsNull
+                ?
+                null
+                :
+                <View>
+                  <ButtonGroup title="Позвонить" />
+                  <ButtonGroup title="Написать" />
+                </View>
+            }
 
           </ScrollView>
         </View>
@@ -234,6 +250,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.28,
     lineHeight: 20,
     textAlign: 'justify',
+    marginBottom: 10,
   },
 
   smallCardWrapper: {

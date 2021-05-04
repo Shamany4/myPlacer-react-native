@@ -26,7 +26,7 @@ export default function HomeScreen({route, navigation}) {
 
   // Get All Items
   useEffect(()=>{
-    setData(json.museums);
+    setData(json.shopping);
   },[data]);
 
 
@@ -93,6 +93,14 @@ export default function HomeScreen({route, navigation}) {
                   }
                   let strType = type[0].toUpperCase() + type.slice(1);
 
+                  let contactNull = false;
+                  let contactsArr = null;
+                  if (el.contact_groups === undefined) {
+                    contactNull = true;
+                  } else {
+                    contactsArr = el.contact_groups[0].contacts;
+                  }
+
                   return <ItemCard open={true}
                                    title={el.name_ex.primary}
                                    type={strType}
@@ -103,7 +111,8 @@ export default function HomeScreen({route, navigation}) {
                                    timeWork={el.schedule[currentDay]}
                                    is_24x7={el.schedule.is_24x7}
                                    rating={el.reviews.general_rating}
-                                   contacts={el.contact_groups[0].contacts}
+                                   contactsNull={contactNull}
+                                   contacts={contactsArr}
                                    icon={require(iconWhitePath + 'cinema.png')}
                                    navigate={navigation}
                                    key={index}
