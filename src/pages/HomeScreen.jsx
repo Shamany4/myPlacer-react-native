@@ -26,7 +26,7 @@ export default function HomeScreen({route, navigation}) {
 
   // Get All Items
   useEffect(()=>{
-    setData(json.shopping);
+    setData(json.clubs);
   },[data]);
 
 
@@ -69,54 +69,71 @@ export default function HomeScreen({route, navigation}) {
               {
                 data.map((el, index) => {
 
-                  const start = {
-                    latitude: location.coords.latitude,
-                    longitude: location.coords.longitude
-                  }
-                  const end = {
-                    latitude: el.point.lat,
-                    longitude: el.point.lon
-                  }
-
-                  let description = '';
-                  if (el.ads === undefined) {
-                    description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
+                  if (el.name_ex === undefined && el.contact_groups === undefined && el.schedule === undefined) {
+                    return null;
                   } else {
-                    description = el.ads.article;
+                    // Get Start and End coords
+                    const start = {
+                      latitude: location.coords.latitude,
+                      longitude: location.coords.longitude
+                    }
+                    const end = {
+                      latitude: el.point.lat,
+                      longitude: el.point.lon
+                    }
+
+                    // Checking the description for emptiness
+                    let description = '';
+                    if (el.ads === undefined) {
+                      description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
+                    } else {
+                      description = el.ads.article;
+                    }
+
+                    // Checking the type for emptiness
+                    let type = '';
+                    if (el.name_ex.extension === undefined) {
+                      type = el.name_ex.primary;
+                    } else {
+                      type = el.name_ex.extension;
+                    }
+                    let strType = type[0].toUpperCase() + type.slice(1);
+
+                    // Checking the contact for emptiness
+                    let contactNull = false;
+                    let contactsArr = null;
+                    if (el.contact_groups === undefined) {
+                      contactNull = true;
+                    } else {
+                      contactsArr = el.contact_groups[0].contacts;
+                    }
+
+                    // Checking the rating for emptiness
+                    let rating = '';
+                    if (el.reviews.general_rating === undefined) {
+                      rating = 'Отсутствует';
+                    } else {
+                      rating = el.reviews.general_rating;
+                    }
+
+                    return <ItemCard open={true}
+                                     title={el.name_ex.primary}
+                                     type={strType}
+                                     address={el.address_name}
+                                     image={el.external_content}
+                                     desc={description}
+                                     distance={haversine(start, end).toFixed(2)}
+                                     timeWork={el.schedule[currentDay]}
+                                     is_24x7={el.schedule.is_24x7}
+                                     rating={rating}
+                                     contactsNull={contactNull}
+                                     contacts={contactsArr}
+                                     icon={require(iconWhitePath + 'cinema.png')}
+                                     navigate={navigation}
+                                     key={index}
+                    />
                   }
 
-                  let type = '';
-                  if (el.name_ex.extension === undefined) {
-                    type = el.name_ex.primary;
-                  } else {
-                    type = el.name_ex.extension;
-                  }
-                  let strType = type[0].toUpperCase() + type.slice(1);
-
-                  let contactNull = false;
-                  let contactsArr = null;
-                  if (el.contact_groups === undefined) {
-                    contactNull = true;
-                  } else {
-                    contactsArr = el.contact_groups[0].contacts;
-                  }
-
-                  return <ItemCard open={true}
-                                   title={el.name_ex.primary}
-                                   type={strType}
-                                   address={el.address_name}
-                                   image={el.external_content}
-                                   desc={description}
-                                   distance={haversine(start, end).toFixed(2)}
-                                   timeWork={el.schedule[currentDay]}
-                                   is_24x7={el.schedule.is_24x7}
-                                   rating={el.reviews.general_rating}
-                                   contactsNull={contactNull}
-                                   contacts={contactsArr}
-                                   icon={require(iconWhitePath + 'cinema.png')}
-                                   navigate={navigation}
-                                   key={index}
-                  />
                 })
               }
               {/*<ItemCard open={true} title="Континент" type="Торговый центр"*/}

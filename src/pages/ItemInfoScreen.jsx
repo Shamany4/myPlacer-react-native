@@ -170,10 +170,7 @@ export default function ItemInfoScreen({route, navigation}) {
                 ?
                 null
                 :
-                <View>
-                  <ButtonGroup title="Позвонить" />
-                  <ButtonGroup title="Написать" />
-                </View>
+                <ButtonGroup title="Позвонить" />
             }
 
           </ScrollView>
