@@ -28,7 +28,8 @@ export default function ItemInfoScreen({route, navigation}) {
     rating,
     contacts,
     status,
-    is_24x7
+    is_24x7,
+    close,
   } = route.params;
 
   return(
@@ -124,7 +125,11 @@ export default function ItemInfoScreen({route, navigation}) {
                     ?
                     <Text style={styles.itemLocation__text}>Круглосуточно</Text>
                     :
-                    <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
+                    close
+                      ?
+                      <Text style={styles.itemLocation__text}>Выходной</Text>
+                      :
+                      <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
                 }
               </View>
               <View style={styles.item} >
