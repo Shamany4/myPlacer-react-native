@@ -1,1618 +1,1626 @@
 {
-  "cinema": [
-    {
-      "address_name": "Ленина, 7",
-      "building_name": "Победа, кинотеатр",
-      "contact_groups": [
+  "cinema": {
+    "result": {
+      "context_rubrics": [{
+        "caption": "Кинотеатры",
+        "id": 192
+      }],
+      "items": [
         {
-          "contacts": [
+          "address_name": "Ленина, 7",
+          "building_name": "Победа, кинотеатр",
+          "contact_groups": [
             {
-              "type": "phone",
-              "text": "+7 (383) 362‒02‒11",
-              "print_text": "+7 (383) 362‒02‒11",
-              "value": "+73833620211"
-            },
-            {
-              "type": "website",
-              "text": "www.vpobede.ru",
-              "value": "http://link.2gis.ru/1.2/CB02D25D/webapi/20210401/project1/141265769361176/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301821A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C51H1J4AH18i?http://www.vpobede.ru",
-              "url": "http://www.vpobede.ru"
-            },
-            {
-              "type": "email",
-              "text": "kinopobeda@vpobede.ru",
-              "value": "kinopobeda@vpobede.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/kinopobeda",
-              "value": "https://vk.com/kinopobeda",
-              "url": "https://vk.com/kinopobeda"
-            },
-            {
-              "type": "facebook",
-              "text": "https://facebook.com/kinopobeda",
-              "value": "https://facebook.com/kinopobeda",
-              "url": "https://facebook.com/kinopobeda"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/kinopobeda",
-              "value": "https://instagram.com/kinopobeda",
-              "url": "https://instagram.com/kinopobeda"
+              "contacts": [
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 362‒02‒11",
+                  "print_text": "+7 (383) 362‒02‒11",
+                  "value": "+73833620211"
+                },
+                {
+                  "type": "website",
+                  "text": "www.vpobede.ru",
+                  "value": "http://link.2gis.ru/1.2/CB02D25D/webapi/20210401/project1/141265769361176/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301821A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C51H1J4AH18i?http://www.vpobede.ru",
+                  "url": "http://www.vpobede.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "kinopobeda@vpobede.ru",
+                  "value": "kinopobeda@vpobede.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/kinopobeda",
+                  "value": "https://vk.com/kinopobeda",
+                  "url": "https://vk.com/kinopobeda"
+                },
+                {
+                  "type": "facebook",
+                  "text": "https://facebook.com/kinopobeda",
+                  "value": "https://facebook.com/kinopobeda",
+                  "url": "https://facebook.com/kinopobeda"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/kinopobeda",
+                  "value": "https://instagram.com/kinopobeda",
+                  "url": "https://instagram.com/kinopobeda"
+                }
+              ]
             }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 228,
-          "main_photo_url": "https://i0.photo.2gis.com/main/branch/1/141265769361176/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 17,
-          "main_photo_url": "http://i6.photo.2gis.com/main/geo/1/141373143520856/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "full_name": "Новосибирск, Победа, кинотеатр",
-      "id": "141265769361176_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301821A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C51H1J4AH1f5",
-      "name": "Победа, центр культуры и отдыха",
-      "name_ex": {
-        "extension": "центр культуры и отдыха",
-        "primary": "Победа",
-        "short_name": "Победа"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "141274359269333",
-        "name": "Победа, центр культуры и отдыха"
-      },
-      "point": {
-        "lat": 55.029227,
-        "lon": 82.914783
-      },
-      "purpose_name": "Культурно-развлекательный комплекс",
-      "reviews": {
-        "general_rating": 4.5,
-        "general_review_count": 2642,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 4.8,
-            "review_count": 4,
-            "tag": "2gis_reviews"
+          ],
+          "external_content": [
+            {
+              "count": 228,
+              "main_photo_url": "https://i0.photo.2gis.com/main/branch/1/141265769361176/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 17,
+              "main_photo_url": "http://i6.photo.2gis.com/main/geo/1/141373143520856/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "full_name": "Новосибирск, Победа, кинотеатр",
+          "id": "141265769361176_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301821A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C51H1J4AH1f5",
+          "name": "Победа, центр культуры и отдыха",
+          "name_ex": {
+            "extension": "центр культуры и отдыха",
+            "primary": "Победа",
+            "short_name": "Победа"
           },
-          {
+          "org": {
+            "branch_count": 1,
+            "id": "141274359269333",
+            "name": "Победа, центр культуры и отдыха"
+          },
+          "point": {
+            "lat": 55.029227,
+            "lon": 82.914783
+          },
+          "purpose_name": "Культурно-развлекательный комплекс",
+          "reviews": {
+            "general_rating": 4.5,
+            "general_review_count": 2642,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 4.8,
+                "review_count": 4,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 4.5,
+                "recommendation_count": 906,
+                "review_count": 2444,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 4.5,
+            "org_review_count": 2642,
             "rating": 4.5,
             "recommendation_count": 906,
-            "review_count": 2444,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 4.5,
-        "org_review_count": 2642,
-        "rating": 4.5,
-        "recommendation_count": 906,
-        "review_count": 2444
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "08:30",
-              "to": "03:00"
-            }
-          ]
-        },
-        "comment": "до последнего сеанса: пн-вс",
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "3 этаж",
-      "address_name": "Гребенщикова, 2",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "type": "phone",
-              "text": "+7 (383) 312‒07‒04",
-              "print_text": "+7 (383) 312‒07‒04",
-              "value": "+73833120704"
-            },
-            {
-              "type": "website",
-              "text": "www.kinoatlac.ru",
-              "value": "http://link.2gis.ru/1.2/C29ECC29/webapi/20210401/project1/70000001032947852/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G81863014A4A96rwdu793618G35G6G1J1C4J2JlfsAuv191C831013353H2J3HHHG386?http://www.kinoatlac.ru",
-              "url": "http://www.kinoatlac.ru"
-            },
-            {
-              "type": "email",
-              "text": "adm@kinoatlac.ru",
-              "value": "adm@kinoatlac.ru"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/kinoatlac",
-              "value": "https://instagram.com/kinoatlac",
-              "url": "https://instagram.com/kinoatlac"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 11,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001032947852/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 1,
-          "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373170901713/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "70000001032947852_koydEy8B665H3H8301IG0GGGm14hjn9AG6G81863014A4A96rwdu793618G35G6G1J1C4J2JlfsAuv191C831013353H2J3HHHG3b8",
-      "name": "Киноатлас",
-      "name_ex": {
-        "primary": "Киноатлас",
-        "short_name": "Киноатлас"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "70000001032947851",
-        "name": "Киноатлас"
-      },
-      "point": {
-        "lat": 55.107172,
-        "lon": 82.938292
-      },
-      "reviews": {
-        "general_rating": 3.8,
-        "general_review_count": 181,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 5,
-            "review_count": 3,
-            "tag": "2gis_reviews"
+            "review_count": 2444
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "08:30",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "comment": "до последнего сеанса: пн-вс",
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "3 этаж",
+          "address_name": "Гребенщикова, 2",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 312‒07‒04",
+                  "print_text": "+7 (383) 312‒07‒04",
+                  "value": "+73833120704"
+                },
+                {
+                  "type": "website",
+                  "text": "www.kinoatlac.ru",
+                  "value": "http://link.2gis.ru/1.2/C29ECC29/webapi/20210401/project1/70000001032947852/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G81863014A4A96rwdu793618G35G6G1J1C4J2JlfsAuv191C831013353H2J3HHHG386?http://www.kinoatlac.ru",
+                  "url": "http://www.kinoatlac.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "adm@kinoatlac.ru",
+                  "value": "adm@kinoatlac.ru"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/kinoatlac",
+                  "value": "https://instagram.com/kinoatlac",
+                  "url": "https://instagram.com/kinoatlac"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 11,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001032947852/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 1,
+              "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373170901713/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "70000001032947852_koydEy8B665H3H8301IG0GGGm14hjn9AG6G81863014A4A96rwdu793618G35G6G1J1C4J2JlfsAuv191C831013353H2J3HHHG3b8",
+          "name": "Киноатлас",
+          "name_ex": {
+            "primary": "Киноатлас",
+            "short_name": "Киноатлас"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "70000001032947851",
+            "name": "Киноатлас"
+          },
+          "point": {
+            "lat": 55.107172,
+            "lon": 82.938292
+          },
+          "reviews": {
+            "general_rating": 3.8,
+            "general_review_count": 181,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 5,
+                "review_count": 3,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 4,
+                "review_count": 94,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 3.8,
+            "org_review_count": 181,
             "rating": 4,
-            "review_count": 94,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 3.8,
-        "org_review_count": 181,
-        "rating": 4,
-        "review_count": 94
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "24:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "2 этаж",
-      "address_name": "Фрунзе, 238",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "type": "website",
-              "text": "kino-city.ru",
-              "value": "http://link.2gis.ru/1.2/4C4D8067/webapi/20210401/project1/141265769983481/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301A44B2Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588CB3H1J4AH1c3?http://kino-city.ru",
-              "url": "http://kino-city.ru"
-            },
-            {
-              "type": "email",
-              "text": "info@kino-city.ru",
-              "value": "info@kino-city.ru"
-            },
-            {
-              "type": "facebook",
-              "text": "https://facebook.com/kinocity.novosib",
-              "value": "https://facebook.com/kinocity.novosib",
-              "url": "https://facebook.com/kinocity.novosib"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/sitikino",
-              "value": "https://instagram.com/sitikino",
-              "url": "https://instagram.com/sitikino"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/kinocitynovosib",
-              "value": "https://vk.com/kinocitynovosib",
-              "url": "https://vk.com/kinocitynovosib"
-            }
-          ]
-        },
-        {
-          "contacts": [
-            {
-              "type": "phone",
-              "text": "+7 (383) 328‒06‒74",
-              "print_text": "+7 (383) 328‒06‒74",
-              "value": "+73833280674"
-            },
-            {
-              "type": "phone",
-              "text": "+7 (383) 328‒06‒73",
-              "print_text": "+7 (383) 328‒06‒73",
-              "value": "+73833280673"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 32,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265769983481/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 11,
-          "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143572158/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "141265769983481_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301A44B2Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588CB3H1J4AH1fA",
-      "name": "КиноСити Новосибирск, развлекательный центр",
-      "name_ex": {
-        "description": "Кинотеатр",
-        "extension": "развлекательный центр",
-        "primary": "КиноСити Новосибирск",
-        "short_name": "КиноСити Новосибирск"
-      },
-      "org": {
-        "branch_count": 2,
-        "id": "141274359712536",
-        "name": "КиноСити Новосибирск, развлекательный центр"
-      },
-      "point": {
-        "lat": 55.038742,
-        "lon": 82.960315
-      },
-      "reviews": {
-        "general_rating": 3.5,
-        "general_review_count": 1621,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 5,
-            "review_count": 1,
-            "tag": "2gis_reviews"
+            "review_count": 94
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "24:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "2 этаж",
+          "address_name": "Фрунзе, 238",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "type": "website",
+                  "text": "kino-city.ru",
+                  "value": "http://link.2gis.ru/1.2/4C4D8067/webapi/20210401/project1/141265769983481/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301A44B2Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588CB3H1J4AH1c3?http://kino-city.ru",
+                  "url": "http://kino-city.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "info@kino-city.ru",
+                  "value": "info@kino-city.ru"
+                },
+                {
+                  "type": "facebook",
+                  "text": "https://facebook.com/kinocity.novosib",
+                  "value": "https://facebook.com/kinocity.novosib",
+                  "url": "https://facebook.com/kinocity.novosib"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/sitikino",
+                  "value": "https://instagram.com/sitikino",
+                  "url": "https://instagram.com/sitikino"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/kinocitynovosib",
+                  "value": "https://vk.com/kinocitynovosib",
+                  "url": "https://vk.com/kinocitynovosib"
+                }
+              ]
+            },
+            {
+              "contacts": [
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 328‒06‒74",
+                  "print_text": "+7 (383) 328‒06‒74",
+                  "value": "+73833280674"
+                },
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 328‒06‒73",
+                  "print_text": "+7 (383) 328‒06‒73",
+                  "value": "+73833280673"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 32,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265769983481/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 11,
+              "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143572158/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "141265769983481_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301A44B2Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588CB3H1J4AH1fA",
+          "name": "КиноСити Новосибирск, развлекательный центр",
+          "name_ex": {
+            "description": "Кинотеатр",
+            "extension": "развлекательный центр",
+            "primary": "КиноСити Новосибирск",
+            "short_name": "КиноСити Новосибирск"
+          },
+          "org": {
+            "branch_count": 2,
+            "id": "141274359712536",
+            "name": "КиноСити Новосибирск, развлекательный центр"
+          },
+          "point": {
+            "lat": 55.038742,
+            "lon": 82.960315
+          },
+          "reviews": {
+            "general_rating": 3.5,
+            "general_review_count": 1621,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 5,
+                "review_count": 1,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 3.5,
+                "recommendation_count": 206,
+                "review_count": 1502,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 3.5,
+            "org_review_count": 1621,
             "rating": 3.5,
             "recommendation_count": 206,
-            "review_count": 1502,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 3.5,
-        "org_review_count": 1621,
-        "rating": 3.5,
-        "recommendation_count": 206,
-        "review_count": 1502
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "04:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "04:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "3 этаж",
-      "address_name": "Красный проспект, 101",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "text": "8‒800‒700‒01‒11",
-              "comment": "единая справочная - круглосуточно",
-              "print_text": "8‒800‒700‒01‒11",
-              "type": "phone",
-              "value": "88007000111"
-            },
-            {
-              "type": "website",
-              "text": "kinoteatr.ru",
-              "value": "http://link.2gis.ru/1.2/B03D6F0E/webapi/20210401/project1/141265769663876/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301848A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C84H1J4AH113?http://kinoteatr.ru",
-              "url": "http://kinoteatr.ru"
-            },
-            {
-              "type": "email",
-              "text": "info@cinemapark.ru",
-              "value": "info@cinemapark.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/cinemapark",
-              "value": "https://vk.com/cinemapark",
-              "url": "https://vk.com/cinemapark"
-            },
-            {
-              "type": "youtube",
-              "text": "https://youtube.com/user/cinemaparkru",
-              "value": "https://youtube.com/user/cinemaparkru",
-              "url": "https://youtube.com/user/cinemaparkru"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/kinoteatr.official",
-              "value": "https://instagram.com/kinoteatr.official",
-              "url": "https://instagram.com/kinoteatr.official"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 53,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265769663876/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 14,
-          "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143569643/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "141265769663876_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301848A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C84H1J4AH12B",
-      "name": "Синема Парк, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Синема Парк",
-        "short_name": "Синема Парк"
-      },
-      "org": {
-        "branch_count": 2,
-        "id": "141274359508440",
-        "name": "Синема Парк, кинотеатр"
-      },
-      "point": {
-        "lat": 55.055851,
-        "lon": 82.912263
-      },
-      "reviews": {
-        "general_rating": 3.2,
-        "general_review_count": 1774,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 4,
-            "review_count": 1,
-            "tag": "2gis_reviews"
+            "review_count": 1502
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "04:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "04:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "3 этаж",
+          "address_name": "Красный проспект, 101",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "text": "8‒800‒700‒01‒11",
+                  "comment": "единая справочная - круглосуточно",
+                  "print_text": "8‒800‒700‒01‒11",
+                  "type": "phone",
+                  "value": "88007000111"
+                },
+                {
+                  "type": "website",
+                  "text": "kinoteatr.ru",
+                  "value": "http://link.2gis.ru/1.2/B03D6F0E/webapi/20210401/project1/141265769663876/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301848A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C84H1J4AH113?http://kinoteatr.ru",
+                  "url": "http://kinoteatr.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "info@cinemapark.ru",
+                  "value": "info@cinemapark.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/cinemapark",
+                  "value": "https://vk.com/cinemapark",
+                  "url": "https://vk.com/cinemapark"
+                },
+                {
+                  "type": "youtube",
+                  "text": "https://youtube.com/user/cinemaparkru",
+                  "value": "https://youtube.com/user/cinemaparkru",
+                  "url": "https://youtube.com/user/cinemaparkru"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/kinoteatr.official",
+                  "value": "https://instagram.com/kinoteatr.official",
+                  "url": "https://instagram.com/kinoteatr.official"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 53,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265769663876/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 14,
+              "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143569643/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "141265769663876_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301848A7Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C84H1J4AH12B",
+          "name": "Синема Парк, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Синема Парк",
+            "short_name": "Синема Парк"
+          },
+          "org": {
+            "branch_count": 2,
+            "id": "141274359508440",
+            "name": "Синема Парк, кинотеатр"
+          },
+          "point": {
+            "lat": 55.055851,
+            "lon": 82.912263
+          },
+          "reviews": {
+            "general_rating": 3.2,
+            "general_review_count": 1774,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 4,
+                "review_count": 1,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 3.4,
+                "recommendation_count": 237,
+                "review_count": 1627,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 3.1,
+            "org_review_count": 3243,
             "rating": 3.4,
             "recommendation_count": 237,
-            "review_count": 1627,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 3.1,
-        "org_review_count": 3243,
-        "rating": 3.4,
-        "recommendation_count": 237,
-        "review_count": 1627
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "04:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "comment": "до последнего сеанса: пн-вс",
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "4 этаж",
-      "address_name": "Военная, 5",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "text": "8‒800‒700‒01‒11",
-              "comment": "единая справочная - круглосуточно",
-              "print_text": "8‒800‒700‒01‒11",
-              "type": "phone",
-              "value": "88007000111"
-            },
-            {
-              "type": "website",
-              "text": "kinoteatr.ru",
-              "value": "http://link.2gis.ru/1.2/E34650D5/webapi/20210401/project1/141265770824119/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G81863014514AHrwdu793618G35G6G1J2J4JGJlfsAuv191C8375893A5H1J4AH19e?http://kinoteatr.ru",
-              "url": "http://kinoteatr.ru"
-            },
-            {
-              "type": "email",
-              "text": "info@formulakino.ru",
-              "value": "info@formulakino.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/formula_kino",
-              "value": "https://vk.com/formula_kino",
-              "url": "https://vk.com/formula_kino"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 22,
-          "main_photo_url": "https://i9.photo.2gis.com/main/branch/1/141265770824119/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 7,
-          "main_photo_url": "http://i3.photo.2gis.com/main/geo/1/141373143573143/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "141265770824119_koydEy8B665H3H27132GGGGGm14hjn9AG6G81863014514AHrwdu793618G35G6G1J2J4JGJlfsAuv191C8375893A5H1J4AH14A",
-      "name": "Формула Кино Аура, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Формула Кино Аура",
-        "short_name": "Формула Кино Аура"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "70000001006278809",
-        "name": "Формула Кино Аура, кинотеатр"
-      },
-      "point": {
-        "lat": 55.02833,
-        "lon": 82.936234
-      },
-      "reviews": {
-        "general_rating": 2.7,
-        "general_review_count": 1156,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "tag": "2gis_reviews"
+            "review_count": 1627
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "04:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "comment": "до последнего сеанса: пн-вс",
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "4 этаж",
+          "address_name": "Военная, 5",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "text": "8‒800‒700‒01‒11",
+                  "comment": "единая справочная - круглосуточно",
+                  "print_text": "8‒800‒700‒01‒11",
+                  "type": "phone",
+                  "value": "88007000111"
+                },
+                {
+                  "type": "website",
+                  "text": "kinoteatr.ru",
+                  "value": "http://link.2gis.ru/1.2/E34650D5/webapi/20210401/project1/141265770824119/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G81863014514AHrwdu793618G35G6G1J2J4JGJlfsAuv191C8375893A5H1J4AH19e?http://kinoteatr.ru",
+                  "url": "http://kinoteatr.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "info@formulakino.ru",
+                  "value": "info@formulakino.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/formula_kino",
+                  "value": "https://vk.com/formula_kino",
+                  "url": "https://vk.com/formula_kino"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 22,
+              "main_photo_url": "https://i9.photo.2gis.com/main/branch/1/141265770824119/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 7,
+              "main_photo_url": "http://i3.photo.2gis.com/main/geo/1/141373143573143/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "141265770824119_koydEy8B665H3H27132GGGGGm14hjn9AG6G81863014514AHrwdu793618G35G6G1J2J4JGJlfsAuv191C8375893A5H1J4AH14A",
+          "name": "Формула Кино Аура, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Формула Кино Аура",
+            "short_name": "Формула Кино Аура"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "70000001006278809",
+            "name": "Формула Кино Аура, кинотеатр"
+          },
+          "point": {
+            "lat": 55.02833,
+            "lon": 82.936234
+          },
+          "reviews": {
+            "general_rating": 2.7,
+            "general_review_count": 1156,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 2.9,
+                "recommendation_count": 79,
+                "review_count": 1020,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 2.7,
+            "org_review_count": 1156,
             "rating": 2.9,
             "recommendation_count": 79,
-            "review_count": 1020,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 2.7,
-        "org_review_count": 1156,
-        "rating": 2.9,
-        "recommendation_count": 79,
-        "review_count": 1020
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "comment": "до последнего сеанса: пн-вс",
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "1 этаж",
-      "address_name": "проспект Карла Маркса, 49",
-      "building_name": "Аврора, кинотеатр",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "text": "+7 (383) 200‒34‒52",
-              "comment": "касса",
-              "print_text": "+7 (383) 200‒34‒52",
-              "type": "phone",
-              "value": "+73832003452"
-            },
-            {
-              "type": "website",
-              "text": "www.mirkino.pro",
-              "value": "http://link.2gis.ru/1.2/F2A9632B/webapi/20210401/project1/141265769362495/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301834C6Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C56H1J4AH13A?http://www.mirkino.pro",
-              "url": "http://www.mirkino.pro"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/kino_nsk",
-              "value": "https://vk.com/kino_nsk",
-              "url": "https://vk.com/kino_nsk"
-            },
-            {
-              "type": "facebook",
-              "text": "https://facebook.com/mirkinonsk",
-              "value": "https://facebook.com/mirkinonsk",
-              "url": "https://facebook.com/mirkinonsk"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/mirkino.pro",
-              "value": "https://instagram.com/mirkino.pro",
-              "url": "https://instagram.com/mirkino.pro"
-            },
-            {
-              "type": "youtube",
-              "text": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw",
-              "value": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw",
-              "url": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw"
-            },
-            {
-              "type": "odnoklassniki",
-              "text": "https://ok.ru/group/54634762993669",
-              "value": "https://ok.ru/group/54634762993669",
-              "url": "https://ok.ru/group/54634762993669"
-            },
-            {
-              "type": "twitter",
-              "text": "https://twitter.com/mirkinonsk",
-              "value": "https://twitter.com/mirkinonsk",
-              "url": "https://twitter.com/mirkinonsk"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 35,
-          "main_photo_url": "https://i9.photo.2gis.com/main/branch/1/141265769362495/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 5,
-          "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143532382/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "full_name": "Новосибирск, Аврора, кинотеатр",
-      "id": "141265769362495_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301834C6Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C56H1J4AH17i",
-      "name": "Аврора, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Аврора",
-        "short_name": "Аврора"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "141274359269326",
-        "name": "Аврора, кинотеатр"
-      },
-      "point": {
-        "lat": 54.991123,
-        "lon": 82.908638
-      },
-      "purpose_name": "Административное здание",
-      "reviews": {
-        "general_rating": 2.9,
-        "general_review_count": 377,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 1,
-            "review_count": 1,
-            "tag": "2gis_reviews"
+            "review_count": 1020
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "comment": "до последнего сеанса: пн-вс",
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "1 этаж",
+          "address_name": "проспект Карла Маркса, 49",
+          "building_name": "Аврора, кинотеатр",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "text": "+7 (383) 200‒34‒52",
+                  "comment": "касса",
+                  "print_text": "+7 (383) 200‒34‒52",
+                  "type": "phone",
+                  "value": "+73832003452"
+                },
+                {
+                  "type": "website",
+                  "text": "www.mirkino.pro",
+                  "value": "http://link.2gis.ru/1.2/F2A9632B/webapi/20210401/project1/141265769362495/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G8186301834C6Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C56H1J4AH13A?http://www.mirkino.pro",
+                  "url": "http://www.mirkino.pro"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/kino_nsk",
+                  "value": "https://vk.com/kino_nsk",
+                  "url": "https://vk.com/kino_nsk"
+                },
+                {
+                  "type": "facebook",
+                  "text": "https://facebook.com/mirkinonsk",
+                  "value": "https://facebook.com/mirkinonsk",
+                  "url": "https://facebook.com/mirkinonsk"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/mirkino.pro",
+                  "value": "https://instagram.com/mirkino.pro",
+                  "url": "https://instagram.com/mirkino.pro"
+                },
+                {
+                  "type": "youtube",
+                  "text": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw",
+                  "value": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw",
+                  "url": "https://youtube.com/channel/UCjKVNp6XSps_AHBabrSjHMw"
+                },
+                {
+                  "type": "odnoklassniki",
+                  "text": "https://ok.ru/group/54634762993669",
+                  "value": "https://ok.ru/group/54634762993669",
+                  "url": "https://ok.ru/group/54634762993669"
+                },
+                {
+                  "type": "twitter",
+                  "text": "https://twitter.com/mirkinonsk",
+                  "value": "https://twitter.com/mirkinonsk",
+                  "url": "https://twitter.com/mirkinonsk"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 35,
+              "main_photo_url": "https://i9.photo.2gis.com/main/branch/1/141265769362495/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 5,
+              "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143532382/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "full_name": "Новосибирск, Аврора, кинотеатр",
+          "id": "141265769362495_koydEy8B665H3H27132GGGGGm14hjn9AG6G8186301834C6Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C56H1J4AH17i",
+          "name": "Аврора, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Аврора",
+            "short_name": "Аврора"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "141274359269326",
+            "name": "Аврора, кинотеатр"
+          },
+          "point": {
+            "lat": 54.991123,
+            "lon": 82.908638
+          },
+          "purpose_name": "Административное здание",
+          "reviews": {
+            "general_rating": 2.9,
+            "general_review_count": 377,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 1,
+                "review_count": 1,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 3,
+                "recommendation_count": 33,
+                "review_count": 336,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 2.9,
+            "org_review_count": 373,
             "rating": 3,
             "recommendation_count": 33,
-            "review_count": 336,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 2.9,
-        "org_review_count": 373,
-        "rating": 3,
-        "recommendation_count": 33,
-        "review_count": 336
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "2 этаж",
-      "address_name": "Зорге, 47/2",
-      "building_name": "Рассвет, кинокомплекс",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "type": "phone",
-              "text": "+7 (383) 311‒01‒84",
-              "print_text": "+7 (383) 311‒01‒84",
-              "value": "+73833110184"
-            },
-            {
-              "type": "website",
-              "text": "www.rassvetnsk.ru",
-              "value": "http://link.2gis.ru/1.2/78AF1095/webapi/20210401/project1/141265769360714/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G818630181745Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C57H1J4AH17h?http://www.rassvetnsk.ru",
-              "url": "http://www.rassvetnsk.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/rassvetnsk",
-              "value": "https://vk.com/rassvetnsk",
-              "url": "https://vk.com/rassvetnsk"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 22,
-          "main_photo_url": "https://i5.photo.2gis.com/main/branch/1/141265769360714/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 2,
-          "main_photo_url": "http://i2.photo.2gis.com/main/geo/1/141373143535442/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "full_name": "Новосибирск, Рассвет, кинокомплекс",
-      "id": "141265769360714_koydEy8B665H3H27132GGGGGm14hjn9AG6G818630181745Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C57H1J4AH135",
-      "name": "Рассвет3D, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Рассвет3D",
-        "short_name": "Рассвет3D"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "141274359269334",
-        "name": "Рассвет3D, кинотеатр"
-      },
-      "point": {
-        "lat": 54.935171,
-        "lon": 82.91393
-      },
-      "purpose_name": "Культурно-развлекательный комплекс",
-      "reviews": {
-        "general_rating": 4,
-        "general_review_count": 219,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 5,
-            "review_count": 1,
-            "tag": "2gis_reviews"
+            "review_count": 336
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "2 этаж",
+          "address_name": "Зорге, 47/2",
+          "building_name": "Рассвет, кинокомплекс",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 311‒01‒84",
+                  "print_text": "+7 (383) 311‒01‒84",
+                  "value": "+73833110184"
+                },
+                {
+                  "type": "website",
+                  "text": "www.rassvetnsk.ru",
+                  "value": "http://link.2gis.ru/1.2/78AF1095/webapi/20210401/project1/141265769360714/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G818630181745Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C57H1J4AH17h?http://www.rassvetnsk.ru",
+                  "url": "http://www.rassvetnsk.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/rassvetnsk",
+                  "value": "https://vk.com/rassvetnsk",
+                  "url": "https://vk.com/rassvetnsk"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 22,
+              "main_photo_url": "https://i5.photo.2gis.com/main/branch/1/141265769360714/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 2,
+              "main_photo_url": "http://i2.photo.2gis.com/main/geo/1/141373143535442/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "full_name": "Новосибирск, Рассвет, кинокомплекс",
+          "id": "141265769360714_koydEy8B665H3H27132GGGGGm14hjn9AG6G818630181745Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837588C57H1J4AH135",
+          "name": "Рассвет3D, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Рассвет3D",
+            "short_name": "Рассвет3D"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "141274359269334",
+            "name": "Рассвет3D, кинотеатр"
+          },
+          "point": {
+            "lat": 54.935171,
+            "lon": 82.91393
+          },
+          "purpose_name": "Культурно-развлекательный комплекс",
+          "reviews": {
+            "general_rating": 4,
+            "general_review_count": 219,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 5,
+                "review_count": 1,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 4,
+                "recommendation_count": 59,
+                "review_count": 182,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 4,
+            "org_review_count": 217,
             "rating": 4,
             "recommendation_count": 59,
-            "review_count": 182,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 4,
-        "org_review_count": 217,
-        "rating": 4,
-        "recommendation_count": 59,
-        "review_count": 182
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "3 этаж",
-      "address_name": "площадь Карла Маркса, 7",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "text": "8‒800‒700‒01‒11",
-              "comment": "единая справочная - круглосуточно",
-              "print_text": "8‒800‒700‒01‒11",
-              "type": "phone",
-              "value": "88007000111"
-            },
-            {
-              "type": "website",
-              "text": "kinoteatr.ru",
-              "value": "http://link.2gis.ru/1.2/6537ED98/webapi/20210401/project1/141265770538610/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G818630159641Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837589378H1J4AH168?http://kinoteatr.ru",
-              "url": "http://kinoteatr.ru"
-            },
-            {
-              "type": "email",
-              "text": "info@cinemapark.ru",
-              "value": "info@cinemapark.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/cinemapark",
-              "value": "https://vk.com/cinemapark",
-              "url": "https://vk.com/cinemapark"
-            },
-            {
-              "type": "youtube",
-              "text": "https://youtube.com/user/cinemaparkru",
-              "value": "https://youtube.com/user/cinemaparkru",
-              "url": "https://youtube.com/user/cinemaparkru"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/kinoteatr.official",
-              "value": "https://instagram.com/kinoteatr.official",
-              "url": "https://instagram.com/kinoteatr.official"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 37,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265770538610/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 36,
-          "main_photo_url": "http://i8.photo.2gis.com/main/geo/1/141373143572328/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "141265770538610_koydEy8B665H3H27132GGGGGm14hjn9AG6G818630159641Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837589378H1J4AH139",
-      "name": "Синема Парк, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Синема Парк",
-        "short_name": "Синема Парк"
-      },
-      "org": {
-        "branch_count": 2,
-        "id": "141274359508440",
-        "name": "Синема Парк, кинотеатр"
-      },
-      "point": {
-        "lat": 54.98048,
-        "lon": 82.898447
-      },
-      "reviews": {
-        "general_rating": 2.9,
-        "general_review_count": 1469,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 4,
-            "review_count": 5,
-            "tag": "2gis_reviews"
+            "review_count": 182
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "3 этаж",
+          "address_name": "площадь Карла Маркса, 7",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "text": "8‒800‒700‒01‒11",
+                  "comment": "единая справочная - круглосуточно",
+                  "print_text": "8‒800‒700‒01‒11",
+                  "type": "phone",
+                  "value": "88007000111"
+                },
+                {
+                  "type": "website",
+                  "text": "kinoteatr.ru",
+                  "value": "http://link.2gis.ru/1.2/6537ED98/webapi/20210401/project1/141265770538610/ci.nsu.ru/koydEy8B665H4H27136GGGGGm14hjn9AG6G818630159641Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837589378H1J4AH168?http://kinoteatr.ru",
+                  "url": "http://kinoteatr.ru"
+                },
+                {
+                  "type": "email",
+                  "text": "info@cinemapark.ru",
+                  "value": "info@cinemapark.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/cinemapark",
+                  "value": "https://vk.com/cinemapark",
+                  "url": "https://vk.com/cinemapark"
+                },
+                {
+                  "type": "youtube",
+                  "text": "https://youtube.com/user/cinemaparkru",
+                  "value": "https://youtube.com/user/cinemaparkru",
+                  "url": "https://youtube.com/user/cinemaparkru"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/kinoteatr.official",
+                  "value": "https://instagram.com/kinoteatr.official",
+                  "url": "https://instagram.com/kinoteatr.official"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 37,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/141265770538610/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 36,
+              "main_photo_url": "http://i8.photo.2gis.com/main/geo/1/141373143572328/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "141265770538610_koydEy8B665H3H27132GGGGGm14hjn9AG6G818630159641Hrwdu793618G35G6G1J2J4JGJlfsAuv191C837589378H1J4AH139",
+          "name": "Синема Парк, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Синема Парк",
+            "short_name": "Синема Парк"
+          },
+          "org": {
+            "branch_count": 2,
+            "id": "141274359508440",
+            "name": "Синема Парк, кинотеатр"
+          },
+          "point": {
+            "lat": 54.98048,
+            "lon": 82.898447
+          },
+          "reviews": {
+            "general_rating": 2.9,
+            "general_review_count": 1469,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 4,
+                "review_count": 5,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 3.1,
+                "recommendation_count": 165,
+                "review_count": 1292,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 3.1,
+            "org_review_count": 3243,
             "rating": 3.1,
             "recommendation_count": 165,
-            "review_count": 1292,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 3.1,
-        "org_review_count": 3243,
-        "rating": 3.1,
-        "recommendation_count": 165,
-        "review_count": 1292
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "03:00"
-            }
-          ]
-        },
-        "comment": "до последнего сеанса: пн-вс",
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "2 этаж",
-      "address_name": "проспект Дзержинского, 2/2",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "type": "phone",
-              "text": "+7 (383) 375‒31‒75",
-              "print_text": "+7 (383) 375‒31‒75",
-              "value": "+73833753175"
-            },
-            {
-              "type": "website",
-              "text": "chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq",
-              "value": "http://link.2gis.ru/1.2/D9631934/webapi/20210401/project1/70000001032409707/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG325?http://chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq",
-              "url": "http://chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq"
-            },
-            {
-              "type": "website",
-              "text": "www.cinemapublic.ru",
-              "value": "http://link.2gis.ru/1.2/987720DB/webapi/20210401/project1/70000001032409707/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG325?http://www.cinemapublic.ru",
-              "url": "http://www.cinemapublic.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/cinemapublicnsk",
-              "value": "https://vk.com/cinemapublicnsk",
-              "url": "https://vk.com/cinemapublicnsk"
-            },
-            {
-              "type": "whatsapp",
-              "text": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A",
-              "value": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A",
-              "url": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 10,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001032409707/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 14,
-          "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143682538/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "70000001032409707_koydEy8B665H3H8301IG0GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG3A1",
-      "name": "Cinema Public, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "primary": "Cinema Public",
-        "short_name": "Cinema Public"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "70000001032409706",
-        "name": "Cinema Public, кинотеатр"
-      },
-      "point": {
-        "lat": 55.043771,
-        "lon": 82.953978
-      },
-      "reviews": {
-        "general_rating": 3.8,
-        "general_review_count": 97,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 5,
-            "review_count": 2,
-            "tag": "2gis_reviews"
+            "review_count": 1292
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "03:00"
+                }
+              ]
+            },
+            "comment": "до последнего сеанса: пн-вс",
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "2 этаж",
+          "address_name": "проспект Дзержинского, 2/2",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "type": "phone",
+                  "text": "+7 (383) 375‒31‒75",
+                  "print_text": "+7 (383) 375‒31‒75",
+                  "value": "+73833753175"
+                },
+                {
+                  "type": "website",
+                  "text": "chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq",
+                  "value": "http://link.2gis.ru/1.2/D9631934/webapi/20210401/project1/70000001032409707/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG325?http://chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq",
+                  "url": "http://chat.whatsapp.com/invite/F2xmTskNNKF6MRwiFEgEpq"
+                },
+                {
+                  "type": "website",
+                  "text": "www.cinemapublic.ru",
+                  "value": "http://link.2gis.ru/1.2/987720DB/webapi/20210401/project1/70000001032409707/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG325?http://www.cinemapublic.ru",
+                  "url": "http://www.cinemapublic.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/cinemapublicnsk",
+                  "value": "https://vk.com/cinemapublicnsk",
+                  "url": "https://vk.com/cinemapublicnsk"
+                },
+                {
+                  "type": "whatsapp",
+                  "text": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A",
+                  "value": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A",
+                  "url": "https://wa.me/79237753175?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%0A%0A%D0%9F%D0%B8%D1%88%D1%83%20%D0%B8%D0%B7%20%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F%202%D0%93%D0%98%D0%A1.%0A%0A"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 10,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001032409707/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 14,
+              "main_photo_url": "https://i1.photo.2gis.com/main/geo/1/141373143682538/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "70000001032409707_koydEy8B665H3H8301IG0GGGm14hjn9AG6G8186301450C81rwdu793618G35G6G1J1C4J2JlfsAuv191C831013358H9J3HHHG3A1",
+          "name": "Cinema Public, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "primary": "Cinema Public",
+            "short_name": "Cinema Public"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "70000001032409706",
+            "name": "Cinema Public, кинотеатр"
+          },
+          "point": {
+            "lat": 55.043771,
+            "lon": 82.953978
+          },
+          "reviews": {
+            "general_rating": 3.8,
+            "general_review_count": 97,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 5,
+                "review_count": 2,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 4.2,
+                "review_count": 60,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 3.8,
+            "org_review_count": 97,
             "rating": 4.2,
-            "review_count": 60,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 3.8,
-        "org_review_count": 97,
-        "rating": 4.2,
-        "review_count": 60
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "09:00",
-              "to": "01:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
-    },
-    {
-      "address_comment": "3 этаж",
-      "address_name": "Кутателадзе, 4/4",
-      "contact_groups": [
-        {
-          "contacts": [
-            {
-              "text": "+7 (383) 373‒13‒13",
-              "comment": "автоинформатор",
-              "print_text": "+7 (383) 373‒13‒13",
-              "type": "phone",
-              "value": "+73833731313"
-            },
-            {
-              "type": "website",
-              "text": "kino-mir.ru",
-              "value": "http://link.2gis.ru/1.2/A196A5C9/webapi/20210401/project1/70000001026842530/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301894564rwdu793618G35G6G1J1C4J2JlfsAuv191C831013341HAJ3HHHG32b?http://kino-mir.ru",
-              "url": "http://kino-mir.ru"
-            },
-            {
-              "type": "vkontakte",
-              "text": "https://vk.com/kinomir_siberia",
-              "value": "https://vk.com/kinomir_siberia",
-              "url": "https://vk.com/kinomir_siberia"
-            },
-            {
-              "type": "twitter",
-              "text": "https://twitter.com/kinomir_siberia",
-              "value": "https://twitter.com/kinomir_siberia",
-              "url": "https://twitter.com/kinomir_siberia"
-            },
-            {
-              "type": "instagram",
-              "text": "https://instagram.com/kinomir_siberia",
-              "value": "https://instagram.com/kinomir_siberia",
-              "url": "https://instagram.com/kinomir_siberia"
-            }
-          ]
-        }
-      ],
-      "external_content": [
-        {
-          "count": 30,
-          "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001026842530/common",
-          "subtype": "common",
-          "type": "photo_album"
-        },
-        {
-          "count": 5,
-          "main_photo_url": "http://i5.photo.2gis.com/main/geo/1/141373143595615/view",
-          "subtype": "view",
-          "type": "photo_album"
-        }
-      ],
-      "id": "70000001026842530_koydEy8B665H3H8301IG0GGGm14hjn9AG6G8186301894564rwdu793618G35G6G1J1C4J2JlfsAuv191C831013341HAJ3HHHG3b0",
-      "name": "Киномир, кинотеатр",
-      "name_ex": {
-        "extension": "кинотеатр",
-        "legal_name": "ООО Киномир-Н",
-        "primary": "Киномир",
-        "short_name": "Киномир"
-      },
-      "org": {
-        "branch_count": 1,
-        "id": "70000001026842529",
-        "name": "Киномир, кинотеатр, ООО Киномир-Н"
-      },
-      "point": {
-        "lat": 54.859934,
-        "lon": 83.104245
-      },
-      "reviews": {
-        "general_rating": 2.4,
-        "general_review_count": 497,
-        "is_reviewable": true,
-        "is_reviewable_on_flamp": true,
-        "items": [
-          {
-            "is_reviewable": true,
-            "rating": 5,
-            "review_count": 2,
-            "tag": "2gis_reviews"
+            "review_count": 60
           },
-          {
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "09:00",
+                  "to": "01:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        },
+        {
+          "address_comment": "3 этаж",
+          "address_name": "Кутателадзе, 4/4",
+          "contact_groups": [
+            {
+              "contacts": [
+                {
+                  "text": "+7 (383) 373‒13‒13",
+                  "comment": "автоинформатор",
+                  "print_text": "+7 (383) 373‒13‒13",
+                  "type": "phone",
+                  "value": "+73833731313"
+                },
+                {
+                  "type": "website",
+                  "text": "kino-mir.ru",
+                  "value": "http://link.2gis.ru/1.2/A196A5C9/webapi/20210401/project1/70000001026842530/ci.nsu.ru/koydEy8B665H4H8301IG4GGGm14hjn9AG6G8186301894564rwdu793618G35G6G1J1C4J2JlfsAuv191C831013341HAJ3HHHG32b?http://kino-mir.ru",
+                  "url": "http://kino-mir.ru"
+                },
+                {
+                  "type": "vkontakte",
+                  "text": "https://vk.com/kinomir_siberia",
+                  "value": "https://vk.com/kinomir_siberia",
+                  "url": "https://vk.com/kinomir_siberia"
+                },
+                {
+                  "type": "twitter",
+                  "text": "https://twitter.com/kinomir_siberia",
+                  "value": "https://twitter.com/kinomir_siberia",
+                  "url": "https://twitter.com/kinomir_siberia"
+                },
+                {
+                  "type": "instagram",
+                  "text": "https://instagram.com/kinomir_siberia",
+                  "value": "https://instagram.com/kinomir_siberia",
+                  "url": "https://instagram.com/kinomir_siberia"
+                }
+              ]
+            }
+          ],
+          "external_content": [
+            {
+              "count": 30,
+              "main_photo_url": "https://i1.photo.2gis.com/main/branch/1/70000001026842530/common",
+              "subtype": "common",
+              "type": "photo_album"
+            },
+            {
+              "count": 5,
+              "main_photo_url": "http://i5.photo.2gis.com/main/geo/1/141373143595615/view",
+              "subtype": "view",
+              "type": "photo_album"
+            }
+          ],
+          "id": "70000001026842530_koydEy8B665H3H8301IG0GGGm14hjn9AG6G8186301894564rwdu793618G35G6G1J1C4J2JlfsAuv191C831013341HAJ3HHHG3b0",
+          "name": "Киномир, кинотеатр",
+          "name_ex": {
+            "extension": "кинотеатр",
+            "legal_name": "ООО Киномир-Н",
+            "primary": "Киномир",
+            "short_name": "Киномир"
+          },
+          "org": {
+            "branch_count": 1,
+            "id": "70000001026842529",
+            "name": "Киномир, кинотеатр, ООО Киномир-Н"
+          },
+          "point": {
+            "lat": 54.859934,
+            "lon": 83.104245
+          },
+          "reviews": {
+            "general_rating": 2.4,
+            "general_review_count": 497,
             "is_reviewable": true,
+            "is_reviewable_on_flamp": true,
+            "items": [
+              {
+                "is_reviewable": true,
+                "rating": 5,
+                "review_count": 2,
+                "tag": "2gis_reviews"
+              },
+              {
+                "is_reviewable": true,
+                "rating": 2.4,
+                "review_count": 377,
+                "tag": "flamp"
+              }
+            ],
+            "org_rating": 2.4,
+            "org_review_count": 497,
             "rating": 2.4,
-            "review_count": 377,
-            "tag": "flamp"
-          }
-        ],
-        "org_rating": 2.4,
-        "org_review_count": 497,
-        "rating": 2.4,
-        "review_count": 377
-      },
-      "schedule": {
-        "Fri": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Mon": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Sat": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Sun": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Thu": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Tue": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "Wed": {
-          "working_hours": [
-            {
-              "from": "10:00",
-              "to": "02:00"
-            }
-          ]
-        },
-        "date_from": "2021-05-01",
-        "date_to": "2021-05-01",
-        "description": "День труда"
-      },
-      "type": "branch"
+            "review_count": 377
+          },
+          "schedule": {
+            "Fri": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Mon": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Sat": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Sun": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Thu": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Tue": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "Wed": {
+              "working_hours": [
+                {
+                  "from": "10:00",
+                  "to": "02:00"
+                }
+              ]
+            },
+            "date_from": "2021-05-01",
+            "date_to": "2021-05-01",
+            "description": "День труда"
+          },
+          "type": "branch"
+        }
+      ]
     }
-  ],
+  },
   "museums": [
     {
       "address_comment": "цокольный этаж",

@@ -1,9 +1,59 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Image, TouchableHighlight} from 'react-native';
+import moment from "moment";
 
-export default function SliderItem({title, type, distance, colorCard, icon, navigate}) {
+export default function SliderItem({colorCard, title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, color, icon, navigate, address}) {
+
+  const [status, setStatus] = useState(false);
+  const [close, setClose] = useState(false);
+
+  useEffect(() => {
+    if (timeWork === undefined) {
+      setStatus(false);
+      setClose(true);
+    }
+  }, [timeWork]);
+
+
+  // Change status buildings
+  useEffect(() => {
+    if (is_24x7) {
+      setStatus(true);
+    } else {
+      if (timeWork) {
+        getStatus();
+      }
+    }
+  }, [timeWork]);
+
+  const getStatus = () => {
+    let date = new Date();
+    let timeOpen = moment().format(timeWork.working_hours[0].from);
+    let timeClose = moment().format(timeWork.working_hours[0].to);
+    let timeCurrent = moment().format('HH:mm');
+    if (moment.utc(moment.duration(timeClose) - moment.duration(timeCurrent)).format('HH:mm') <= moment.utc(moment.duration(timeClose) - moment.duration(timeOpen)).format('HH:mm')) {
+      setStatus(true);
+    }
+  }
+
   return (
-    <TouchableHighlight style={{height: '83%'}} onPress={() => navigate.navigate('Info')} underlayColor="#fff">
+    <TouchableHighlight style={{height: '83%'}}
+                        underlayColor="#fff"
+                        onPress={() =>
+                          navigate.navigate('Info', {
+                            name: title,
+                            address: address,
+                            image: image,
+                            description: desc,
+                            workTime: timeWork,
+                            rating: rating,
+                            status: status,
+                            contacts: contacts,
+                            contactsNull: contactsNull,
+                            close: close,
+                            is_24x7: is_24x7
+                          })}
+    >
       <View style={styles.sliderItem} backgroundColor={colorCard}>
         <View style={styles.sliderInfo}>
           <View style={styles.sliderLocation}>

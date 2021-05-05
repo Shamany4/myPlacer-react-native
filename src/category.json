@@ -31,7 +31,7 @@
       "icon": "billiard.png"
     },
     {
-      "name": "Бани, сауны",
+      "name": "Сауны",
       "color": "#FFEF9F",
       "icon": "sauna.png"
     },
@@ -39,31 +39,6 @@
       "name": "Компьютерные клубы",
       "color": "#FFB99F",
       "icon": "computer.png"
-    },
-    {
-      "name": "Парки",
-      "color": "#AEFF9F",
-      "icon": "park.png"
-    },
-    {
-      "name": "Кафе",
-      "color": "#FFC59F",
-      "icon": "cafe.png"
-    },
-    {
-      "name": "Дельфинарии",
-      "color": "#9FF8FF",
-      "icon": "dolphinarium.png"
-    },
-    {
-      "name": "Аквапарки",
-      "color": "#64B5FC",
-      "icon": "aquapark.png"
-    },
-    {
-      "name": "Торговые центры",
-      "color": "#C564FC",
-      "icon": "shopping.png"
     },
     {
       "name": "Кальянные",
@@ -74,26 +49,6 @@
       "name": "Клубы",
       "color": "#6A54FF",
       "icon": "clubs.png"
-    },
-    {
-      "name": "Библиотеки",
-      "color": "#FFDF75",
-      "icon": "library.png"
-    },
-    {
-      "name": "Fast Food",
-      "color": "#FF7575",
-      "icon": "fastFood.png"
-    },
-    {
-      "name": "Зоопарки",
-      "color": "#75FFB6",
-      "icon": "zoopark.png"
-    },
-    {
-      "name": "Цирки",
-      "color": "#AF6AFF",
-      "icon": "circuses.png"
     }
   ]
 }

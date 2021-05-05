@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View, ScrollView, Alert} from 'react-native';
+import {StyleSheet, View, ScrollView, Alert, Text} from 'react-native';
 import Swiper from "react-native-web-swiper";
 import haversine from 'haversine'
 import json from "../db.json";
-import AppLoading from "expo-app-loading";
+import categoryJSON from '../category.json';
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
@@ -11,6 +11,7 @@ import SliderItem from "../components/SliderItem";
 import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
+import MyLoadingApp from "../components/MyLoadingApp";
 
 export default function HomeScreen({route, navigation}) {
   const {
@@ -22,16 +23,46 @@ export default function HomeScreen({route, navigation}) {
   const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
 
+  const [isReady, setIsReady] = useState(false);
   const [data, setData] = useState([]);
+
+  const [category, setCategory] = useState([]);
+
+  // Function setTimeout
+  const timeout = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   // Get All Items
   useEffect(()=>{
-    setData(json.clubs);
+    if (!isReady) {
+      fetch('https://catalog.api.2gis.com/3.0/items?' +
+        `q=Новосибирск кафе` +
+        '&fields=items.org,' +
+        'items.point,' +
+        'items.contact_groups,' +
+        'items.name_ex,' +
+        'items.description,' +
+        'items.schedule,' +
+        'items.external_content,' +
+        'context_rubrics,' +
+        'items.reviews' +
+        '&key=ruoucu5799')
+        .then((response) => response.json())
+        .then((json) => {
+          setData(json.result);
+          setIsReady(true);
+        })
+    }
   },[data]);
 
 
-  if (data) {
-    return(
+  if (!isReady) {
+    return (
+      <MyLoadingApp title="Загружаем информацию о заведениях" />
+    );
+  } else {
+    return (
       <View style={styles.application}>
         <Menu navigation={navigation}/>
         <View style={styles.container}>
@@ -56,20 +87,89 @@ export default function HomeScreen({route, navigation}) {
                   }
                 }}
               >
-                <SliderItem title="Континент" type="Торговый центр"
-                            distance="2.68" colorCard="#f3f3f3"
-                            icon={require(iconBuildingPath + 'shopping.png')}
-                            navigate={navigation}
-                />
+                {
+                  data.items.map((el, index) => {
+                    if (el.name_ex === undefined || el.external_content === undefined || el.schedule === undefined) {
+                      return null;
+                    } else {
+                      // Get Start and End coords
+                      const start = {
+                        latitude: location.coords.latitude,
+                        longitude: location.coords.longitude
+                      }
+                      const end = {
+                        latitude: el.point.lat,
+                        longitude: el.point.lon
+                      }
+
+                      let currentDistance = Math.round(haversine(start, end));
+                      let minDistance = 5;
+
+                      // Checking the description for emptiness
+                      let description = '';
+                      if (el.ads === undefined || el.ads.article === undefined) {
+                        description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
+                      } else {
+                        description = el.ads.article;
+                      }
+
+                      // Checking the type for emptiness
+                      let type = data.context_rubrics[0].caption;
+
+                      // Checking the contact for emptiness
+                      let contactNull = false;
+                      let contactsArr = [];
+                      if (el.contact_groups === undefined) {
+                        contactNull = true;
+                      } else {
+                        if (el.contact_groups[1] !== undefined) {
+                          contactsArr.push(el.contact_groups[1].contacts[0])
+                        }
+                        contactsArr = el.contact_groups[0].contacts;
+                      }
+
+                      // Checking the rating for emptiness
+                      let rating = '';
+                      if (el.reviews.general_rating === undefined) {
+                        rating = 'Отсутствует';
+                      } else {
+                        rating = el.reviews.general_rating;
+                      }
+
+
+                      if (currentDistance <= minDistance) {
+                        return <SliderItem open={true}
+                                           title={el.name_ex.primary}
+                                           type={type}
+                                           address={el.address_name}
+                                           image={el.external_content}
+                                           desc={description}
+                                           distance={haversine(start, end).toFixed(2)}
+                                           timeWork={el.schedule[currentDay]}
+                                           is_24x7={el.schedule.is_24x7}
+                                           rating={rating}
+                                           contactsNull={contactNull}
+                                           contacts={contactsArr}
+                                           colorCard="#f3f3f3"
+                                           icon={require(iconBuildingPath + 'cinema.png')}
+                                           navigate={navigation}
+                                           key={index}
+                        />
+                      }
+                    }
+
+                  })
+                }
               </Swiper>
             </View>
 
             <SubtitlePage title="Популярное сегодня"/>
             <View style={styles.popularWrapper}>
-              {
-                data.map((el, index) => {
 
-                  if (el.name_ex === undefined && el.contact_groups === undefined && el.schedule === undefined) {
+              {
+                data.items.map((el, index) => {
+
+                  if (el.name_ex === undefined || el.external_content === undefined || el.schedule === undefined) {
                     return null;
                   } else {
                     // Get Start and End coords
@@ -84,27 +184,24 @@ export default function HomeScreen({route, navigation}) {
 
                     // Checking the description for emptiness
                     let description = '';
-                    if (el.ads === undefined) {
+                    if (el.ads === undefined || el.ads.article === undefined) {
                       description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
                     } else {
                       description = el.ads.article;
                     }
 
                     // Checking the type for emptiness
-                    let type = '';
-                    if (el.name_ex.extension === undefined) {
-                      type = el.name_ex.primary;
-                    } else {
-                      type = el.name_ex.extension;
-                    }
-                    let strType = type[0].toUpperCase() + type.slice(1);
+                    let type = data.context_rubrics[0].caption;
 
                     // Checking the contact for emptiness
                     let contactNull = false;
-                    let contactsArr = null;
+                    let contactsArr = [];
                     if (el.contact_groups === undefined) {
                       contactNull = true;
                     } else {
+                      if (el.contact_groups[1] !== undefined) {
+                        contactsArr.push(el.contact_groups[1].contacts[0])
+                      }
                       contactsArr = el.contact_groups[0].contacts;
                     }
 
@@ -118,7 +215,7 @@ export default function HomeScreen({route, navigation}) {
 
                     return <ItemCard open={true}
                                      title={el.name_ex.primary}
-                                     type={strType}
+                                     type={type}
                                      address={el.address_name}
                                      image={el.external_content}
                                      desc={description}
@@ -128,6 +225,7 @@ export default function HomeScreen({route, navigation}) {
                                      rating={rating}
                                      contactsNull={contactNull}
                                      contacts={contactsArr}
+                                     color="#000"
                                      icon={require(iconWhitePath + 'cinema.png')}
                                      navigate={navigation}
                                      key={index}
@@ -136,9 +234,7 @@ export default function HomeScreen({route, navigation}) {
 
                 })
               }
-              {/*<ItemCard open={true} title="Континент" type="Торговый центр"*/}
-              {/*          distance="1.68" icon={require(iconWhitePath + 'shopping.png')}*/}
-              {/*          navigate={navigation}/>*/}
+
             </View>
 
 
@@ -146,8 +242,6 @@ export default function HomeScreen({route, navigation}) {
         </View>
       </View>
     );
-  } else {
-    return <AppLoading />
   }
 }
 

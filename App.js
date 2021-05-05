@@ -4,8 +4,7 @@ import * as Font from 'expo-font';
 import * as Location from "expo-location";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Alert} from 'react-native';
-import AppLoading from 'expo-app-loading';
+import {Alert, Text, View} from 'react-native';
 
 import {
   HomeScreen,
@@ -17,6 +16,9 @@ import {
   RegisterScreen,
   ItemInfoScreen,
 } from './src/pages'
+
+import MyLoadingApp from "./src/components/MyLoadingApp";
+import AppLoading from "expo-app-loading";
 
 
 let customFonts = {
@@ -63,13 +65,13 @@ export default function App() {
     })();
   }, []);
 
+  // Get current day weeks
   useEffect(() => {
     let date = new Date();
     let countDayWeek = date.getDay();
     let arrDaysWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     setDayWeek(arrDaysWeek[countDayWeek]);
   }, []);
-
 
   if (font && location && dayWeek) {
     return(
@@ -90,6 +92,8 @@ export default function App() {
       </NavigationContainer>
     );
   } else {
-    return <AppLoading />
+    return(
+      <MyLoadingApp title="Получаем необходимые данные"/>
+    );
   }
 }

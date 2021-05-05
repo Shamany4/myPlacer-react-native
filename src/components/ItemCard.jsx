@@ -3,10 +3,17 @@ import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
 import moment from 'moment';
 import 'moment/locale/ru';
 
-export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, icon, navigate, address}) {
+export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, color, icon, navigate, address}) {
 
-  const [status, setStatus] = useState(true);
+  const [status, setStatus] = useState(false);
   const [close, setClose] = useState(false);
+
+  useEffect(() => {
+    if (timeWork === undefined) {
+      setStatus(false);
+      setClose(true);
+    }
+  }, [timeWork]);
 
 
   // Change status buildings
@@ -15,25 +22,21 @@ export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, 
       setStatus(true);
     } else {
       if (timeWork) {
-        moment.locale('ru');
-        let timeOpen = timeWork.working_hours[0].from;
-        let timeClose = timeWork.working_hours[0].to;
-        let timeCurrent = moment().format('HH[:]MM');
-        if (moment.utc(moment.duration(timeClose) - moment.duration(timeCurrent)).format('HH[:]MM') <= moment.utc(moment.duration(timeClose) - moment.duration(timeOpen)).format('HH[:]MM')) {
-          setStatus(true);
-        } else {
-          setStatus(false);
-        }
+        getStatus();
       }
     }
   }, [timeWork]);
 
-  useEffect(() => {
-    if (timeWork === undefined) {
-      setStatus(false);
-      setClose(true);
+  const getStatus = () => {
+    let date = new Date();
+    let timeOpen = moment().format(timeWork.working_hours[0].from);
+    let timeClose = moment().format(timeWork.working_hours[0].to);
+    let timeCurrent = moment().format('HH:mm');
+    if (moment.utc(moment.duration(timeClose) - moment.duration(timeCurrent)).format('HH:mm') <= moment.utc(moment.duration(timeClose) - moment.duration(timeOpen)).format('HH:mm')) {
+      setStatus(true);
     }
-  }, [timeWork]);
+  }
+
 
   return(
     <TouchableHighlight style={{width: '48%'}}
@@ -76,7 +79,7 @@ export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, 
           <Image style={styles.itemLocation__icon} source={require('../assets/icons/position.png')}/>
           <Text style={styles.itemLocation__text}>{distance} км</Text>
         </View>
-        <View style={styles.itemIcon}>
+        <View style={styles.itemIcon} backgroundColor={color} >
           <Image style={styles.itemIcon__icon}
                  source={icon}/>
         </View>
@@ -144,7 +147,6 @@ const styles = StyleSheet.create({
     right: 0,
     height: 50,
     width: 50,
-    backgroundColor: '#404040',
     borderRadius: 10,
     flex: 1,
     justifyContent: 'center',
