@@ -35,25 +35,25 @@ export default function HomeScreen({route, navigation}) {
 
   // Get All Items
   useEffect(()=>{
-    if (!isReady) {
-      fetch('https://catalog.api.2gis.com/3.0/items?' +
-        `q=Новосибирск кафе` +
-        '&fields=items.org,' +
-        'items.point,' +
-        'items.contact_groups,' +
-        'items.name_ex,' +
-        'items.description,' +
-        'items.schedule,' +
-        'items.external_content,' +
-        'context_rubrics,' +
-        'items.reviews' +
-        '&key=ruoucu5799')
-        .then((response) => response.json())
-        .then((json) => {
-          setData(json.result);
-          setIsReady(true);
-        })
-    }
+    // if (!isReady) {
+    //   fetch('https://catalog.api.2gis.com/3.0/items?' +
+    //     `q=Новосибирск кафе` +
+    //     '&fields=items.org,' +
+    //     'items.point,' +
+    //     'items.contact_groups,' +
+    //     'items.name_ex,' +
+    //     'items.description,' +
+    //     'items.schedule,' +
+    //     'items.external_content,' +
+    //     'context_rubrics,' +
+    //     'items.reviews' +
+    //     '&key=ruoucu5799')
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //       setData(json.result);
+    //       setIsReady(true);
+    //     })
+    // }
   },[data]);
 
 

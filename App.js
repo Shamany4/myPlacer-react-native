@@ -77,13 +77,17 @@ export default function App() {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Search">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen}
                         options={{ headerShown: false }}
-                        initialParams={{ location: location, currentDay: dayWeek }}/>
-          <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }}/>
+                        initialParams={{ location: location, currentDay: dayWeek }}
+          />
+          <Stack.Screen name="Search" component={SearchScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location: location, currentDay: dayWeek }}
+          />
           <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Cabinet" component={CabinetScreen} options={{ headerShown: false }}/>
