@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View, ScrollView, Alert, Text} from 'react-native';
+import {StyleSheet, View, ScrollView, Alert, Text, Button, Image, TouchableHighlight} from 'react-native';
 import Swiper from "react-native-web-swiper";
 import haversine from 'haversine'
 import categoryJSON from '../category.json';
@@ -11,6 +11,7 @@ import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 import MyLoadingApp from "../components/MyLoadingApp";
+import ButtonGroup from "../components/ButtonGroup";
 
 export default function HomeScreen({route, navigation}) {
 
@@ -74,11 +75,17 @@ export default function HomeScreen({route, navigation}) {
     })
   }
 
-  // useEffect(() => {
-  //   if (items.length > 0 && localItems.length > 0) {
-  //     setIsReady(true);
-  //   }
-  // }, [items, localItems]);
+  const getNewRandomItemsHandler = () => {
+    setItems([]);
+    fetch('https://shamany4.github.io/fake-server/data.json')
+      .then((response) => response.json())
+      .then(async (json) => {
+        await getRandomItems(json.result);
+      })
+      .catch((error) => {
+        setErrors(error);
+      })
+  }
 
 
   if (errors) {
@@ -175,6 +182,8 @@ export default function HomeScreen({route, navigation}) {
                           return icon = require(iconBuildingPath + 'billiard.png');
                         case 'Бани, сауны':
                           return icon = require(iconBuildingPath + 'sauna.png');
+                        case 'Компьютерные клубы':
+                          return icon = require(iconBuildingPath + 'computer.png');
                         case 'Парки':
                           return icon = require(iconBuildingPath + 'park.png');
                         case 'Кафе':
@@ -220,7 +229,15 @@ export default function HomeScreen({route, navigation}) {
             </Swiper>
           </View>
 
-          <SubtitlePage title="Случайные заведения"/>
+          <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10}}>
+            <SubtitlePage title="Случайные заведения"/>
+            <TouchableHighlight underlayColor="#fff" onPress={getNewRandomItemsHandler} style={{padding: 10}}>
+              <Image style={{height: 20, width: 20}}
+                     source={require('../assets/icons/reload.png')}
+              />
+            </TouchableHighlight>
+          </View>
+
           <View style={styles.popularWrapper}>
 
             {
@@ -286,6 +303,8 @@ export default function HomeScreen({route, navigation}) {
                         return icon = require(iconBuildingPath + 'billiard.png');
                       case 'Бани, сауны':
                         return icon = require(iconBuildingPath + 'sauna.png');
+                      case 'Компьютерные клубы':
+                        return icon = require(iconBuildingPath + 'computer.png');
                       case 'Парки':
                         return icon = require(iconBuildingPath + 'park.png');
                       case 'Кафе':
@@ -330,7 +349,6 @@ export default function HomeScreen({route, navigation}) {
             }
 
           </View>
-
 
         </ScrollView>
       </View>

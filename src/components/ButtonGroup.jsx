@@ -1,10 +1,10 @@
 import {Alert, StyleSheet, Text, TouchableHighlight} from "react-native";
 import React from "react";
 
-export default function ButtonGroup({title}) {
+export default function ButtonGroup({title, click}) {
   return(
     <TouchableHighlight style={styles.buttonGroup}
-                        onPress={() => Alert.alert('Simple Button pressed')}
+                        onPress={click}
     >
       <Text style={styles.buttonGroup__text}>{title}</Text>
     </TouchableHighlight>
