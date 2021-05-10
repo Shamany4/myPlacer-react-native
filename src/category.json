@@ -18,7 +18,7 @@
     {
       "name": "Рестораны",
       "color": "#FFEF9F",
-      "icon": "museum.png"
+      "icon": "restaurant.png"
     },
     {
       "name": "Боулинги",
@@ -31,7 +31,7 @@
       "icon": "billiard.png"
     },
     {
-      "name": "Сауны",
+      "name": "Бани, сауны",
       "color": "#FFEF9F",
       "icon": "sauna.png"
     },
@@ -41,14 +41,49 @@
       "icon": "computer.png"
     },
     {
+      "name": "Парки",
+      "color": "#A1D286",
+      "icon": "park.png"
+    },
+    {
+      "name": "Кафе",
+      "color": "#42061E",
+      "icon": "cafe.png"
+    },
+    {
+      "name": "Дельфинарии",
+      "color": "#C0CAC6",
+      "icon": "dolphinarium.png"
+    },
+    {
+      "name": "Аквапарки",
+      "color": "#006699",
+      "icon": "aquapark.png"
+    },
+    {
+      "name": "Торговые центры",
+      "color": "#FFE4E1",
+      "icon": "shopping.png"
+    },
+    {
       "name": "Кальянные",
       "color": "#D8D8D8",
       "icon": "hookah.png"
     },
     {
-      "name": "Клубы",
+      "name": "Ночные клубы",
       "color": "#6A54FF",
       "icon": "clubs.png"
+    },
+    {
+      "name": "Библиотеки",
+      "color": "#6B715B",
+      "icon": "library.png"
+    },
+    {
+      "name": "Fast Food",
+      "color": "#CE0018",
+      "icon": "fastFood.png"
     }
   ]
 }

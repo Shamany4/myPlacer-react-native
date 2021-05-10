@@ -53,6 +53,7 @@ export default function SliderItem({colorCard, title, type, image, desc, timeWor
                             close: close,
                             is_24x7: is_24x7
                           })}
+
     >
       <View style={styles.sliderItem} backgroundColor={colorCard}>
         <View style={styles.sliderInfo}>

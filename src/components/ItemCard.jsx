@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   itemIcon__icon: {
-    height: 24,
-    width: 24,
+    height: 30,
+    width: 30,
   }
 });
