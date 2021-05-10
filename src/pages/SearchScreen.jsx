@@ -6,6 +6,7 @@ import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 import ItemCard from "../components/ItemCard";
 import haversine from "haversine";
+import categoryJSON from "../category.json";
 
 
 export default function SearchScreen({route, navigation}) {
@@ -14,32 +15,60 @@ export default function SearchScreen({route, navigation}) {
     currentDay,
   } = route.params;
 
+  const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
 
   const [data, setData] = useState([]);
+  const [items, setItems] = useState([]);
   const [search, setSearch] = useState(false);
   const [value, setValue] = useState('');
+  const [failSearch, setFailSearch] = useState(false);
 
   useEffect(() => {
     if (value === '') {
       setSearch(false);
+      setFailSearch(false);
     }
   });
 
+  useEffect(()=>{
+    fetch('https://shamany4.github.io/fake-server/data.json')
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json.result);
+      })
+  },[]);
+
   const changeTextHandler = (value) => {
+    if (value === '') {
+      setItems([]);
+    }
     setSearch(true);
     setValue(value);
   }
 
-  const pressIconHandler = () => {
-    fetch('https://shamany4.github.io/fake-server/data.json')
-          .then((response) => response.json())
-          .then((json) => {
-            setData(json.result);
-          })
+  const getItemFromSearch = () => {
+    if (items) {
+      setItems([]);
+    }
+    data.map((el) => {
+      let regexp = new RegExp(`(${value})`, 'mi')
+      if (regexp.test(el.name) || regexp.test(el.context_rubrics) || regexp.test(el.name_ex.primary)) {
+        setItems(array => [...array, el]);
+      }
+    })
   }
 
-  console.log(data);
+  useEffect(() => {
+    if (items.length > 0) {
+      setFailSearch(false);
+    } else {
+      setFailSearch(true);
+    }
+  }, [items]);
+
+  console.log(items.length)
+
 
   return (
     <View style={styles.application}>
@@ -60,7 +89,7 @@ export default function SearchScreen({route, navigation}) {
               />
               <TouchableHighlight style={styles.searchGroupImage}
                                   underlayColor="#f2f2f2"
-                                  onPress={pressIconHandler}
+                                  onPress={getItemFromSearch}
               >
                 <Image style={styles.searchGroupImage__icon} source={require('../assets/icons/search.png')}/>
               </TouchableHighlight>
@@ -75,6 +104,130 @@ export default function SearchScreen({route, navigation}) {
                 <Image style={styles.searchGroupImage__icon} source={require('../assets/icons/search.png')}/>
               </View>
             </View>
+          }
+
+          <View style={styles.popularWrapper}>
+
+            {
+              items
+                ?
+                items.map((el, index) => {
+                  // Get Start and End coords
+                  let start = {
+                    latitude: location.coords.latitude,
+                    longitude: location.coords.longitude
+                  }
+                  let end = {
+                    latitude: el.point.lat,
+                    longitude: el.point.lon
+                  }
+
+                  // Checking the description for emptiness
+                  let description = '';
+                  if (el.ads === undefined || el.ads.article === undefined) {
+                    description = 'Отсутствует какое-либо описание для данного заведения. Приносим свои извенения.';
+                  } else {
+                    description = el.ads.article;
+                  }
+
+                  // Checking the type for emptiness
+                  let type = el.context_rubrics;
+
+                  // Checking the contact for emptiness
+                  let contactNull = false;
+                  let contactsArr = [];
+                  if (el.contact_groups === undefined) {
+                    contactNull = true;
+                  } else {
+                    if (el.contact_groups[1] !== undefined) {
+                      contactsArr.push(el.contact_groups[1].contacts[0])
+                    }
+                    contactsArr = el.contact_groups[0].contacts;
+                  }
+
+                  // Checking the rating for emptiness
+                  let rating = '';
+                  if (el.reviews.general_rating === undefined) {
+                    rating = 'Отсутствует';
+                  } else {
+                    rating = el.reviews.general_rating;
+                  }
+
+                  let color = '';
+                  let icon = '';
+                  categoryJSON.category.forEach((elCategory) => {
+                    if (el.context_rubrics === elCategory.name) {
+                      color = elCategory.color;
+                      switch (el.context_rubrics) {
+                        case 'Кинотеатры':
+                          return icon = require(iconWhitePath + 'cinema.png');
+                        case 'Театры':
+                          return icon = require(iconWhitePath + 'theatre.png');
+                        case 'Музеи':
+                          return icon = require(iconWhitePath + 'museum.png');
+                        case 'Рестораны':
+                          return icon = require(iconWhitePath + 'restaurant.png');
+                        case 'Боулинги':
+                          return icon = require(iconWhitePath + 'bowling.png');
+                        case 'Бильярдные':
+                          return icon = require(iconWhitePath + 'billiard.png');
+                        case 'Бани, сауны':
+                          return icon = require(iconWhitePath + 'sauna.png');
+                        case 'Компьютерные клубы':
+                          return icon = require(iconWhitePath + 'computer.png');
+                        case 'Парки':
+                          return icon = require(iconWhitePath + 'park.png');
+                        case 'Кафе':
+                          return icon = require(iconWhitePath + 'cafe.png');
+                        case 'Дельфинарии':
+                          return icon = require(iconWhitePath + 'dolphinarium.png');
+                        case 'Аквапарки':
+                          return icon = require(iconWhitePath + 'aquapark.png');
+                        case 'Торговые центры':
+                          return icon = require(iconWhitePath + 'shopping.png');
+                        case 'Кальянные':
+                          return icon = require(iconWhitePath + 'hookah.png');
+                        case 'Ночные клубы':
+                          return icon = require(iconWhitePath + 'clubs.png');
+                        case 'Библиотеки':
+                          return icon = require(iconWhitePath + 'library.png');
+                        case 'Fast Food':
+                          return icon = require(iconWhitePath + 'fastFood.png');
+
+                      }
+                    }
+                  });
+
+                  return <ItemCard open={true}
+                                   title={el.name_ex.primary}
+                                   type={type}
+                                   address={el.address_name}
+                                   image={el.external_content}
+                                   desc={description}
+                                   distance={haversine(start, end).toFixed(2)}
+                                   timeWork={el.schedule[currentDay]}
+                                   is_24x7={el.schedule.is_24x7}
+                                   rating={rating}
+                                   contactsNull={contactNull}
+                                   contacts={contactsArr}
+                                   color={color}
+                                   icon={icon}
+                                   navigate={navigation}
+                                   key={index}
+                  />
+                })
+                :
+                null
+            }
+
+          </View>
+
+          {
+            failSearch
+              ?
+              <Text style={styles.searchFailText}>Упс, ничего не найдено :(</Text>
+              :
+              null
           }
 
 
@@ -128,7 +281,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   searchGroupImage__icon: {
     height: 24,
@@ -139,5 +292,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between'
+  },
+  searchFailText: {
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 16,
+    marginTop: 15,
+    textAlign: 'center'
   }
 })

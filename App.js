@@ -46,11 +46,6 @@ export default function App() {
     LoadAsyncFonts();
   }, [LoadAsyncFonts]);
 
-  const _AsyncGetAndroidSystemRC = () => {
-    const system = systemRCPrevelegiers.getAll();
-    _AsyncGetAndroidSystemRC(system)
-  }
-
   // Get current user position
   useEffect(() => {
     (async () => {
@@ -77,7 +72,7 @@ export default function App() {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Search">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen}
