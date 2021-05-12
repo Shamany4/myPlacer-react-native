@@ -27,10 +27,15 @@ export default function LoginScreen({navigation}) {
     age: false,
     phone: false
   }
+  const hideFields = {
+    pass: true,
+    confirm: true
+  }
 
 
   const [regNext, setRegNext] = useState(false);
   const [userData, setUserData] = useState(initParams);
+  const [hideTextInput, setHideTextInput] = useState(hideFields);
   const [successInput, setSuccessInput] = useState(validFields);
   const [errorInput, setErrorInput] = useState(validFields);
   const [password, setPassword] = useState('');
@@ -55,17 +60,18 @@ export default function LoginScreen({navigation}) {
         }
         break;
       case 'pass':
-        if (/(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z]*([0-9#$-/:-?{-~!"^_`\[\]]))(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]*[a-zA-Z])[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]{4,}/.test(value) && value !== '') {
+        if (/(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z]*([0-9#$-/:-?{-~!"^_`\[\]]))(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]*[a-zA-Z])[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]{8,}/.test(value) && value !== '') {
           setPassword(value);
           setSuccessInput({...successInput, pass: true});
           setErrorInput({...errorInput, pass: false});
         } else {
+          setPassword('');
           setSuccessInput({...successInput, pass: false});
           setErrorInput({...errorInput, pass: true});
         }
         break;
       case 'passConfirm':
-        if (password === value) {
+        if (password && password === value) {
           setUserData({...userData, pass: MD5(value)});
           setSuccessInput({...successInput, confirm: true});
           setErrorInput({...errorInput, confirm: false});
@@ -78,8 +84,16 @@ export default function LoginScreen({navigation}) {
     }
   }
 
-  console.log(userData);
-  console.log(successInput);
+  const showPassHandler = (type) => {
+    switch (type) {
+      case 'pass':
+        setHideTextInput({...hideTextInput, pass: !hideTextInput.pass});
+        break;
+      case 'passConfirm':
+        setHideTextInput({...hideTextInput, confirm: !hideTextInput.confirm});
+        break;
+    }
+  }
 
 
   return(
@@ -111,19 +125,21 @@ export default function LoginScreen({navigation}) {
                               changeText={(text) => changeInputHandler(text, 'email')}
                   />
                   <InputGroup placeholder="Ваш пароль"
-                              secure={true}
+                              secure={hideTextInput.pass}
                               icon={require(iconInputPath + 'pass.png')}
                               secondIcon={require(iconInputPath + 'eye.png')}
                               validData={successInput.pass}
                               invalidData={errorInput.pass}
+                              iconClick={() => showPassHandler('pass')}
                               changeText={(text) => changeInputHandler(text, 'pass')}
                   />
                   <InputGroup placeholder="Повторите пароль"
-                              secure={true}
+                              secure={hideTextInput.confirm}
                               icon={require(iconInputPath + 'pass.png')}
                               secondIcon={require(iconInputPath + 'eye.png')}
                               validData={successInput.confirm}
                               invalidData={errorInput.confirm}
+                              iconClick={() => showPassHandler('passConfirm')}
                               changeText={(text) => changeInputHandler(text, 'passConfirm')}
                   />
                   <ButtonGroup title="Регистрация" click={setNextStepReg} />

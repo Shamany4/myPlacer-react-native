@@ -1,7 +1,7 @@
-import {Image, StyleSheet, TextInput, View} from "react-native";
+import {Image, StyleSheet, TextInput, TouchableHighlight, View} from "react-native";
 import React from "react";
 
-export default function ({placeholder, value, secure, icon, secondIcon, changeText, validData, invalidData}) {
+export default function ({placeholder, value, secure, icon, secondIcon, changeText, validData, invalidData, iconClick}) {
   return(
     <View style={styles.inputGroup}
           borderColor={validData ? '#00ad8b' : invalidData ? '#F56E6E' : null}
@@ -18,9 +18,12 @@ export default function ({placeholder, value, secure, icon, secondIcon, changeTe
       {
         secondIcon
           ?
-          <View style={styles.inputGroupSecond}>
+          <TouchableHighlight style={styles.inputGroupSecond}
+                              underlayColor="#eee"
+                              onPress={iconClick}
+          >
             <Image style={styles.inputGroupSecond__icon} source={secondIcon}/>
-          </View>
+          </TouchableHighlight>
           :
           null
       }
