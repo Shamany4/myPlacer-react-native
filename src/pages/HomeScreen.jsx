@@ -20,11 +20,6 @@ export default function HomeScreen({route, navigation}) {
     currentDay,
   } = route.params;
 
-  const initialsParams = {
-    isReady: false,
-    randomItems: []
-  }
-
   const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
 
@@ -186,8 +181,6 @@ export default function HomeScreen({route, navigation}) {
                         switch (el.context_rubrics) {
                           case 'Кинотеатры':
                             return icon = require(iconBuildingPath + 'cinema.png');
-                          case 'Театры':
-                            return icon = require(iconBuildingPath + 'theatre.png');
                           case 'Музеи':
                             return icon = require(iconBuildingPath + 'museum.png');
                           case 'Рестораны':
@@ -306,39 +299,37 @@ export default function HomeScreen({route, navigation}) {
                     color = elCategory.color;
                     switch (el.context_rubrics) {
                       case 'Кинотеатры':
-                        return icon = require(iconWhitePath + 'cinema.png');
-                      case 'Театры':
-                        return icon = require(iconWhitePath + 'theatre.png');
+                        return icon = require(iconBuildingPath + 'cinema.png');
                       case 'Музеи':
-                        return icon = require(iconWhitePath + 'museum.png');
+                        return icon = require(iconBuildingPath + 'museum.png');
                       case 'Рестораны':
-                        return icon = require(iconWhitePath + 'restaurant.png');
+                        return icon = require(iconBuildingPath + 'restaurant.png');
                       case 'Боулинги':
-                        return icon = require(iconWhitePath + 'bowling.png');
+                        return icon = require(iconBuildingPath + 'bowling.png');
                       case 'Бильярдные':
-                        return icon = require(iconWhitePath + 'billiard.png');
+                        return icon = require(iconBuildingPath + 'billiard.png');
                       case 'Бани, сауны':
-                        return icon = require(iconWhitePath + 'sauna.png');
+                        return icon = require(iconBuildingPath + 'sauna.png');
                       case 'Компьютерные клубы':
-                        return icon = require(iconWhitePath + 'computer.png');
+                        return icon = require(iconBuildingPath + 'computer.png');
                       case 'Парки':
-                        return icon = require(iconWhitePath + 'park.png');
+                        return icon = require(iconBuildingPath + 'park.png');
                       case 'Кафе':
-                        return icon = require(iconWhitePath + 'cafe.png');
+                        return icon = require(iconBuildingPath + 'cafe.png');
                       case 'Дельфинарии':
-                        return icon = require(iconWhitePath + 'dolphinarium.png');
+                        return icon = require(iconBuildingPath + 'dolphinarium.png');
                       case 'Аквапарки':
-                        return icon = require(iconWhitePath + 'aquapark.png');
+                        return icon = require(iconBuildingPath + 'aquapark.png');
                       case 'Торговые центры':
-                        return icon = require(iconWhitePath + 'shopping.png');
+                        return icon = require(iconBuildingPath + 'shopping.png');
                       case 'Кальянные':
-                        return icon = require(iconWhitePath + 'hookah.png');
+                        return icon = require(iconBuildingPath + 'hookah.png');
                       case 'Ночные клубы':
-                        return icon = require(iconWhitePath + 'clubs.png');
+                        return icon = require(iconBuildingPath + 'clubs.png');
                       case 'Библиотеки':
-                        return icon = require(iconWhitePath + 'library.png');
+                        return icon = require(iconBuildingPath + 'library.png');
                       case 'Fast Food':
-                        return icon = require(iconWhitePath + 'fastFood.png');
+                        return icon = require(iconBuildingPath + 'fastFood.png');
 
                     }
                   }

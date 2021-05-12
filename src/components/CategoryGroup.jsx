@@ -1,13 +1,19 @@
 import React from "react";
-import {Image, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, TouchableHighlight, View} from "react-native";
 
-export default function CategoryGroup({title, color, icon}) {
+export default function CategoryGroup({title, color, icon, navigate}) {
   return(
-    <View style={styles.categoryGroup} backgroundColor={color}>
-      <Text style={styles.categoryGroup__text}>{title}</Text>
-      <Image style={styles.categoryGroup__icon}
-             source={icon}/>
-    </View>
+    <TouchableHighlight underlayColor="#fff"
+                        onPress={() =>
+                          navigate.navigate('OneCategory', {
+                            categoryName: title
+                          })}>
+      <View style={styles.categoryGroup} backgroundColor={color}>
+        <Text style={styles.categoryGroup__text}>{title}</Text>
+        <Image style={styles.categoryGroup__icon}
+               source={icon}/>
+      </View>
+    </TouchableHighlight>
   );
 }
 

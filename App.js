@@ -15,6 +15,7 @@ import {
   LoginScreen,
   RegisterScreen,
   ItemInfoScreen,
+  OneCategoryScreen,
 } from './src/pages'
 
 import MyLoadingApp from "./src/components/MyLoadingApp";
@@ -72,7 +73,7 @@ export default function App() {
     return(
       <NavigationContainer>
         <StatusBar style="auto"/>
-        <Stack.Navigator initialRouteName="Home">
+        <Stack.Navigator initialRouteName="Category">
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="Home" component={HomeScreen}
@@ -83,10 +84,23 @@ export default function App() {
                         options={{ headerShown: false }}
                         initialParams={{ location: location, currentDay: dayWeek }}
           />
-          <Stack.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Favorites" component={FavoritesScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Cabinet" component={CabinetScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Info" component={ItemInfoScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Category" component={CategoryScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location: location, currentDay: dayWeek }}
+          />
+          <Stack.Screen name="Favorites" component={FavoritesScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Cabinet" component={CabinetScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Info" component={ItemInfoScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="OneCategory" component={OneCategoryScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location: location, currentDay: dayWeek }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );

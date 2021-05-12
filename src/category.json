@@ -2,72 +2,67 @@
   "category": [
     {
       "name": "Кинотеатры",
-      "color": "#9FD2FF",
+      "color": "#47CBE1",
       "icon": "cinema.png"
     },
     {
-      "name": "Театры",
-      "color": "#FFD99F",
-      "icon": "theatre.png"
-    },
-    {
       "name": "Музеи",
-      "color": "#CCFF9F",
+      "color": "#8EBEA4",
       "icon": "museum.png"
     },
     {
       "name": "Рестораны",
-      "color": "#FFEF9F",
+      "color": "#FFD6B2",
       "icon": "restaurant.png"
     },
     {
       "name": "Боулинги",
-      "color": "#9FD9FF",
+      "color": "#ACCAE0",
       "icon": "bowling.png"
     },
     {
       "name": "Бильярдные",
-      "color": "#9FFFAC",
+      "color": "#9FFFD2",
       "icon": "billiard.png"
     },
     {
       "name": "Бани, сауны",
-      "color": "#FFEF9F",
+      "color": "#FFE6A8",
       "icon": "sauna.png"
     },
     {
       "name": "Компьютерные клубы",
-      "color": "#FFB99F",
+      "color": "#FF8A91",
       "icon": "computer.png"
     },
     {
       "name": "Парки",
-      "color": "#A1D286",
+      "color": "#96FF96",
       "icon": "park.png"
     },
     {
       "name": "Кафе",
-      "color": "#42061E",
+      "color": "#E8DFDE",
       "icon": "cafe.png"
     },
     {
       "name": "Дельфинарии",
-      "color": "#C0CAC6",
+      "color": "#93D8E8",
       "icon": "dolphinarium.png"
     },
     {
       "name": "Аквапарки",
-      "color": "#006699",
+      "color": "#5688C3",
       "icon": "aquapark.png"
     },
     {
       "name": "Торговые центры",
-      "color": "#FFE4E1",
+      "color": "#EAEAEA",
       "icon": "shopping.png"
     },
     {
       "name": "Кальянные",
-      "color": "#D8D8D8",
+      "color": "#AD8EFF",
       "icon": "hookah.png"
     },
     {
@@ -77,12 +72,12 @@
     },
     {
       "name": "Библиотеки",
-      "color": "#6B715B",
+      "color": "#CE9C85",
       "icon": "library.png"
     },
     {
       "name": "Fast Food",
-      "color": "#CE0018",
+      "color": "#F76262",
       "icon": "fastFood.png"
     }
   ]

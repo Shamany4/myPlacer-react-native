@@ -6,3 +6,4 @@ export { default as CabinetScreen } from './CabinetScreen';
 export { default as LoginScreen } from './LoginScreen';
 export { default as RegisterScreen } from './RegisterScreen';
 export { default as ItemInfoScreen } from './ItemInfoScreen';
+export { default as OneCategoryScreen } from './OneCategoryScreen';

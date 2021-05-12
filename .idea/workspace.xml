@@ -4,8 +4,11 @@
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/category.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/category.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CategoryScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,8 @@
       <workItem from="1620632232201" duration="12000" />
       <workItem from="1620632346316" duration="9228000" />
       <workItem from="1620647473232" duration="28776000" />
-      <workItem from="1620797705633" duration="1040000" />
+      <workItem from="1620797705633" duration="4433000" />
+      <workItem from="1620819131804" duration="1163000" />
     </task>
     <servers />
   </component>
