@@ -67,8 +67,6 @@ export default function SearchScreen({route, navigation}) {
     }
   }, [items]);
 
-  console.log(items.length)
-
 
   return (
     <View style={styles.application}>
