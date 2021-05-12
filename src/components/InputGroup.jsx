@@ -1,9 +1,11 @@
 import {Image, StyleSheet, TextInput, View} from "react-native";
 import React from "react";
 
-export default function ({placeholder, value, secure, icon, secondIcon}) {
+export default function ({placeholder, value, secure, icon, secondIcon, changeText, validData, invalidData}) {
   return(
-    <View style={styles.inputGroup}>
+    <View style={styles.inputGroup}
+          borderColor={validData ? '#00ad8b' : invalidData ? '#F56E6E' : null}
+          borderWidth={validData ? 2 : invalidData ? 2 : null} >
       <View style={styles.inputGroupImage}>
         <Image style={styles.inputGroupImage__icon} source={icon}/>
       </View>
@@ -11,6 +13,7 @@ export default function ({placeholder, value, secure, icon, secondIcon}) {
                  value={value}
                  placeholder={placeholder}
                  secureTextEntry={secure}
+                 onChangeText={changeText}
       />
       {
         secondIcon
@@ -29,6 +32,7 @@ const styles = StyleSheet.create({
   inputGroup: {
     width: '100%',
     height: 60,
+    borderColor: '#eee',
     backgroundColor: '#eee',
     elevation: 5,
     borderRadius: 10,

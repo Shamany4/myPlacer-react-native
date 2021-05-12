@@ -1,11 +1,87 @@
-import React from "react";
-import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
+import React, {useEffect, useState} from "react";
+import {StyleSheet, View, Text, Image, ScrollView, Alert} from 'react-native';
+import MD5 from 'crypto-js/md5';
+
+
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
+import SubtitlePage from "../components/SubtitlePage";
+
 
 
 export default function LoginScreen({navigation}) {
   const iconInputPath = '../assets/icons/';
+
+  const initParams = {
+    email: '',
+    pass: '',
+    name: '',
+    age: 0,
+    phone: 0
+  }
+  const validFields = {
+    email: false,
+    pass: false,
+    confirm: false,
+    name: false,
+    age: false,
+    phone: false
+  }
+
+
+  const [regNext, setRegNext] = useState(false);
+  const [userData, setUserData] = useState(initParams);
+  const [successInput, setSuccessInput] = useState(validFields);
+  const [errorInput, setErrorInput] = useState(validFields);
+  const [password, setPassword] = useState('');
+
+  const setNextStepReg = () => {
+    if (userData.email && userData.pass) {
+      setRegNext(true);
+    }
+  }
+
+  const changeInputHandler = (value, typeInput) => {
+    switch (typeInput) {
+      case 'email':
+        if (/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(value) && value !== '') {
+          setUserData({...userData, email: value });
+          setSuccessInput({...successInput, email: true});
+          setErrorInput({...errorInput, email: false});
+        } else {
+          setUserData({...userData, email: '' });
+          setSuccessInput({...successInput, email: false});
+          setErrorInput({...errorInput, email: true});
+        }
+        break;
+      case 'pass':
+        if (/(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z]*([0-9#$-/:-?{-~!"^_`\[\]]))(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]*[a-zA-Z])[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]{4,}/.test(value) && value !== '') {
+          setPassword(value);
+          setSuccessInput({...successInput, pass: true});
+          setErrorInput({...errorInput, pass: false});
+        } else {
+          setSuccessInput({...successInput, pass: false});
+          setErrorInput({...errorInput, pass: true});
+        }
+        break;
+      case 'passConfirm':
+        if (password === value) {
+          setUserData({...userData, pass: MD5(value)});
+          setSuccessInput({...successInput, confirm: true});
+          setErrorInput({...errorInput, confirm: false});
+        } else {
+          setUserData({...userData, pass: '' });
+          setSuccessInput({...successInput, confirm: false});
+          setErrorInput({...errorInput, confirm: true});
+        }
+        break;
+    }
+  }
+
+  console.log(userData);
+  console.log(successInput);
+
+
   return(
     <ScrollView>
       <View style={styles.login}>
@@ -22,13 +98,54 @@ export default function LoginScreen({navigation}) {
 
         <View style={styles.container}>
           <View style={styles.loginForm}>
-            <View>
-              <InputGroup placeholder="Ваш email" secure={false} icon={require(iconInputPath + 'email.png')}/>
-              <InputGroup placeholder="Ваш пароль" secure={true} icon={require(iconInputPath + 'pass.png')} secondIcon={require(iconInputPath + 'eye.png')}/>
-              <InputGroup placeholder="Повторите пароль" secure={true} icon={require(iconInputPath + 'pass.png')} secondIcon={require(iconInputPath + 'eye.png')}/>
-              <InputGroup placeholder="Ваш возраст" secure={true} icon={require(iconInputPath + 'info.png')}/>
-              <ButtonGroup title="Регистрация"/>
-            </View>
+            {
+              !regNext
+                ?
+                <View>
+                  <SubtitlePage title="Данные для входа"/>
+                  <InputGroup placeholder="Ваш email"
+                              secure={false}
+                              icon={require(iconInputPath + 'email.png')}
+                              validData={successInput.email}
+                              invalidData={errorInput.email}
+                              changeText={(text) => changeInputHandler(text, 'email')}
+                  />
+                  <InputGroup placeholder="Ваш пароль"
+                              secure={true}
+                              icon={require(iconInputPath + 'pass.png')}
+                              secondIcon={require(iconInputPath + 'eye.png')}
+                              validData={successInput.pass}
+                              invalidData={errorInput.pass}
+                              changeText={(text) => changeInputHandler(text, 'pass')}
+                  />
+                  <InputGroup placeholder="Повторите пароль"
+                              secure={true}
+                              icon={require(iconInputPath + 'pass.png')}
+                              secondIcon={require(iconInputPath + 'eye.png')}
+                              validData={successInput.confirm}
+                              invalidData={errorInput.confirm}
+                              changeText={(text) => changeInputHandler(text, 'passConfirm')}
+                  />
+                  <ButtonGroup title="Регистрация" click={setNextStepReg} />
+                </View>
+                :
+                <View>
+                  <SubtitlePage title="Контактные данные"/>
+                  <InputGroup placeholder="Ваше имя"
+                              secure={false}
+                              icon={require(iconInputPath + 'user.png')}
+                  />
+                  <InputGroup placeholder="Ваш возраст"
+                              secure={false}
+                              icon={require(iconInputPath + 'info.png')}
+                  />
+                  <InputGroup placeholder="Ваш телефон"
+                              secure={false}
+                              icon={require(iconInputPath + 'phone.png')}
+                  />
+                  <ButtonGroup title="Завершить регистрацию" click={() => navigation.navigate('Home')} />
+                </View>
+            }
 
             <View style={styles.loginFooter}>
               <Text style={styles.loginFooter__title}>Уже имеете аккаунт?</Text>
@@ -47,17 +164,14 @@ const styles = StyleSheet.create({
     paddingLeft: '6%',
     paddingRight: '6%',
   },
-  login: {
-
-  },
   loginForm: {
+    paddingBottom: 25
   },
   loginImageGroup: {
     width: '100%',
     height: 230,
-    backgroundColor: 'gray',
     position: 'relative',
-    marginBottom: 30
+    marginBottom: '10%'
   },
   loginImageGroupBlack: {
     position: 'absolute',

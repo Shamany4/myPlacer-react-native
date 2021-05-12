@@ -14,6 +14,7 @@ export default function CategoryScreen({route, navigation}) {
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
+  const iconWhitePath = '../assets/whiteBuildings/';
 
   const getUrl = (name) => {
     switch (name) {
