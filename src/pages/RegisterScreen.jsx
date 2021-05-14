@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Image, ScrollView, Alert} from 'react-native';
-import MD5 from 'crypto-js/md5';
+import CryptoJS from 'crypto-js/md5';
+import firebase from "firebase";
 
 
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 import SubtitlePage from "../components/SubtitlePage";
-
+import TextInputMask from "react-native-masked-text/lib/text-input-mask";
 
 
 export default function LoginScreen({navigation}) {
@@ -39,11 +40,60 @@ export default function LoginScreen({navigation}) {
   const [successInput, setSuccessInput] = useState(validFields);
   const [errorInput, setErrorInput] = useState(validFields);
   const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState(null);
 
-  const setNextStepReg = () => {
+  const setNextStepRegHandler = () => {
     if (userData.email && userData.pass) {
       setRegNext(true);
+    } else {
+      setErrorInput({...errorInput, email: true, pass: true, confirm: true});
     }
+  }
+
+  const finishRegisterHandler = () => {
+    if (userData.name && userData.age && userData.phone) {
+      onSignUp();
+    } else {
+      setErrorInput({...errorInput, name: true, age: true, phone: true});
+    }
+  }
+
+  const onSignUp = () => {
+    const  { email, pass, name, age, phone } = userData;
+    firebase.auth().createUserWithEmailAndPassword(email, pass)
+      .then((result) => {
+        firebase.firestore().collection('users')
+          .doc(firebase.auth().currentUser.uid)
+          .set({
+            name,
+            email,
+            age,
+            phone
+          })
+      })
+      .catch((error) => {
+        if (error.code === 'auth/email-already-in-use') {
+          Alert.alert('Ошибка регистрации!','Этот адрес электронной почты уже используется!');
+          setRegNext(false);
+          setPhone(null);
+          setSuccessInput({...successInput,
+            email: false,
+            pass: false,
+            confirm: false,
+            name: false,
+            age: false,
+            phone: false
+          });
+          setErrorInput({...errorInput,
+            email: true,
+            pass: true,
+            confirm: true,
+            name: true,
+            age: true,
+            phone: true
+          });
+        }
+      })
   }
 
   const changeInputHandler = (value, typeInput) => {
@@ -72,13 +122,47 @@ export default function LoginScreen({navigation}) {
         break;
       case 'passConfirm':
         if (password && password === value) {
-          setUserData({...userData, pass: MD5(value)});
+          setUserData({...userData, pass: value});
           setSuccessInput({...successInput, confirm: true});
           setErrorInput({...errorInput, confirm: false});
         } else {
           setUserData({...userData, pass: '' });
           setSuccessInput({...successInput, confirm: false});
           setErrorInput({...errorInput, confirm: true});
+        }
+        break;
+      case 'userName':
+        if (/^[А-я]{3,20}$/.test(value) && value !== '') {
+          setUserData({...userData, name: value});
+          setSuccessInput({...successInput, name: true});
+          setErrorInput({...errorInput, name: false});
+        } else {
+          setUserData({...userData, name: '' });
+          setSuccessInput({...successInput, name: false});
+          setErrorInput({...errorInput, name: true});
+        }
+        break;
+      case 'age':
+        if (/^[0-9]{2}$/.test(value) && value !== '') {
+          setUserData({...userData, age: Number(value)});
+          setSuccessInput({...successInput, age: true});
+          setErrorInput({...errorInput, age: false});
+        } else {
+          setUserData({...userData, age: 0 });
+          setSuccessInput({...successInput, age: false});
+          setErrorInput({...errorInput, age: true});
+        }
+        break;
+      case 'phone':
+        let number = Number(value[0] + value[3] + value[4] + value[5] + value[8] + value[9] + value[10] + value[12] + value[13] + value[14] + value[15]);
+        if (value[0] && value[3] && value[4] && value[5] && value[8] && value[9] && value[10] && value[12] && value[13] && value[14] && value[15]) {
+          setUserData({...userData, phone: number});
+          setSuccessInput({...successInput, phone: true});
+          setErrorInput({...errorInput, phone: false});
+        } else {
+          setUserData({...userData, phone: 0});
+          setSuccessInput({...successInput, phone: false});
+          setErrorInput({...errorInput, phone: true});
         }
         break;
     }
@@ -94,6 +178,7 @@ export default function LoginScreen({navigation}) {
         break;
     }
   }
+
 
 
   return(
@@ -142,7 +227,7 @@ export default function LoginScreen({navigation}) {
                               iconClick={() => showPassHandler('passConfirm')}
                               changeText={(text) => changeInputHandler(text, 'passConfirm')}
                   />
-                  <ButtonGroup title="Регистрация" click={setNextStepReg} />
+                  <ButtonGroup title="Регистрация" click={setNextStepRegHandler} />
                 </View>
                 :
                 <View>
@@ -150,16 +235,42 @@ export default function LoginScreen({navigation}) {
                   <InputGroup placeholder="Ваше имя"
                               secure={false}
                               icon={require(iconInputPath + 'user.png')}
+                              validData={successInput.name}
+                              invalidData={errorInput.name}
+                              changeText={(text) => changeInputHandler(text, 'userName')}
                   />
                   <InputGroup placeholder="Ваш возраст"
                               secure={false}
                               icon={require(iconInputPath + 'info.png')}
+                              validData={successInput.age}
+                              invalidData={errorInput.age}
+                              changeText={(text) => changeInputHandler(text, 'age')}
                   />
-                  <InputGroup placeholder="Ваш телефон"
-                              secure={false}
-                              icon={require(iconInputPath + 'phone.png')}
-                  />
-                  <ButtonGroup title="Завершить регистрацию" click={() => navigation.navigate('Home')} />
+
+                  <View style={styles.inputGroup}
+                        borderColor={successInput.phone ? '#00ad8b' : errorInput.phone ? '#F56E6E' : null}
+                        borderWidth={successInput.phone ? 2 : errorInput.phone ? 2 : null}
+                  >
+                    <View style={styles.inputGroupImage}>
+                      <Image style={styles.inputGroupImage__icon}
+                             source={require(iconInputPath + 'phone.png')}/>
+                    </View>
+                    <TextInputMask
+                      style={styles.inputGroup__input}
+                      type={'custom'}
+                      placeholder="Ваш телефон"
+                      options={{
+                        mask: '8 (999) 999-9999'
+                      }}
+                      value={phone}
+                      onChangeText={(text) => {
+                        setPhone(text);
+                        changeInputHandler(text, 'phone')
+                      }}
+                    />
+                  </View>
+
+                  <ButtonGroup title="Завершить регистрацию" click={finishRegisterHandler} />
                 </View>
             }
 
@@ -239,5 +350,39 @@ const styles = StyleSheet.create({
     fontSize: 16,
     letterSpacing: 0.32,
     marginTop: 5
-  }
+  },
+
+  inputGroup: {
+    width: '100%',
+    height: 60,
+    borderColor: '#eee',
+    backgroundColor: '#eee',
+    elevation: 5,
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20
+  },
+  inputGroup__input: {
+    height: '100%',
+    fontFamily: 'Gilroy-Medium',
+    fontSize: 15,
+    paddingRight: 20,
+    letterSpacing: 0.3,
+    color: '#000',
+    flex: 4,
+  },
+  inputGroupImage: {
+    height: '100%',
+    maxWidth: 60,
+    minWidth: 60,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputGroupImage__icon: {
+    height: 24,
+    width: 24
+  },
 });

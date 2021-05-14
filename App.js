@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import * as Location from "expo-location";
+import firebase from 'firebase/app'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Alert, Text, View} from 'react-native';
@@ -19,8 +20,6 @@ import {
 } from './src/pages'
 
 import MyLoadingApp from "./src/components/MyLoadingApp";
-import AppLoading from "expo-app-loading";
-
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -32,6 +31,20 @@ let customFonts = {
 };
 
 const Stack = createStackNavigator();
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBZ5gMw4gVnR1gmCkdCrDz6gw-R2jxVG9U",
+  authDomain: "myplacer-1593b.firebaseapp.com",
+  projectId: "myplacer-1593b",
+  storageBucket: "myplacer-1593b.appspot.com",
+  messagingSenderId: "1087593687763",
+  appId: "1:1087593687763:web:80dba23c097058598f0226",
+  measurementId: "G-8ET9TN3FRT"
+};
+
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default function App() {
   const [font, setFont] = useState(false);
