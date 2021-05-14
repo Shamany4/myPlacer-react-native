@@ -1,10 +1,10 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from "react-native";
 
-export default function AvatarGroup() {
+export default function AvatarGroup({userName}) {
   return(
     <View style={styles.avatar}>
-      <Text style={styles.avatar__name}>Майкл</Text>
+      <Text style={styles.avatar__name}>{userName}</Text>
       <Image
         style={styles.avatar__image}
         source={{

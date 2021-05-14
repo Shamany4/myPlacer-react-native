@@ -18,6 +18,7 @@ export default function HomeScreen({route, navigation}) {
   const {
     location,
     currentDay,
+    name,
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -103,7 +104,7 @@ export default function HomeScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView>
 
-          <HeaderGroup />
+          <HeaderGroup userName={name}/>
           <TitlePage title="Главная"/>
           <SubtitlePage title="Рядом с вами"/>
 

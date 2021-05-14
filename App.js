@@ -1,23 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import { StatusBar } from 'expo-status-bar';
+import React, {useEffect, useState} from 'react';
+import {StatusBar} from 'expo-status-bar';
 import * as Font from 'expo-font';
 import * as Location from "expo-location";
 import firebase from 'firebase/app'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import {Alert, Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {Alert} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
-  HomeScreen,
-  SearchScreen,
+  CabinetScreen,
   CategoryScreen,
   FavoritesScreen,
-  CabinetScreen,
-  LoginScreen,
-  RegisterScreen,
+  HomeScreen,
   ItemInfoScreen,
+  LoginScreen,
   OneCategoryScreen,
-} from './src/pages'
+  RegisterScreen,
+  SearchScreen
+} from './src/pages';
 
 import MyLoadingApp from "./src/components/MyLoadingApp";
 
@@ -38,8 +39,8 @@ const firebaseConfig = {
   projectId: "myplacer-1593b",
   storageBucket: "myplacer-1593b.appspot.com",
   messagingSenderId: "1087593687763",
-  appId: "1:1087593687763:web:80dba23c097058598f0226",
-  measurementId: "G-8ET9TN3FRT"
+  appId: "1:1087593687763:web:aea46bb5fe734c418f0226",
+  measurementId: "G-63H7MQ1DXM"
 };
 
 if (firebase.apps.length === 0) {
@@ -50,6 +51,7 @@ export default function App() {
   const [font, setFont] = useState(false);
   const [location, setLocation] = useState(null);
   const [dayWeek, setDayWeek] = useState('');
+  const [authenticated, setAuthenticated] = useState(false);
 
   async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
@@ -82,41 +84,90 @@ export default function App() {
     setDayWeek(arrDaysWeek[countDayWeek]);
   }, []);
 
+  // Find user ID in local storage
+  useEffect(() => {
+    (async () => {
+      try {
+        const value = await AsyncStorage.getItem('@userId')
+        if(value !== null) {
+          setAuthenticated(true);
+        } else {
+          setAuthenticated(false);
+        }
+      } catch(e) {
+        Alert.alert(e);
+      }
+    })();
+  }, []);
+
+
+
+  // Handle user state changes
+  // function onAuthStateChanged(user) {
+  //   setUser(user);
+  //   if (initializing) {
+  //     setInitializing(false);
+  //   }
+  // }
+  //
+  // useEffect(() => {
+  //   return firebase.auth().onAuthStateChanged(onAuthStateChanged); // unsubscribe on unmount
+  // }, []);
+
+  // console.log(firebase.auth().currentUser.uid);
+
+  // firebase.firestore().collection('users')
+  //   .doc(firebase.auth().currentUser.uid)
+  //   .get()
+  //   .then(querySnapshot => {
+  //     console.log(querySnapshot.data().name)
+  //   });
+
   if (font && location && dayWeek) {
-    return(
-      <NavigationContainer>
-        <StatusBar style="auto"/>
-        <Stack.Navigator initialRouteName="Register">
-          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-          <Stack.Screen name="Home" component={HomeScreen}
-                        options={{ headerShown: false }}
-                        initialParams={{ location: location, currentDay: dayWeek }}
-          />
-          <Stack.Screen name="Search" component={SearchScreen}
-                        options={{ headerShown: false }}
-                        initialParams={{ location: location, currentDay: dayWeek }}
-          />
-          <Stack.Screen name="Category" component={CategoryScreen}
-                        options={{ headerShown: false }}
-                        initialParams={{ location: location, currentDay: dayWeek }}
-          />
-          <Stack.Screen name="Favorites" component={FavoritesScreen}
-                        options={{ headerShown: false }}
-          />
-          <Stack.Screen name="Cabinet" component={CabinetScreen}
-                        options={{ headerShown: false }}
-          />
-          <Stack.Screen name="Info" component={ItemInfoScreen}
-                        options={{ headerShown: false }}
-          />
-          <Stack.Screen name="OneCategory" component={OneCategoryScreen}
-                        options={{ headerShown: false }}
-                        initialParams={{ location: location, currentDay: dayWeek }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    );
+    if (authenticated) {
+      return (
+        <NavigationContainer>
+          <StatusBar style="auto"/>
+          <Stack.Navigator initialRouteName="Register">
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+            <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+      );
+    } else {
+      return (
+        <NavigationContainer>
+          <StatusBar style="auto"/>
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={HomeScreen}
+                          options={{ headerShown: false }}
+                          initialParams={{ location: location, currentDay: dayWeek, name: 'Антон' }}
+            />
+            <Stack.Screen name="Search" component={SearchScreen}
+                          options={{ headerShown: false }}
+                          initialParams={{ location: location, currentDay: dayWeek }}
+            />
+            <Stack.Screen name="Category" component={CategoryScreen}
+                          options={{ headerShown: false }}
+                          initialParams={{ location: location, currentDay: dayWeek }}
+            />
+            <Stack.Screen name="Favorites" component={FavoritesScreen}
+                          options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Cabinet" component={CabinetScreen}
+                          options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Info" component={ItemInfoScreen}
+                          options={{ headerShown: false }}
+            />
+            <Stack.Screen name="OneCategory" component={OneCategoryScreen}
+                          options={{ headerShown: false }}
+                          initialParams={{ location: location, currentDay: dayWeek }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      );
+    }
   } else {
     return(
       <MyLoadingApp title="Получаем необходимые данные"/>

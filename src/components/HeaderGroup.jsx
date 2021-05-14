@@ -6,7 +6,7 @@ import 'moment/locale/ru';
 import DateGroup from './DateGroup';
 import AvatarGroup from "./AvatarGroup";
 
-export default function HeaderGroup({ }) {
+export default function HeaderGroup({ userName }) {
 
   const [dayWeek, setDayWeek] = useState('Воскресенье');
   const [dayMonth, setDayMonth] = useState('мая');
@@ -22,7 +22,7 @@ export default function HeaderGroup({ }) {
   return (
     <View style={styles.header}>
       <DateGroup dayWeek={dayWeek} dayMonth={dayMonth} />
-      <AvatarGroup />
+      <AvatarGroup userName={userName}/>
     </View>
   );
 }

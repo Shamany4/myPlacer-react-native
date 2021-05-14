@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Image, ScrollView, Alert} from 'react-native';
-import CryptoJS from 'crypto-js/md5';
 import firebase from "firebase";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 import InputGroup from "../components/InputGroup";
@@ -61,7 +61,7 @@ export default function LoginScreen({navigation}) {
   const onSignUp = () => {
     const  { email, pass, name, age, phone } = userData;
     firebase.auth().createUserWithEmailAndPassword(email, pass)
-      .then((result) => {
+      .then(() => {
         firebase.firestore().collection('users')
           .doc(firebase.auth().currentUser.uid)
           .set({
@@ -69,6 +69,10 @@ export default function LoginScreen({navigation}) {
             email,
             age,
             phone
+          })
+          .then(async () => {
+            await AsyncStorage.setItem('@userId', firebase.auth().currentUser.uid)
+            navigation.navigate('Home');
           })
       })
       .catch((error) => {
@@ -178,7 +182,6 @@ export default function LoginScreen({navigation}) {
         break;
     }
   }
-
 
 
   return(
