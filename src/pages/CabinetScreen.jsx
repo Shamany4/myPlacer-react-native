@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StyleSheet, View, ScrollView, Text, Image, TouchableHighlight} from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import firebase from "firebase";
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
@@ -8,7 +10,19 @@ import SubtitlePage from "../components/SubtitlePage";
 import InputGroup from "../components/InputGroup";
 
 export default function CabinetScreen({navigation}) {
+
+
   const iconInputPath = '../assets/icons/';
+
+  const logOutHandler = () => {
+    firebase.auth()
+      .signOut()
+      .then(async () => {
+        await AsyncStorage.removeItem('@userId');
+        navigation.navigate('Register');
+      })
+  }
+
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
@@ -26,8 +40,8 @@ export default function CabinetScreen({navigation}) {
             />
             <View style={styles.cabinetEditGroup}>
               <Text style={styles.cabinetEditGroup__text}>Майкл</Text>
-              <TouchableHighlight onPress={() => navigation.navigate('Home')}>
-                <Image style={styles.cabinetEditGroup__icon} source={require('../assets/icons/edit.png')}/>
+              <TouchableHighlight onPress={logOutHandler}>
+                <Text style={styles.cabinetEditGroup__exit}>Выход</Text>
               </TouchableHighlight>
             </View>
           </View>
@@ -101,10 +115,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Gilroy-SemiBold',
     fontSize: 18
   },
-  cabinetEditGroup__icon: {
-    width: 18,
-    height: 19,
-    marginLeft: 15
+  cabinetEditGroup__exit: {
+    fontFamily: 'Gilroy-Medium',
+    fontSize: 16,
+    textDecorationLine: 'underline',
+    marginLeft: 5
   },
   cabinetInfoGroup: {
     display: 'flex',

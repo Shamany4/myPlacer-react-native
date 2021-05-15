@@ -52,6 +52,8 @@ export default function App() {
   const [location, setLocation] = useState(null);
   const [dayWeek, setDayWeek] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
+  const [userID, setUserID] = useState(null);
+  const [user, setUser] = useState(null);
 
   async function LoadAsyncFonts() {
     await Font.loadAsync(customFonts);
@@ -84,93 +86,83 @@ export default function App() {
     setDayWeek(arrDaysWeek[countDayWeek]);
   }, []);
 
-  // Find user ID in local storage
+  // Find user ID in local storage and set info for current user
   useEffect(() => {
     (async () => {
-      try {
-        const value = await AsyncStorage.getItem('@userId')
-        if(value !== null) {
-          setAuthenticated(true);
-        } else {
-          setAuthenticated(false);
-        }
-      } catch(e) {
-        Alert.alert(e);
+      let value = await AsyncStorage.getItem('@userId');
+      if(value !== null) {
+        setUserID(value);
+        setAuthenticated(true);
+        getUserCollection(value);
+      } else {
+        setUserID(null);
+        setAuthenticated(false);
       }
     })();
   }, []);
 
+  const getUserCollection = (user_id) => {
+    firebase.firestore().collection('users')
+      .doc(user_id)
+      .get()
+      .then((result) => {
+        setUser(result.data());
+      })
+  }
 
 
-  // Handle user state changes
-  // function onAuthStateChanged(user) {
-  //   setUser(user);
-  //   if (initializing) {
-  //     setInitializing(false);
-  //   }
-  // }
-  //
-  // useEffect(() => {
-  //   return firebase.auth().onAuthStateChanged(onAuthStateChanged); // unsubscribe on unmount
-  // }, []);
-
-  // console.log(firebase.auth().currentUser.uid);
-
-  // firebase.firestore().collection('users')
-  //   .doc(firebase.auth().currentUser.uid)
-  //   .get()
-  //   .then(querySnapshot => {
-  //     console.log(querySnapshot.data().name)
-  //   });
-
-  if (font && location && dayWeek) {
-    if (authenticated) {
-      return (
-        <NavigationContainer>
-          <StatusBar style="auto"/>
-          <Stack.Navigator initialRouteName="Register">
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-            <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-          </Stack.Navigator>
-        </NavigationContainer>
-      );
-    } else {
-      return (
-        <NavigationContainer>
-          <StatusBar style="auto"/>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={HomeScreen}
-                          options={{ headerShown: false }}
-                          initialParams={{ location: location, currentDay: dayWeek, name: 'Антон' }}
-            />
-            <Stack.Screen name="Search" component={SearchScreen}
-                          options={{ headerShown: false }}
-                          initialParams={{ location: location, currentDay: dayWeek }}
-            />
-            <Stack.Screen name="Category" component={CategoryScreen}
-                          options={{ headerShown: false }}
-                          initialParams={{ location: location, currentDay: dayWeek }}
-            />
-            <Stack.Screen name="Favorites" component={FavoritesScreen}
-                          options={{ headerShown: false }}
-            />
-            <Stack.Screen name="Cabinet" component={CabinetScreen}
-                          options={{ headerShown: false }}
-            />
-            <Stack.Screen name="Info" component={ItemInfoScreen}
-                          options={{ headerShown: false }}
-            />
-            <Stack.Screen name="OneCategory" component={OneCategoryScreen}
-                          options={{ headerShown: false }}
-                          initialParams={{ location: location, currentDay: dayWeek }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      );
-    }
-  } else {
+  if (!font && !location && !dayWeek) {
+    return <MyLoadingApp title="Получаем необходимые данные" />
+  }
+  if (!user) {
+    return <MyLoadingApp title="Получаем пользовательские данные" />
+  }
+  if (authenticated) {
     return(
-      <MyLoadingApp title="Получаем необходимые данные"/>
+      <NavigationContainer>
+        <StatusBar style="auto"/>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Home" component={HomeScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location, dayWeek, name: user.name }}
+          />
+          <Stack.Screen name="Search" component={SearchScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location, dayWeek }}
+          />
+          <Stack.Screen name="Category" component={CategoryScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location, dayWeek }}
+          />
+          <Stack.Screen name="Favorites" component={FavoritesScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Cabinet" component={CabinetScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Info" component={ItemInfoScreen}
+                        options={{ headerShown: false }}
+          />
+          <Stack.Screen name="OneCategory" component={OneCategoryScreen}
+                        options={{ headerShown: false }}
+                        initialParams={{ location, dayWeek }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
+  } else {
+    return (<NavigationContainer>
+      <StatusBar style="auto"/>
+      <Stack.Navigator initialRouteName="Register">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+        <Stack.Screen name="Home" component={HomeScreen}
+                      options={{ headerShown: false }}
+                      initialParams={{ location, dayWeek, name: user.name }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>);
   }
 }
