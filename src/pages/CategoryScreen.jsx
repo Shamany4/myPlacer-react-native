@@ -9,8 +9,7 @@ import CategoryGroup from "../components/CategoryGroup";
 
 export default function CategoryScreen({route, navigation}) {
   const {
-    location,
-    currentDay,
+    name
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -61,7 +60,7 @@ export default function CategoryScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView style={styles.category}>
 
-          <HeaderGroup/>
+          <HeaderGroup userName={name}/>
           <TitlePage title="Категории"/>
 
           <View style={styles.categoryWrapper}>

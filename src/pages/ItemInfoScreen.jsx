@@ -11,6 +11,9 @@ import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 
 export default function ItemInfoScreen({route, navigation}) {
+  const {
+    username
+  } = route.params;
 
   const iconInputPath = '../assets/icons/';
 
@@ -41,7 +44,7 @@ export default function ItemInfoScreen({route, navigation}) {
         <View style={styles.container}>
           <ScrollView style={styles.info}>
 
-            <HeaderGroup/>
+            <HeaderGroup userName={username}/>
 
             <View style={styles.infoTitleGroup}>
               <View style={{flex: 5}}>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, View, ScrollView, Alert, Text, Button, Image, TouchableHighlight} from 'react-native';
+import {StyleSheet, View, ScrollView, Image, TouchableHighlight} from 'react-native';
 import Swiper from "react-native-web-swiper";
 import haversine from 'haversine'
 import categoryJSON from '../category.json';
@@ -11,7 +11,6 @@ import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 import MyLoadingApp from "../components/MyLoadingApp";
-import ButtonGroup from "../components/ButtonGroup";
 
 export default function HomeScreen({route, navigation}) {
 
@@ -104,7 +103,7 @@ export default function HomeScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView>
 
-          <HeaderGroup userName={name}/>
+          <HeaderGroup userName={name} />
           <TitlePage title="Главная"/>
           <SubtitlePage title="Рядом с вами"/>
 

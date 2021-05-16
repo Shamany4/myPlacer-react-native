@@ -6,7 +6,11 @@ import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 import ItemCard from "../components/ItemCard";
 
-export default function FavoritesScreen({navigation}) {
+export default function FavoritesScreen({route, navigation}) {
+  const {
+    name
+  } = route.params;
+
   const iconWhitePath = '../assets/whiteBuildings/';
   return (
     <View style={styles.application}>
@@ -14,7 +18,7 @@ export default function FavoritesScreen({navigation}) {
       <View style={styles.container}>
         <ScrollView style={styles.favorites}>
 
-          <HeaderGroup/>
+          <HeaderGroup userName={name}/>
           <TitlePage title="Избранное"/>
 
           <View style={styles.popularWrapper}>

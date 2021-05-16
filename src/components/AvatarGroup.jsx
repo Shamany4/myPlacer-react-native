@@ -1,16 +1,14 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 
 export default function AvatarGroup({userName}) {
+
   return(
     <View style={styles.avatar}>
       <Text style={styles.avatar__name}>{userName}</Text>
-      <Image
-        style={styles.avatar__image}
-        source={{
-          uri: 'https://sun9-54.userapi.com/impf/c849224/v849224749/1d2f6f/-p1ekz9Xlv8.jpg?size=720x1080&quality=96&sign=a60c91d2c7a99e0aa65830162d8ae1a3&type=album',
-        }}
-      />
+      <View style={styles.avatar__image}>
+        <Text style={styles.avatar__symbol}>{userName[0].toUpperCase()}</Text>
+      </View>
     </View>
   );
 }
@@ -29,8 +27,17 @@ const styles = StyleSheet.create({
   avatar__image: {
     height: 50,
     width: 50,
-    backgroundColor: 'gray',
+    backgroundColor: '#f4f4f4',
     borderRadius: 10,
-    marginLeft: 13
+    marginLeft: 13,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 3,
+  },
+  avatar__symbol: {
+    fontSize: 30,
+    fontFamily: 'Gilroy-Black',
+    color: '#000'
   }
 })

@@ -10,9 +10,11 @@ import categoryJSON from "../category.json";
 
 
 export default function SearchScreen({route, navigation}) {
+
   const {
     location,
     currentDay,
+    name
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -74,7 +76,7 @@ export default function SearchScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView style={styles.search}>
 
-          <HeaderGroup/>
+          <HeaderGroup userName={name}/>
           <TitlePage title="Поиск"/>
 
           {

@@ -15,7 +15,8 @@ export default function OneCategoryScreen({route, navigation}) {
   const {
     location,
     currentDay,
-    categoryName
+    categoryName,
+    name
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -58,7 +59,7 @@ export default function OneCategoryScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView>
 
-          <HeaderGroup />
+          <HeaderGroup userName={name}/>
           <TitlePage title={categoryName} />
 
           <View style={styles.oneCategoryGroupWrapper}>

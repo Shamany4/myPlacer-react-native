@@ -9,8 +9,10 @@ import Menu from "../components/Menu";
 import SubtitlePage from "../components/SubtitlePage";
 import InputGroup from "../components/InputGroup";
 
-export default function CabinetScreen({navigation}) {
-
+export default function CabinetScreen({route, navigation}) {
+  const {
+    name
+  } = route.params;
 
   const iconInputPath = '../assets/icons/';
 
@@ -29,7 +31,7 @@ export default function CabinetScreen({navigation}) {
       <View style={styles.container}>
         <ScrollView style={styles.cabinet}>
 
-          <HeaderGroup/>
+          <HeaderGroup userName={name}/>
           <TitlePage title="Личный кабинет"/>
 
           <View style={styles.cabinetImageGroup}>

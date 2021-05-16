@@ -71,8 +71,7 @@ export default function LoginScreen({navigation}) {
             phone
           })
           .then(async () => {
-            await AsyncStorage.setItem('@userId', firebase.auth().currentUser.uid)
-            navigation.navigate('Home');
+            await AsyncStorage.setItem('@userId', firebase.auth().currentUser.uid);
           })
       })
       .catch((error) => {
