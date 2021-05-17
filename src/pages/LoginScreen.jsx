@@ -1,11 +1,95 @@
-import React from "react";
-import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
+import React, {useState} from "react";
+import {StyleSheet, View, Text, Image, ScrollView, Alert} from 'react-native';
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
+import SubtitlePage from "../components/SubtitlePage";
+import firebase from "firebase";
+import * as SecureStore from "expo-secure-store";
 
 
 export default function LoginScreen({navigation}) {
   const iconInputPath = '../assets/icons/';
+
+  const initParams = {
+    email: '',
+    pass: '',
+  }
+  const validFields = {
+    email: false,
+    pass: false,
+  }
+  const hideFields = {
+    pass: true,
+  }
+
+  const [userData, setUserData] = useState(initParams);
+  const [hideTextInput, setHideTextInput] = useState(hideFields);
+  const [successInput, setSuccessInput] = useState(validFields);
+  const [errorInput, setErrorInput] = useState(validFields);
+
+  const setNextStepRegHandler = () => {
+    if (userData.email && userData.pass) {
+      onSignIn();
+    } else {
+      setErrorInput({...errorInput, email: true, pass: true });
+    }
+  }
+
+  const changeInputHandler = (value, typeInput) => {
+    switch (typeInput) {
+      case 'email':
+        if (/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(value) && value !== '') {
+          setUserData({...userData, email: value });
+          setSuccessInput({...successInput, email: true});
+          setErrorInput({...errorInput, email: false});
+        } else {
+          setUserData({...userData, email: '' });
+          setSuccessInput({...successInput, email: false});
+          setErrorInput({...errorInput, email: true});
+        }
+        break;
+      case 'pass':
+        if (/(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z]*([0-9#$-/:-?{-~!"^_`\[\]]))(?=[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]*[a-zA-Z])[#$-/:-?{-~!"^_`\[\]a-zA-Z0-9]{8,}/.test(value) && value !== '') {
+          setUserData({...userData, pass: value });
+          setSuccessInput({...successInput, pass: true});
+          setErrorInput({...errorInput, pass: false});
+        } else {
+          setUserData({...userData, pass: '' });
+          setSuccessInput({...successInput, pass: false});
+          setErrorInput({...errorInput, pass: true});
+        }
+        break;
+    }
+  }
+
+  const onSignIn = () => {
+    const  { email, pass } = userData;
+    firebase.auth().signInWithEmailAndPassword(email, pass)
+      .then(() => {
+        firebase.firestore().collection('users')
+          .doc(firebase.auth().currentUser.uid)
+          .get()
+          .then(async () => {
+            await SecureStore.setItemAsync('userID', firebase.auth().currentUser.uid);
+            navigation.navigate('Home');
+          })
+      })
+      .catch((error) => {
+        Alert.alert('Ошибка авторизации', 'Не удалось найти пользователя по данной паре логин/пароль. Попробуйте попытку снова.');
+      })
+  }
+
+  const showPassHandler = (type) => {
+    switch (type) {
+      case 'pass':
+        setHideTextInput({...hideTextInput, pass: !hideTextInput.pass});
+        break;
+      case 'passConfirm':
+        setHideTextInput({...hideTextInput, confirm: !hideTextInput.confirm});
+        break;
+    }
+  }
+
   return(
     <ScrollView>
       <View style={styles.login}>
@@ -21,11 +105,26 @@ export default function LoginScreen({navigation}) {
         </View>
 
         <View style={styles.container}>
+          <SubtitlePage title="Данные для входа"/>
           <View style={styles.loginForm}>
             <View>
-              <InputGroup placeholder="Ваш email" secure={false} icon={require(iconInputPath + 'email.png')}/>
-              <InputGroup placeholder="Ваш пароль" secure={true} icon={require(iconInputPath + 'pass.png')}/>
-              <ButtonGroup title="Войти"/>
+              <InputGroup placeholder="Ваш email"
+                          secure={false}
+                          icon={require(iconInputPath + 'email.png')}
+                          validData={successInput.email}
+                          invalidData={errorInput.email}
+                          changeText={(text) => changeInputHandler(text, 'email')}
+              />
+              <InputGroup placeholder="Ваш пароль"
+                          secure={hideTextInput.pass}
+                          icon={require(iconInputPath + 'pass.png')}
+                          secondIcon={require(iconInputPath + 'eye.png')}
+                          validData={successInput.pass}
+                          invalidData={errorInput.pass}
+                          iconClick={() => showPassHandler('pass')}
+                          changeText={(text) => changeInputHandler(text, 'pass')}
+              />
+              <ButtonGroup title="Войти" click={setNextStepRegHandler}/>
             </View>
 
             <View style={styles.loginFooter}>
@@ -55,7 +154,7 @@ const styles = StyleSheet.create({
     height: 230,
     backgroundColor: 'gray',
     position: 'relative',
-    marginBottom: 60
+    marginBottom: '15%'
   },
   loginImageGroupBlack: {
     position: 'absolute',
