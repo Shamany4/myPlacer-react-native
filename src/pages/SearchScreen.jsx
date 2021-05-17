@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView, TextInput, Image, Text, TouchableHighlight} from 'react-native';
+import categoryJSON from "../category.json";
+import * as SecureStore from "expo-secure-store";
+import firebase from "firebase";
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 import ItemCard from "../components/ItemCard";
 import haversine from "haversine";
-import categoryJSON from "../category.json";
+import MyLoadingApp from "../components/MyLoadingApp";
 
 
 export default function SearchScreen({route, navigation}) {
@@ -14,7 +17,6 @@ export default function SearchScreen({route, navigation}) {
   const {
     location,
     currentDay,
-    name
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -22,6 +24,7 @@ export default function SearchScreen({route, navigation}) {
 
   const [data, setData] = useState([]);
   const [items, setItems] = useState([]);
+  const [user, setUser] = useState(null);
   const [search, setSearch] = useState(false);
   const [value, setValue] = useState('');
   const [failSearch, setFailSearch] = useState(false);
@@ -69,14 +72,31 @@ export default function SearchScreen({route, navigation}) {
     }
   }, [items]);
 
+  useEffect(() => {
+    (async () => {
+      let result = await SecureStore.getItemAsync('userID');
+      if (result) {
+        firebase.firestore().collection('users')
+          .doc(result)
+          .get()
+          .then((response) => {
+            setUser(response.data());
+          })
+      }
+    })();
+  }, []);
 
+
+  if (!user) {
+    return <MyLoadingApp title="Загружаем пользовательские данные"/>
+  }
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
       <View style={styles.container}>
         <ScrollView style={styles.search}>
 
-          <HeaderGroup userName={name}/>
+          <HeaderGroup userName={user.name}/>
           <TitlePage title="Поиск"/>
 
           {

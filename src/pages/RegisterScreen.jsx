@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {StyleSheet, View, Text, Image, ScrollView, Alert} from 'react-native';
 import firebase from "firebase";
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
 
 import InputGroup from "../components/InputGroup";
 import ButtonGroup from "../components/ButtonGroup";
 import SubtitlePage from "../components/SubtitlePage";
 import TextInputMask from "react-native-masked-text/lib/text-input-mask";
+import * as SecureStore from 'expo-secure-store';
+import moment from "moment";
 
 
 export default function LoginScreen({navigation}) {
@@ -68,10 +68,12 @@ export default function LoginScreen({navigation}) {
             name,
             email,
             age,
-            phone
+            phone,
+            dateRegistration: moment().format('ll')
           })
           .then(async () => {
-            await AsyncStorage.setItem('@userId', firebase.auth().currentUser.uid);
+            await SecureStore.setItemAsync('userID', firebase.auth().currentUser.uid);
+            navigation.navigate('Home');
           })
       })
       .catch((error) => {

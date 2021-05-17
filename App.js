@@ -6,10 +6,9 @@ import firebase from 'firebase/app'
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Alert, View} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as SecureStore from 'expo-secure-store';
 
 import {
-  MainScreen,
   HomeScreen,
   SearchScreen,
   CategoryScreen,
@@ -19,11 +18,9 @@ import {
   RegisterScreen,
   ItemInfoScreen,
   OneCategoryScreen,
-  TestPage,
-  TestPage2
 } from './src/pages';
-
 import MyLoadingApp from "./src/components/MyLoadingApp";
+
 
 let customFonts = {
   'Gilroy-Regular': require('./assets/fonts/Gilroy-Regular.ttf'),
@@ -50,13 +47,13 @@ if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
 
+
 export default function App() {
   const [font, setFont] = useState(false);
   const [location, setLocation] = useState(null);
-  const [dayWeek, setDayWeek] = useState('');
+  const [dayWeek, setDayWeek] = useState(null);
 
   const [authenticated, setAuthenticated] = useState(false);
-  const [userID, setUserID] = useState(null);
   const [user, setUser] = useState(null);
 
   async function LoadAsyncFonts() {
@@ -90,73 +87,88 @@ export default function App() {
     setDayWeek(arrDaysWeek[countDayWeek]);
   }, []);
 
-  // Find user ID in local storage and set info for current user
   useEffect(() => {
     (async () => {
-      let value = await AsyncStorage.getItem('@userId');
-      if(value !== null) {
-        setUserID(value);
+      let result = await SecureStore.getItemAsync('userID');
+      if (result) {
         setAuthenticated(true);
-        getUserCollection(value);
+        firebase.firestore().collection('users')
+          .doc(result)
+          .get()
+          .then(response => {
+            setUser(response.data())
+          })
       } else {
-        setUserID(null);
+        setUser(null);
         setAuthenticated(false);
       }
     })();
   }, []);
 
-  const getUserCollection = (user_id) => {
-    firebase.firestore().collection('users')
-      .doc(user_id)
-      .get()
-      .then((result) => {
-        setUser(result.data());
-      })
-  }
-
-  console.log(location)
-  console.log(dayWeek)
-
   if (font && location && dayWeek) {
     return (
       <NavigationContainer>
         <StatusBar style="auto" />
-        <Stack.Navigator initialRouteName="Main">
+        <Stack.Navigator initialRouteName="Login">
           {
-            authenticated ? (
+            !authenticated ? (
               <>
                 <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
                 <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-              </>
-            ) : (
-              <>
                 <Stack.Screen name="Home" component={HomeScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ location, dayWeek, name: 'Aasldkj' }}
+                              initialParams={{ location, dayWeek }}
                 />
                 <Stack.Screen name="Search" component={SearchScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ location, dayWeek, name: 'Aasldkj' }}
+                              initialParams={{ location, dayWeek }}
                 />
                 <Stack.Screen name="Category" component={CategoryScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ name: 'Aasldkj' }}
                 />
                 <Stack.Screen name="Favorites" component={FavoritesScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ location, dayWeek, name: 'Aasldkj' }}
+                              initialParams={{ location, dayWeek }}
                 />
                 <Stack.Screen name="Cabinet" component={CabinetScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ name: 'Aasldkj' }}
                 />
                 <Stack.Screen name="Info" component={ItemInfoScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ username: 'Aasldkj' }}
                 />
                 <Stack.Screen name="OneCategory" component={OneCategoryScreen}
                               options={{ headerShown: false }}
-                              initialParams={{ location, dayWeek, name: 'Aasldkj' }}
+                              initialParams={{ location, dayWeek }}
+                />
+              </>
+            ) : (
+              <>
+                <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+                <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+                <Stack.Screen name="Home" component={HomeScreen}
+                              options={{ headerShown: false }}
+                              initialParams={{ location, dayWeek }}
+                />
+                <Stack.Screen name="Search" component={SearchScreen}
+                              options={{ headerShown: false }}
+                              initialParams={{ location, dayWeek }}
+                />
+                <Stack.Screen name="Category" component={CategoryScreen}
+                              options={{ headerShown: false }}
+                />
+                <Stack.Screen name="Favorites" component={FavoritesScreen}
+                              options={{ headerShown: false }}
+                              initialParams={{ location, dayWeek }}
+                />
+                <Stack.Screen name="Cabinet" component={CabinetScreen}
+                              options={{ headerShown: false }}
+                />
+                <Stack.Screen name="Info" component={ItemInfoScreen}
+                              options={{ headerShown: false }}
+                />
+                <Stack.Screen name="OneCategory" component={OneCategoryScreen}
+                              options={{ headerShown: false }}
+                              initialParams={{ location, dayWeek }}
                 />
               </>
             )

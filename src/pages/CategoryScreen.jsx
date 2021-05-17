@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView, Text, Image} from 'react-native';
 import categoryJSON from "../category.json";
 
@@ -6,11 +6,13 @@ import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 import CategoryGroup from "../components/CategoryGroup";
+import * as SecureStore from "expo-secure-store";
+import firebase from "firebase";
+import MyLoadingApp from "../components/MyLoadingApp";
 
-export default function CategoryScreen({route, navigation}) {
-  const {
-    name
-  } = route.params;
+export default function CategoryScreen({navigation}) {
+
+  const [user, setUser] = useState(null);
 
   const iconBuildingPath = '../assets/buildings/';
   const iconWhitePath = '../assets/whiteBuildings/';
@@ -54,13 +56,31 @@ export default function CategoryScreen({route, navigation}) {
     }
   }
 
+  useEffect(() => {
+    (async () => {
+      let result = await SecureStore.getItemAsync('userID');
+      if (result) {
+        firebase.firestore().collection('users')
+          .doc(result)
+          .get()
+          .then((response) => {
+            setUser(response.data());
+          })
+      }
+    })();
+  }, []);
+
+
+  if (!user) {
+    return <MyLoadingApp title="Загружаем пользовательские данные"/>
+  }
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
       <View style={styles.container}>
         <ScrollView style={styles.category}>
 
-          <HeaderGroup userName={name}/>
+          <HeaderGroup userName={user.name}/>
           <TitlePage title="Категории"/>
 
           <View style={styles.categoryWrapper}>

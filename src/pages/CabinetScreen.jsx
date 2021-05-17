@@ -1,18 +1,18 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, ScrollView, Text, Image, TouchableHighlight} from 'react-native';
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import firebase from "firebase";
+import * as SecureStore from 'expo-secure-store';
 
 import HeaderGroup from '../components/HeaderGroup';
 import TitlePage from "../components/TitlePage";
 import Menu from "../components/Menu";
 import SubtitlePage from "../components/SubtitlePage";
 import InputGroup from "../components/InputGroup";
+import MyLoadingApp from "../components/MyLoadingApp";
 
-export default function CabinetScreen({route, navigation}) {
-  const {
-    name
-  } = route.params;
+export default function CabinetScreen({navigation}) {
+
+  const [user, setUser] = useState(null);
 
   const iconInputPath = '../assets/icons/';
 
@@ -20,18 +20,35 @@ export default function CabinetScreen({route, navigation}) {
     firebase.auth()
       .signOut()
       .then(async () => {
-        await AsyncStorage.removeItem('@userId');
-        navigation.navigate('Register');
+        await SecureStore.deleteItemAsync('userID');
+        navigation.navigate('Login');
       })
   }
 
+  useEffect(() => {
+    (async () => {
+      let result = await SecureStore.getItemAsync('userID');
+      if (result) {
+        firebase.firestore().collection('users')
+          .doc(result)
+          .get()
+          .then((response) => {
+            setUser(response.data());
+          })
+      }
+    })();
+  }, []);
+
+  if (!user) {
+    return <MyLoadingApp title="Загружаем пользовательские данные"/>
+  }
   return (
     <View style={styles.application}>
       <Menu navigation={navigation}/>
       <View style={styles.container}>
         <ScrollView style={styles.cabinet}>
 
-          <HeaderGroup userName={name}/>
+          <HeaderGroup userName={user.name}/>
           <TitlePage title="Личный кабинет"/>
 
           <View style={styles.cabinetImageGroup}>
@@ -41,38 +58,37 @@ export default function CabinetScreen({route, navigation}) {
                    }}
             />
             <View style={styles.cabinetEditGroup}>
-              <Text style={styles.cabinetEditGroup__text}>Майкл</Text>
+              <Text style={styles.cabinetEditGroup__text}>{user.name}</Text>
               <TouchableHighlight onPress={logOutHandler}>
                 <Text style={styles.cabinetEditGroup__exit}>Выход</Text>
               </TouchableHighlight>
             </View>
           </View>
 
-          <SubtitlePage title="Данные для входа"/>
+          <SubtitlePage title="Логин для входа"/>
           <View>
-            <InputGroup value="mikle-po4ta@mail.ru" secure={false} icon={require(iconInputPath + 'email.png')}
-                        secondIcon={require(iconInputPath + 'edit.png')}/>
-            <InputGroup value="*********************" secure={true} icon={require(iconInputPath + 'pass.png')} secondIcon={require(iconInputPath + 'edit.png')}/>
-            <InputGroup value="8 (383) 311-01-84" secure={false} icon={require(iconInputPath + 'phone.png')} secondIcon={require(iconInputPath + 'edit.png')}/>
+            <InputGroup value={user.email} secure={false}
+                        icon={require(iconInputPath + 'email.png')}
+            />
           </View>
 
           <SubtitlePage title="Контактные данные"/>
           <View>
             <View style={styles.cabinetInfoGroup}>
-              <Text style={styles.cabinetInfoGroup__title}>Город проживания:</Text>
-              <Text style={styles.cabinetInfoGroup__subtitle}>Новосибирск</Text>
+              <Text style={styles.cabinetInfoGroup__title}>Полное имя:</Text>
+              <Text style={styles.cabinetInfoGroup__subtitle}>{user.name}</Text>
             </View>
             <View style={styles.cabinetInfoGroup}>
-              <Text style={styles.cabinetInfoGroup__title}>Улица:</Text>
-              <Text style={styles.cabinetInfoGroup__subtitle}>Немировича-Данченко</Text>
+              <Text style={styles.cabinetInfoGroup__title}>Возраст:</Text>
+              <Text style={styles.cabinetInfoGroup__subtitle}>{user.age}</Text>
+            </View>
+            <View style={styles.cabinetInfoGroup}>
+              <Text style={styles.cabinetInfoGroup__title}>Телефон:</Text>
+              <Text style={styles.cabinetInfoGroup__subtitle}>{user.phone.toString()}</Text>
             </View>
             <View style={styles.cabinetInfoGroup}>
               <Text style={styles.cabinetInfoGroup__title}>Дата регистрации:</Text>
-              <Text style={styles.cabinetInfoGroup__subtitle}>15.04.2021</Text>
-            </View>
-            <View style={styles.cabinetInfoGroup}>
-              <Text style={styles.cabinetInfoGroup__title}>Дата рождения:</Text>
-              <Text style={styles.cabinetInfoGroup__subtitle}>21.06.1995</Text>
+              <Text style={styles.cabinetInfoGroup__subtitle}>{user.dateRegistration}</Text>
             </View>
           </View>
 

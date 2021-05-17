@@ -11,13 +11,14 @@ import SubtitlePage from "../components/SubtitlePage";
 import ItemCard from "../components/ItemCard";
 import Menu from "../components/Menu";
 import MyLoadingApp from "../components/MyLoadingApp";
+import * as SecureStore from "expo-secure-store";
+import firebase from "firebase";
 
 export default function HomeScreen({route, navigation}) {
 
   const {
     location,
     currentDay,
-    name,
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -25,6 +26,7 @@ export default function HomeScreen({route, navigation}) {
 
   const [isReady, setIsReady] = useState(false);
   const [items, setItems] = useState([]);
+  const [user, setUser] = useState(null);
   const [localItems, setLocalItems] = useState([]);
   const [errors, setErrors] = useState(null);
   const [emptyLocalItems, setEmptyLocalItems] = useState(false);
@@ -91,8 +93,25 @@ export default function HomeScreen({route, navigation}) {
     }
   }, [localItems]);
 
+  useEffect(() => {
+    (async () => {
+      let result = await SecureStore.getItemAsync('userID');
+      if (result) {
+        firebase.firestore().collection('users')
+          .doc(result)
+          .get()
+          .then((response) => {
+            setUser(response.data());
+          })
+      }
+    })();
+  }, []);
+
   if (errors) {
     return <MyLoadingApp title={errors} />
+  }
+  if (!user) {
+    return <MyLoadingApp title="Загружаем пользовательские данные"/>
   }
   if (!isReady) {
     return <MyLoadingApp title="Загружаем информацию о заведениях"/>
@@ -103,7 +122,7 @@ export default function HomeScreen({route, navigation}) {
       <View style={styles.container}>
         <ScrollView>
 
-          <HeaderGroup userName={name} />
+          <HeaderGroup userName={user.name} />
           <TitlePage title="Главная"/>
           <SubtitlePage title="Рядом с вами"/>
 
