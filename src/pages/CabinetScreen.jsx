@@ -52,11 +52,9 @@ export default function CabinetScreen({navigation}) {
           <TitlePage title="Личный кабинет"/>
 
           <View style={styles.cabinetImageGroup}>
-            <Image style={styles.cabinetImageGroup__image}
-                   source={{
-                     uri: 'https://sun9-54.userapi.com/impf/c849224/v849224749/1d2f6f/-p1ekz9Xlv8.jpg?size=720x1080&quality=96&sign=a60c91d2c7a99e0aa65830162d8ae1a3&type=album',
-                   }}
-            />
+            <View style={styles.avatar__image}>
+              <Text style={styles.avatar__symbol}>{user.name[0].toUpperCase()}</Text>
+            </View>
             <View style={styles.cabinetEditGroup}>
               <Text style={styles.cabinetEditGroup__text}>{user.name}</Text>
               <TouchableHighlight onPress={logOutHandler}>
@@ -118,10 +116,21 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginBottom: 10,
   },
-  cabinetImageGroup__image: {
-    width: 140,
-    height: 140,
+  avatar__image: {
+    height: 150,
+    width: 150,
+    backgroundColor: '#f4f4f4',
     borderRadius: 20,
+    marginLeft: 13,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 3,
+  },
+  avatar__symbol: {
+    fontSize: 80,
+    fontFamily: 'Gilroy-Black',
+    color: '#000'
   },
   cabinetEditGroup: {
     display: 'flex',
