@@ -221,6 +221,7 @@ export default function SearchScreen({route, navigation}) {
                   return <ItemCard open={true}
                                    title={el.name_ex.primary}
                                    type={type}
+                                   buildingID={el.id}
                                    address={el.address_name}
                                    image={el.external_content}
                                    desc={description}
