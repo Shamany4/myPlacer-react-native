@@ -39,7 +39,14 @@ export default function ItemInfoScreen({route, navigation}) {
   const favoriteHandler = async () => {
     let userID = await SecureStore.getItemAsync('userID');
     if (favorite) {
-      Alert.alert('Added!');
+      firebase.firestore().collection('favorites')
+        .doc(userID)
+        .collection('userFavorites')
+        .doc(buildingID)
+        .delete()
+        .then(() => {
+          setFavorite(false);
+        })
     } else {
       firebase.firestore().collection('favorites')
         .doc(userID)
@@ -58,16 +65,18 @@ export default function ItemInfoScreen({route, navigation}) {
       firebase.firestore().collection('favorites')
         .doc(userID)
         .collection('userFavorites')
+        .doc(buildingID)
         .get()
-        .then(result => {
-          result.forEach(el => {
-            if (el.data().buildingID === buildingID) {
-              setFavorite(true);
-            } else {
-              setFavorite(false);
-            }
-          })
+        .then((response) => {
+          if (response.data() === undefined) {
+            setFavorite(false);
+            setIsVisible(true);
+          } else {
+            setFavorite(true);
+            setIsVisible(true);
+          }
         })
+
     })();
   }, []);
 
