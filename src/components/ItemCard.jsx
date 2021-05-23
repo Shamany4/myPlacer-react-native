@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Image, TouchableHighlight} from "react-native";
 import moment from 'moment';
 import 'moment/locale/ru';
 
-export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, color, icon, navigate, address, username}) {
+export default function ItemCard({ buildingID, title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, color, icon, navigate, address, username}) {
 
   const [status, setStatus] = useState(false);
   const [close, setClose] = useState(false);
@@ -44,6 +44,7 @@ export default function ItemCard({ title, type, image, desc, timeWork, is_24x7, 
                         onPress={() =>
                           navigate.navigate('Info', {
                             name: title,
+                            buildingID: buildingID,
                             address: address,
                             image: image,
                             description: desc,

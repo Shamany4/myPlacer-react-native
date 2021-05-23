@@ -238,6 +238,7 @@ export default function HomeScreen({route, navigation}) {
                     return <SliderItem open={true}
                                        title={el.name_ex.primary}
                                        type={type}
+                                       buildingID={el.id}
                                        address={el.address_name}
                                        image={el.external_content}
                                        desc={description}
@@ -356,6 +357,7 @@ export default function HomeScreen({route, navigation}) {
                 });
 
                 return <ItemCard open={true}
+                                 buildingID={el.id}
                                  title={el.name_ex.primary}
                                  type={type}
                                  address={el.address_name}

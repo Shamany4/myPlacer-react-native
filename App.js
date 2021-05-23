@@ -91,7 +91,6 @@ export default function App() {
     (async () => {
       let result = await SecureStore.getItemAsync('userID');
       if (result) {
-        console.log(result)
         setAuthenticated(true);
         firebase.firestore().collection('users')
           .doc(result)
