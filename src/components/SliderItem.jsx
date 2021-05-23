@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Image, TouchableHighlight} from 'react-native';
 import moment from "moment";
 
-export default function SliderItem({colorCard, title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, color, icon, navigate, address}) {
+export default function SliderItem({colorCard, title, type, image, desc, timeWork, is_24x7, rating, contacts, contactsNull, distance, username, icon, navigate, address}) {
 
   const [status, setStatus] = useState(false);
   const [close, setClose] = useState(false);
@@ -51,7 +51,8 @@ export default function SliderItem({colorCard, title, type, image, desc, timeWor
                             contacts: contacts,
                             contactsNull: contactsNull,
                             close: close,
-                            is_24x7: is_24x7
+                            is_24x7: is_24x7,
+                            username: username
                           })}
 
     >

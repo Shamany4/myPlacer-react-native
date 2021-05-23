@@ -250,6 +250,7 @@ export default function HomeScreen({route, navigation}) {
                                        colorCard={color}
                                        icon={icon}
                                        navigate={navigation}
+                                       username={user.name}
                                        key={index}
                     />
                   })
@@ -369,6 +370,7 @@ export default function HomeScreen({route, navigation}) {
                                  color={color}
                                  icon={icon}
                                  navigate={navigation}
+                                 username={user.name}
                                  key={index}
                 />
               })

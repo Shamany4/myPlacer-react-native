@@ -91,6 +91,7 @@ export default function CategoryScreen({navigation}) {
                                       color={el.color}
                                       icon={icon}
                                       navigate={navigation}
+                                      username={user.name}
                                       key={index}
                 />
               })

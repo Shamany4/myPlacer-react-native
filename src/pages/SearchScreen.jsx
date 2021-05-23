@@ -233,6 +233,7 @@ export default function SearchScreen({route, navigation}) {
                                    color={color}
                                    icon={icon}
                                    navigate={navigation}
+                                   username={user.name}
                                    key={index}
                   />
                 })
