@@ -14,7 +14,7 @@ import ItemCard from "../components/ItemCard";
 export default function OneCategoryScreen({route, navigation}) {
   const {
     location,
-    currentDay,
+    dayWeek,
     categoryName,
     username
   } = route.params;
@@ -153,11 +153,12 @@ export default function OneCategoryScreen({route, navigation}) {
                 return <ItemCard open={true}
                                  title={el.name_ex.primary}
                                  type={type}
+                                 buildingID={el.id}
                                  address={el.address_name}
                                  image={el.external_content}
                                  desc={description}
                                  distance={haversine(start, end).toFixed(2)}
-                                 timeWork={el.schedule[currentDay]}
+                                 timeWork={el.schedule[dayWeek]}
                                  is_24x7={el.schedule.is_24x7}
                                  rating={rating}
                                  contactsNull={contactNull}
