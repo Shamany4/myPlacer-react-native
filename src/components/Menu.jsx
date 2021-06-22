@@ -4,19 +4,19 @@ import {Image, Text, StyleSheet, TouchableHighlight, View} from "react-native";
 export default function Menu({navigation}) {
   return(
     <View style={styles.navbar}>
-      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Home')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.push('Home')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/home.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Search')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.push('Search')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/search.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight style={styles.navbar__centralBtn} onPress={() => navigation.navigate('Category')}>
+      <TouchableHighlight style={styles.navbar__centralBtn} onPress={() => navigation.push('Category')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/iconsWhite/map.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Favorites')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.push('Favorites')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/like.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.navigate('Cabinet')}>
+      <TouchableHighlight underlayColor="#fff" style={styles.navbarIconGroup} onPress={() => navigation.push('Cabinet')}>
         <Image style={styles.navbarIconGroup__icon} source={require('../assets/icons/user.png')}/>
       </TouchableHighlight>
     </View>

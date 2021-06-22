@@ -18,7 +18,7 @@ export default function HomeScreen({route, navigation}) {
 
   const {
     location,
-    currentDay,
+    dayWeek,
   } = route.params;
 
   const iconBuildingPath = '../assets/buildings/';
@@ -243,7 +243,7 @@ export default function HomeScreen({route, navigation}) {
                                        image={el.external_content}
                                        desc={description}
                                        distance={haversine(start, end).toFixed(2)}
-                                       timeWork={el.schedule[currentDay]}
+                                       timeWork={el.schedule[dayWeek]}
                                        is_24x7={el.schedule.is_24x7}
                                        rating={rating}
                                        contactsNull={contactNull}
@@ -364,9 +364,9 @@ export default function HomeScreen({route, navigation}) {
                                  image={el.external_content}
                                  desc={description}
                                  distance={haversine(start, end).toFixed(2)}
-                                 timeWork={el.schedule[currentDay]}
+                                 timeWork={el.schedule[dayWeek]}
                                  is_24x7={el.schedule.is_24x7}
-                                 rating={rating}
+                                 rating={rating}r
                                  contactsNull={contactNull}
                                  contacts={contactsArr}
                                  color={color}

@@ -5,7 +5,7 @@ export default function CategoryGroup({title, color, icon, navigate, username}) 
   return(
     <TouchableHighlight underlayColor="#fff"
                         onPress={() =>
-                          navigate.navigate('OneCategory', {
+                          navigate.push('OneCategory', {
                             categoryName: title,
                             username: username
                           })}>

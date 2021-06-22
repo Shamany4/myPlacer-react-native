@@ -41,8 +41,8 @@ export default function ItemCard({ buildingID, title, type, image, desc, timeWor
   return(
     <TouchableHighlight style={{width: '48%'}}
                         underlayColor="#fff"
-                        onPress={() =>
-                          navigate.navigate('Info', {
+                        onPress={async () =>
+                          await navigate.push('Info', {
                             name: title,
                             buildingID: buildingID,
                             address: address,

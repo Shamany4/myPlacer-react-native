@@ -21,7 +21,7 @@ export default function CabinetScreen({navigation}) {
       .signOut()
       .then(async () => {
         await SecureStore.deleteItemAsync('userID');
-        navigation.navigate('Login');
+        navigation.push('Login');
       })
   }
 

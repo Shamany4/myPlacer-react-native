@@ -76,7 +76,6 @@ export default function ItemInfoScreen({route, navigation}) {
             setIsVisible(true);
           }
         })
-
     })();
   }, []);
 
@@ -88,153 +87,156 @@ export default function ItemInfoScreen({route, navigation}) {
     return(
       <View style={styles.application}>
         <Menu navigation={navigation}/>
-        <ScrollView>
-          <View style={styles.container}>
-            <ScrollView style={styles.info}>
+        <View style={{flex: 1, paddingTop: 30}}>
+          <ScrollView>
+            <View style={styles.container}>
+              <ScrollView style={styles.info}>
 
-              <HeaderGroup userName={username} />
+                <HeaderGroup userName={username} />
 
-              <View style={styles.infoTitleGroup}>
-                <View style={{flex: 5}}>
-                  <TitlePage title={name}/>
-                  <Text style={styles.infoTitleGroup__address}>{address}</Text>
-                </View>
-                <TouchableOpacity onPress={favoriteHandler} style={{flex: 1, alignItems: 'flex-end'}}>
-                  {
-                    favorite
-                      ?
-                      <Image style={styles.infoTitleGroup__icon}
-                             source={require('../assets/icons/favoriteFill.png')}
-                      />
-                      :
-                      <Image style={styles.infoTitleGroup__icon}
-                             source={require('../assets/icons/favoriteBorder.png')}
-                      />
-                  }
-                </TouchableOpacity>
-              </View>
-
-              <View style={styles.infoStatusGroup}>
-                <SubtitlePage title="Фото заведения"/>
-                <View style={styles.itemStatus}>
-                  {
-                    status ?
-                      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                        <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
-                        <Text style={styles.itemStatus__text}>Открыто</Text>
-                      </View>
-                      :
-                      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                        <View style={styles.itemStatus__circle} backgroundColor="#ff8c84"/>
-                        <Text style={styles.itemStatus__text}>Закрыто</Text>
-                      </View>
-                  }
-                </View>
-              </View>
-
-            </ScrollView>
-          </View>
-
-          {/* End container */}
-          <View style={styles.sliderContainer}>
-            <Swiper
-              loop
-              timeout={2.5}
-              controlsProps={{
-                prevTitle: '',
-                nextTitle: '',
-                dotActiveStyle: {
-                  backgroundColor: 'black',
-                  height: 10,
-                  width: 10,
-                  borderRadius: 5
-                }
-              }}
-            >
-              {
-                image.map((el, index) =>
-                  <Image style={styles.sliderItemPhoto}
-                         source={{
-                           uri: el.main_photo_url
-                         }}
-                         key={index}
-                  />)
-              }
-            </Swiper>
-          </View>
-
-          {/* Start container */}
-          <View style={styles.containerInfo}>
-            <ScrollView style={styles.info}>
-
-              <SubtitlePage title="Информация о заведении"/>
-              <Text style={styles.infoDescription}>{description.split('<br />')}</Text>
-
-              <View style={styles.smallCardWrapper}>
-                <View style={styles.item} >
-                  <Text style={styles.itemTitle}>Режим работы</Text>
-                  {
-                    is_24x7
-                      ?
-                      <Text style={styles.itemLocation__text}>Круглосуточно</Text>
-                      :
-                      close
+                <View style={styles.infoTitleGroup}>
+                  <View style={{flex: 5}}>
+                    <TitlePage title={name}/>
+                    <Text style={styles.infoTitleGroup__address}>{address}</Text>
+                  </View>
+                  <TouchableOpacity onPress={favoriteHandler} style={{flex: 1, alignItems: 'flex-end'}}>
+                    {
+                      favorite
                         ?
-                        <Text style={styles.itemLocation__text}>Выходной</Text>
+                        <Image style={styles.infoTitleGroup__icon}
+                               source={require('../assets/icons/favoriteFill.png')}
+                        />
                         :
-                        <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
+                        <Image style={styles.infoTitleGroup__icon}
+                               source={require('../assets/icons/favoriteBorder.png')}
+                        />
+                    }
+                  </TouchableOpacity>
+                </View>
+
+                <View style={styles.infoStatusGroup}>
+                  <SubtitlePage title="Фото заведения"/>
+                  <View style={styles.itemStatus}>
+                    {
+                      status ?
+                        <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                          <View style={styles.itemStatus__circle} backgroundColor="#84ffa9"/>
+                          <Text style={styles.itemStatus__text}>Открыто</Text>
+                        </View>
+                        :
+                        <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                          <View style={styles.itemStatus__circle} backgroundColor="#ff8c84"/>
+                          <Text style={styles.itemStatus__text}>Закрыто</Text>
+                        </View>
+                    }
+                  </View>
+                </View>
+
+              </ScrollView>
+            </View>
+
+            {/* End container */}
+            <View style={styles.sliderContainer}>
+              <Swiper
+                loop
+                timeout={2.5}
+                controlsProps={{
+                  prevTitle: '',
+                  nextTitle: '',
+                  dotActiveStyle: {
+                    backgroundColor: 'black',
+                    height: 10,
+                    width: 10,
+                    borderRadius: 5
                   }
-                </View>
-                <View style={styles.item} >
-                  <Text style={styles.itemTitle}>Рейтинг</Text>
-                  <Text style={styles.itemLocation__text_rating}>{rating}</Text>
-                </View>
-              </View>
-
-              <SubtitlePage title="Контактная информация" />
-              {
-                contactsNull
-                  ?
-                  <Text style={styles.infoDescription}>Отсутствует какая-либо контактная информация о заведении. Подробности узнавайте по прибытию на адрес.</Text>
-                  :
-                  contacts.map((el, index) => {
-                    switch (el.type) {
-                      case 'phone':
-                        return <InputGroup value={el.text} icon={require('../assets/icons/phone.png')} secure={false} key={index}/>
-                      case 'email':
-                        return <InputGroup value={el.text} icon={require('../assets/icons/email.png')} secure={false} key={index}/>
-                      case 'website':
-                        return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
-                      case 'vkontakte':
-                        let str = el.text.split('https://');
-                        return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
-                      case 'instagram':
-                        let str2 = el.text.split('https://instagram.com/');
-                        return <InputGroup value={str2[1]} icon={require('../assets/icons/instagram.png')} secure={false} key={index}/>
-                    }
+                }}
+              >
+                {
+                  image.map((el, index) => {
+                    return <Image style={styles.sliderItemPhoto}
+                                  source={{
+                                    uri: el.main_photo_url
+                                  }}
+                                  key={index}
+                    />
                   })
-              }
+                }
+              </Swiper>
+            </View>
 
+            {/* Start container */}
+            <View style={styles.containerInfo}>
+              <ScrollView style={styles.info}>
 
-              {
+                <SubtitlePage title="Информация о заведении"/>
+                <Text style={styles.infoDescription}>{description.split('<br />')}</Text>
 
-                contactsNull
-                  ?
-                  null
-                  :
-                  contacts.map((el, index) => {
-                    if (el.type !== 'phone') {
-                      return null;
-                    } else {
-                      return <ButtonGroup title={"Позвонить на " + el.value} click={() => callPhoneHandle(el.value)} key={index}/>
+                <View style={styles.smallCardWrapper}>
+                  <View style={styles.item} >
+                    <Text style={styles.itemTitle}>Режим работы</Text>
+                    {
+                      is_24x7
+                        ?
+                        <Text style={styles.itemLocation__text}>Круглосуточно</Text>
+                        :
+                        close
+                          ?
+                          <Text style={styles.itemLocation__text}>Выходной</Text>
+                          :
+                          <Text style={styles.itemLocation__text}>{workTime.working_hours[0].from} - {workTime.working_hours[0].to}</Text>
                     }
-                  })
+                  </View>
+                  <View style={styles.item} >
+                    <Text style={styles.itemTitle}>Рейтинг</Text>
+                    <Text style={styles.itemLocation__text_rating}>{rating}</Text>
+                  </View>
+                </View>
 
-              }
+                <SubtitlePage title="Контактная информация" />
+                {
+                  contactsNull
+                    ?
+                    <Text style={styles.infoDescription}>Отсутствует какая-либо контактная информация о заведении. Подробности узнавайте по прибытию на адрес.</Text>
+                    :
+                    contacts.map((el, index) => {
+                      switch (el.type) {
+                        case 'phone':
+                          return <InputGroup value={el.text} icon={require('../assets/icons/phone.png')} secure={false} key={index}/>
+                        case 'email':
+                          return <InputGroup value={el.text} icon={require('../assets/icons/email.png')} secure={false} key={index}/>
+                        case 'website':
+                          return <InputGroup value={el.text} icon={require('../assets/icons/website.png')} secure={false} key={index}/>
+                        case 'vkontakte':
+                          let str = el.text.split('https://');
+                          return <InputGroup value={str[1]} icon={require('../assets/icons/vk.png')} secure={false} key={index}/>
+                        case 'instagram':
+                          let str2 = el.text.split('https://instagram.com/');
+                          return <InputGroup value={str2[1]} icon={require('../assets/icons/instagram.png')} secure={false} key={index}/>
+                      }
+                    })
+                }
 
-            </ScrollView>
-          </View>
-        </ScrollView>
+
+                {
+
+                  contactsNull
+                    ?
+                    null
+                    :
+                    contacts.map((el, index) => {
+                      if (el.type !== 'phone') {
+                        return null;
+                      } else {
+                        return <ButtonGroup title={"Позвонить на " + el.value} click={() => callPhoneHandle(el.value)} key={index}/>
+                      }
+                    })
+
+                }
+
+              </ScrollView>
+            </View>
+          </ScrollView>
+        </View>
 
       </View>
     );
@@ -251,7 +253,6 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: '6%',
     paddingRight: '6%',
-    paddingTop: 30,
   },
   containerInfo: {
     paddingLeft: '6%',

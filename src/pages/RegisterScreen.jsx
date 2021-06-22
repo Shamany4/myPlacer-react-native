@@ -11,6 +11,7 @@ import moment from "moment";
 
 
 export default function LoginScreen({navigation}) {
+
   const iconInputPath = '../assets/icons/';
 
   const initParams = {
@@ -73,7 +74,7 @@ export default function LoginScreen({navigation}) {
           })
           .then(async () => {
             await SecureStore.setItemAsync('userID', firebase.auth().currentUser.uid);
-            navigation.navigate('Home');
+            navigation.push('Home');
           })
       })
       .catch((error) => {
@@ -280,7 +281,7 @@ export default function LoginScreen({navigation}) {
 
             <View style={styles.loginFooter}>
               <Text style={styles.loginFooter__title}>Уже имеете аккаунт?</Text>
-              <Text style={styles.loginFooter__btn} onPress={() => navigation.navigate('Login')}>Авторизация</Text>
+              <Text style={styles.loginFooter__btn} onPress={() => navigation.push('Login')}>Авторизация</Text>
             </View>
           </View>
         </View>

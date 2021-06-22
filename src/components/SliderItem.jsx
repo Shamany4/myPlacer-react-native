@@ -40,7 +40,7 @@ export default function SliderItem({buildingID, colorCard, title, type, image, d
     <TouchableHighlight style={{height: '83%'}}
                         underlayColor="#fff"
                         onPress={() =>
-                          navigate.navigate('Info', {
+                          navigate.push('Info', {
                             name: title,
                             address: address,
                             image: image,

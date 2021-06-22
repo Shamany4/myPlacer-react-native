@@ -8,6 +8,7 @@ import * as SecureStore from "expo-secure-store";
 
 
 export default function LoginScreen({navigation}) {
+
   const iconInputPath = '../assets/icons/';
 
   const initParams = {
@@ -71,7 +72,7 @@ export default function LoginScreen({navigation}) {
           .get()
           .then(async () => {
             await SecureStore.setItemAsync('userID', firebase.auth().currentUser.uid);
-            navigation.navigate('Home');
+            navigation.push('Home');
           })
       })
       .catch((error) => {
@@ -129,7 +130,7 @@ export default function LoginScreen({navigation}) {
 
             <View style={styles.loginFooter}>
               <Text style={styles.loginFooter__title}>Ещё не имеете аккаунта?</Text>
-              <Text style={styles.loginFooter__btn} onPress={() => navigation.navigate('Register')}>Регистрация</Text>
+              <Text style={styles.loginFooter__btn} onPress={() => navigation.push('Register')}>Регистрация</Text>
             </View>
           </View>
         </View>
