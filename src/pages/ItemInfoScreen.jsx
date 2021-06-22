@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-
+import {Linking} from 'react-native'
 
 import Menu from "../components/Menu";
 import HeaderGroup from "../components/HeaderGroup";
@@ -79,6 +79,10 @@ export default function ItemInfoScreen({route, navigation}) {
 
     })();
   }, []);
+
+  const callPhoneHandle = (phone) => {
+    Linking.openURL(`tel:${phone}`)
+  }
 
   if (isVisible) {
     return(
@@ -213,11 +217,19 @@ export default function ItemInfoScreen({route, navigation}) {
 
 
               {
+
                 contactsNull
                   ?
                   null
                   :
-                  <ButtonGroup title="Позвонить" />
+                  contacts.map((el, index) => {
+                    if (el.type !== 'phone') {
+                      return null;
+                    } else {
+                      return <ButtonGroup title={"Позвонить на " + el.value} click={() => callPhoneHandle(el.value)} key={index}/>
+                    }
+                  })
+
               }
 
             </ScrollView>
