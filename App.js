@@ -74,7 +74,7 @@ export default function App() {
         return;
       }
 
-      let location = await Location.getCurrentPositionAsync({});
+      let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.High });
       setLocation(location);
     })();
   }, []);
