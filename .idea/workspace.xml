@@ -4,16 +4,6 @@
     <list default="true" id="71e3ee8c-c753-4aea-8e02-2f38b22e627c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CategoryGroup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SliderItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SliderItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CabinetScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ItemInfoScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ItemInfoScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/LoginScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SearchScreen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +35,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -103,6 +94,7 @@
       <workItem from="1621746018031" duration="7121000" />
       <workItem from="1621762702424" duration="33724000" />
       <workItem from="1624340672072" duration="10288000" />
+      <workItem from="1632304272609" duration="627000" />
     </task>
     <servers />
   </component>
